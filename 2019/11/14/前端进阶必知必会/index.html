@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>前端进阶必知必会 | blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="YP's Blog">
+  
+  <meta name="description" content="学习笔记源码研读系列  jquery源码分析（面向对象式编程） express源码分析 underscore源码分析（函数式编程） vue源码分析（双向数据绑定、响应式原理、编译原理）  js高级系列  深究剖析闭包原理及应用场景 解密V8引擎运行机制原理（掌握GO/AO） 前端模板引擎 - 微引擎开发 v8引擎内存优化（了解v8引擎内存回收机制，掌握内存优化技巧） 前端i18n国际化开发技术（多">
+<meta name="keywords" content="web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端进阶必知必会">
+<meta property="og:url" content="http://localhost:4000/2019/11/14/前端进阶必知必会/index.html">
+<meta property="og:site_name" content="blog">
+<meta property="og:description" content="学习笔记源码研读系列  jquery源码分析（面向对象式编程） express源码分析 underscore源码分析（函数式编程） vue源码分析（双向数据绑定、响应式原理、编译原理）  js高级系列  深究剖析闭包原理及应用场景 解密V8引擎运行机制原理（掌握GO/AO） 前端模板引擎 - 微引擎开发 v8引擎内存优化（了解v8引擎内存回收机制，掌握内存优化技巧） 前端i18n国际化开发技术（多">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-07-04T05:56:25.013Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端进阶必知必会">
+<meta name="twitter:description" content="学习笔记源码研读系列  jquery源码分析（面向对象式编程） express源码分析 underscore源码分析（函数式编程） vue源码分析（双向数据绑定、响应式原理、编译原理）  js高级系列  深究剖析闭包原理及应用场景 解密V8引擎运行机制原理（掌握GO/AO） 前端模板引擎 - 微引擎开发 v8引擎内存优化（了解v8引擎内存回收机制，掌握内存优化技巧） 前端i18n国际化开发技术（多">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">YP Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        YP Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Blog" target="_blank" href="https://iloveyou11.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/iloveyou11">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-前端进阶必知必会" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      前端进阶必知必会
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端/">前端</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-11-14
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h4 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h4><p><a href="http://note.youdao.com/noteshare?id=24e9d3cdd8febbf4104baf0601aaf444&sub=CE7C12D4C8E24370B7DAB28DE7A1C7F7" target="_blank" rel="noopener">源码研读系列</a></p>
+<ul>
+<li>jquery源码分析（面向对象式编程）</li>
+<li>express源码分析</li>
+<li>underscore源码分析（函数式编程）</li>
+<li>vue源码分析（双向数据绑定、响应式原理、编译原理）</li>
+</ul>
+<p><a href="http://note.youdao.com/noteshare?id=fa23dd3d2ff21b4bd25221c9b7796101&sub=10C0B3F7EC354C8190A92A3EDC03640F" target="_blank" rel="noopener">js高级系列</a></p>
+<ul>
+<li>深究剖析闭包原理及应用场景</li>
+<li>解密V8引擎运行机制原理（掌握GO/AO）</li>
+<li>前端模板引擎 - 微引擎开发</li>
+<li>v8引擎内存优化（了解v8引擎内存回收机制，掌握内存优化技巧）</li>
+<li>前端i18n国际化开发技术（多语言支持如何实现）</li>
+<li>剖析new运算符</li>
+<li>实现一个驱动模块框架（第三方库开发思维）</li>
+<li>性能优化Cache架构（第三方库开发思维）</li>
+<li>深究剖析闭包原理及应用场景</li>
+</ul>
+<p><a href="http://note.youdao.com/noteshare?id=dad701e838d283ff01fccf556df25c5a&sub=CFF8F1337D1F441EA7342A3D1DEAFBE3" target="_blank" rel="noopener">js进阶</a></p>
+<p><a href="http://note.youdao.com/noteshare?id=16623d3c11c9d0baa6954629b75addc6&sub=527D7282BBD84839B26336BED13508E9" target="_blank" rel="noopener">webpack系列（手写loader、plugin）</a></p>
+<ul>
+<li>手写webpack（简易版，并不涉及内部原理，这里只实现了单纯的替换）</li>
+<li>手写loader（对单类型文件作统一解析处理）</li>
+<li>手写plugin（需要针对整个构建流程作处理，并非对单类型文件作处理）</li>
+</ul>
+<p><a href="http://note.youdao.com/noteshare?id=ff4ffa452ed4e9833b02ac597b27267c&sub=9731D2296E7845BABB108B066D0F9587" target="_blank" rel="noopener">vue高级应用和vue3.0的到来</a></p>
+<ul>
+<li>vue高级应用场景（包括render函数运用、批量注册全局组件、自动化注册路由、路由懒加载）</li>
+<li>大型vue项目的api层如何封装（api层设计、axios二次封装）</li>
+<li>vue3.0的变化</li>
+<li>vue3更快的 Virtual DOM 新策略优化</li>
+<li>Vue的优化技巧（打包速度优化、路由优化）</li>
+</ul>
+<p><a href="http://note.youdao.com/noteshare?id=7846e739acece4f1ecce5f0d7c9b3bf3&sub=8709B9F4D1AC4CE2B5674DBB1A1913D1" target="_blank" rel="noopener">vue插件和UI库编写</a></p>
+<ul>
+<li>编写vuex（简易版）</li>
+<li>编写vuex异步插件（掌握vue插件编写的整个流程）</li>
+<li>实现vue-cli3的UI库</li>
+<li>搭建自己的vue-cli（实现自己的代码下载工具）</li>
+<li>手写vue-router</li>
+</ul>
+<p><a href="http://note.youdao.com/noteshare?id=7d76b4426aa29dc6d897e0a347662c15&sub=034228F616F3421A8D38FA5C73316F7E" target="_blank" rel="noopener">前端优化策略</a></p>
+<ul>
+<li>懒加载与预加载的原理和实现-. webpack做模块懒加载（模块异步加载）</li>
+<li>前端还有哪些优化策略？</li>
+</ul>
+<p><a href="http://note.youdao.com/noteshare?id=326804064be687c5a23315deb70506c3&sub=5F290EA00FB145AB95744356F9BD6ED2" target="_blank" rel="noopener">前端开发模式变化</a></p>
+<ul>
+<li>未来的开发模式（mvc时代-&gt;mvvm时代-&gt;中间层时代）</li>
+<li>基于NodeJS打造Web中间层</li>
+</ul>
+<p><a href="http://note.youdao.com/noteshare?id=03464998d761636d7c6a42c2f52e9025&sub=AB15F259C57C4C4FA9C89F03859CC687" target="_blank" rel="noopener">高并发系统架构解决方案</a></p>
+<ul>
+<li>高并发系统架构技术（了解高并发情况下的处理方案）</li>
+</ul>
+<p>react分享系列</p>
+<ul>
+<li><a href="https://github.com/brickspert/blog/issues/1" target="_blank" rel="noopener">从零搭建React全家桶框架教程</a>——<a href="https://iloveyou11.github.io/2019/10/30/%E4%BB%8E0%E6%90%AD%E5%BB%BAreact%E7%8E%AF%E5%A2%83/" target="_blank" rel="noopener">PS.我的笔记</a></li>
+<li><a href="https://www.bilibili.com/video/av74527572" target="_blank" rel="noopener">手写react</a>——<a href="https://github.com/iloveyou11/my-react" target="_blank" rel="noopener">PS.github地址</a></li>
+</ul>
+<h4 id="成长建议"><a href="#成长建议" class="headerlink" title="成长建议"></a>成长建议</h4><p><strong>【成长焦虑问题】</strong><br><strong>1. 业务思考</strong></p>
+<p>明白业务和公司目标，做这个需求可以参与到需求的早期阶段，深入思考为什么我们提出这个需求，这个需求解决了什么业务问题，有没有更好的方案，而不是拿到一个方案我只是个代码的实现者。如果针对需求有一些不知道的地方，可以向产品经理、运营请教，并且技术是一定要服务于业务的，有时候我们可以通过技术手段来提升业务价值</p>
+<p><strong>2. 技术思考</strong></p>
+<p>我们在开发的过程中肯定会有各种各样的痛点，学会用技术的手段去优化业务开发的流程，来提升开发效率。有时候业务项目很多都是大同小异的，我们可以针对项目量身定做一套脚手架工具</p>
+<p><strong>3. 优化工作流程</strong></p>
+<p>不仅要熟悉从需求到开发、联调、测试、上线每个功能环节，还是思考每个环节有没有提升点，特别是上线过程，能不能做到自动化，能不能做到小流量发布，能不能即使回滚代码，能不能做增量发布，这些都值得我们去思考去优化。看看大公司的经验分享，看能不能移植到自己的业务中。</p>
+<p><strong>4. 技术分享</strong></p>
+<p>主动进行技术分享，把工作中遇到的问题、解决方案、学习到的新技术、产生总结下来，作为组内的技术分享输出，好一点的话可以对外输出。一是可以沉淀自己的技术，二是大家可以知道你做的东西，并且可以活跃组内的技术氛围。另外还可以锻炼自己的语言表述能力，这一点对于未来的职业发展是非常重要的</p>
+<p><strong>【技术追求】</strong><br><strong>1. 主动承担有挑战的事情</strong></p>
+<p>不满足于我们完成的日常需求，如果这些重复劳动对自己的成长空间已经很小了，我们可以和leader主动申请去做一些具有个人挑战的事情，可以学到更多的东西，跳出自己的舒适圈</p>
+<p><strong>2. 积极优化重构自己的代码</strong></p>
+<p>可以学习优秀的源码作为参考，追求高质量代码，不断去优化去重构自己的代码，而且注意重构要趁早，否则后面再去优化就会很困难</p>
+<p><strong>3. 对技术背后实现的原理有探究的兴趣</strong></p>
+<p>要研究自己工作中相关技术背后的原理，深入到源码，这样之后再遇到一些坑可以很轻松地解决，节约了工作中调bug的实践，同时也能让自己的技能得到提升</p>
+<p><strong>4. 写高质量的技术博文</strong></p>
+<p>这也是一个不断锻炼的过程，写文章的过程中，我们对一些原理一些细节是很较真的，这有助于自己更加深入地掌握相关的知识，好的文章对外输出也可以帮助自己提高一定的技术影响力</p>
+<p>为什么会有35岁中年危机？如果一个人到了35岁，还和工作两三年的人差不太多，你的精力是敌不过那些年轻人的，这时就让自己沦为下风，公司就不会选择留你。如果要摆脱这个危机，就需要自己不断学习，如果35岁能成为非常厉害的大牛，是会非常吃香的。终其原因是自己的能力达不到，使自己陷入了35岁中年危机。如何持续学习？</p>
+<p><strong>【持续学习】</strong><br><strong>1. 应该学习的内容</strong></p>
+<p>学习内容一定要和工作相关，不要脱离工作实践。如游戏、webgl，如果工作中用不到这些点，没必要我花费太大的精力去学习这些方向。这一点大家要注意。而且学习内容一定要拿到工作中去反复验证的。</p>
+<p><strong>2. 掌握好的学习方法</strong></p>
+<p>梳理知识点，不要毫无目的地去学习</p>
+<p><strong>3. 思考和反馈</strong></p>
+<p>始终保持好奇心，在工作中善于发现问题</p>
+<p><strong>4. 知识付费</strong></p>
+<p>需要有经验的人为你作指导</p>
+<p><strong>【成长路线】</strong></p>
+<p>市场对于高级人才是非常稀缺的。我们可以花几年时间去彻底研究透某个领域，对于刚工作的人来说这是非常重要的，因为只有在一个领域打通了才谈得上跨领域迁移去扩展自己的知识面。以下是技术路线和管理路线：</p>
+<ol>
+<li>工程师</li>
+<li>高级工程师</li>
+<li>资深工程师</li>
+<li>技术专家、前端架构师</li>
+<li>前端团队技术负责人</li>
+<li>部门负责人</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/11/14/前端进阶必知必会/&title=《前端进阶必知必会》 — blog&pic=/images/banner.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/11/14/前端进阶必知必会/&title=《前端进阶必知必会》 — blog&source=一个专注web开发技术的网站" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/11/14/前端进阶必知必会/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端进阶必知必会》 — blog&url=http://localhost:4000/2019/11/14/前端进阶必知必会/&via=http://localhost:4000" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/11/14/前端进阶必知必会/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2019/11/14/前端进阶必知必会/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#学习笔记"><span class="post-toc-text">学习笔记</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#成长建议"><span class="post-toc-text">成长建议</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/11/18/励志/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          那些成长过程的话
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2019/11/13/正则表达式进阶训练/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">正则表达式进阶训练</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Yang Pei<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    var mihoConfig = {
+        root: "http://localhost:4000",
+        animate: "false" ,
+        isHome: "false" ,
+        share: "true"
+    }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/AI/">AI</a><a class="category-link" href="/categories/前端/">前端</a><a class="category-link" href="/categories/计算机/">计算机</a><a class="category-link" href="/categories/语言/">语言</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+    <div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+    <script src="/js/search.js"></script>
+        <script src="/js/main.js"></script>
+
+            
+                <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+                <div id="particles"></div>
+                <script src="/js/particles.js"></script>
+                    
+
+                        
+
+                                
+
+                                                
+                                                                
+                                                                    <script src="/js/pop-img.js"></script>
+                                                                        <script>
+                                                                            $(".article-entry p img").popImg();
+                                                                        </script>
+                                                                        
+  </div>
+</body>
+</html>

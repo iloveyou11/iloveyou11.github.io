@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+  <title>hexo+github部署个人博客教程 | blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="YP's Blog">
+  
+  <meta name="description" content="hexo 官方文档 这是我的个人博客效果: YP blog">
+<meta name="keywords" content="web">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo+github部署个人博客教程">
+<meta property="og:url" content="http://localhost:4000/2019/01/01/hexo+github部署个人博客教程/index.html">
+<meta property="og:site_name" content="blog">
+<meta property="og:description" content="hexo 官方文档 这是我的个人博客效果: YP blog">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-07-04T05:58:07.692Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo+github部署个人博客教程">
+<meta name="twitter:description" content="hexo 官方文档 这是我的个人博客效果: YP blog">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/" class="left">
+                    <span class="site-title">YP Blog</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a  href="/">
+                        <i class="fa fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                    
+                    <a  href="/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>Archives</span>
+                    </a>
+                    
+                    <a  href="/about">
+                        <i class="fa fa-user"></i>
+                        <span>About</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/">
+                    <img src="/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        YP Blog
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发的技术博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="Blog" target="_blank" href="https://iloveyou11.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/iloveyou11">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-hexo+github部署个人博客教程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      hexo+github部署个人博客教程
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/前端/">前端</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-01
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="noopener">hexo 官方文档</a></p>
+<p>这是我的个人博客效果: <a href="https://iloveyou11.github.io/" target="_blank" rel="noopener">YP blog</a></p>
+<a id="more"></a>
+
+<h4 id="搭建的具体流程"><a href="#搭建的具体流程" class="headerlink" title="搭建的具体流程"></a>搭建的具体流程</h4><ul>
+<li>安装 git，申请 github 账号，生成 ssh 密钥，在 github 新建 new SSH Key</li>
+<li>在 github 新建个人仓库用户名，取名为<strong>‘’用户名.github.io’’</strong>这个用户名使用你的 GitHub 帐号名称代替，这个是固定写法</li>
+<li>安装 nodejs</li>
+<li>安装 hexo <code>npm install -g hexo-cli</code></li>
+<li>初始化博客 <code>hexo init [name]</code>创建博客项目</li>
+<li>为了检测网站别按顺序输入以下命令：<code>hexo g</code> 、<code>hexo s</code>，打开 localhost:4000 查看网站是否成功显示</li>
+<li>关联 github，安装包<code>npm install hexo-deployer-git --save</code>，修改_config.yml 配置文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/deployment.html</span><br><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/name/name.github.io.git  #记得加.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>分别运行<code>hexo g</code> 、<code>hexo s</code>，在https://[yourname].github.io/查看博客（在下方会讲命令的具体作用）</li>
+<li>关于主题更换（默认是 landscape 主题，如果想更换主题请看这里）<br>在主题官网选择好主题，找到对应的 github 仓库，<code>git clone [theme path] themes/[theme name]</code>安装到本项目的 themes 文件夹下，并修改_config.yml 配置文件中 theme（名字与你命名的主题文件夹名字相同），再分别运行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean  #清除缓存</span><br><span class="line">hexo g   #相当于hexo generate，生成博客</span><br><span class="line">hexo d   #相当于hexo deploy，部署博客</span><br></pre></td></tr></table></figure>
+
+<p>打开你的博客地址即可看到效果</p>
+<ul>
+<li>关于博客书写<br><code>hexo n &quot;博客名字&quot;</code>，会在<code>source/_posts</code>文件夹下生成 markdown 文件，使用 markdown 语法书写博客即可，建议使用<a href="http://marxi.co/" target="_blank" rel="noopener">Marxico</a>可视化工具编写（也可以采用其他的可视化工具，视个人而定）</li>
+<li>博客的格式<br>博客的大体可以采用以下格式（不同主题格式或许有些不同，可以自行查阅相关文档）：</li>
+</ul>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: Hello World</span><br><span class="line">date: 2019-07-25</span><br><span class="line">author: XXX</span><br><span class="line">categories: XXX</span><br><span class="line">tags:</span><br><span class="line"><span class="bullet">  - </span>Android</span><br><span class="line">comments: true</span><br><span class="line">cover_picture: /images/banner.jpg</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">这里写博客开头部分内容</span><br><span class="line"></span><br><span class="line"><span class="section"># 如果添加下行语句，文章会自动生成“更多”按钮，点击后 more 后面的内容才会显示</span></span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line">这里写后续的博客内容</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>关于图片<br>如果采用本地项目文件夹存储图片，每次打开博客会加载大量的图片，会导致性能有所下降，建议使用图床存储，如<a href="https://www.qiniu.com/" target="_blank" rel="noopener">七牛</a> 或 <a href="http://www.tietuku.com/" target="_blank" rel="noopener">贴图库</a> ，在文章中直接采用外链引入图片</li>
+</ul>
+<p><strong>[坑]</strong>：如果 hexo g 生成的文件缺少 index.html 和 archive，部署后打开博客会出现 404 的错误说找不到 index,html 文件,在 github 仓库中打开确实没有.造成这个问题的原因是缺少相应的 npm 包，输入命令<code>npm ls --depth 0</code>，安装好缺少的包重新发布即可.好像是因为安装了新的主题而引起的,这个问题也是折腾了我好久.-_-</p>
+<h4 id="hexo-常用命令"><a href="#hexo-常用命令" class="headerlink" title="hexo 常用命令"></a>hexo 常用命令</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo -g #全局安装Hexo</span><br><span class="line">npm update hexo -g #升级hexo</span><br><span class="line">hexo init #初始化项目</span><br><span class="line">hexo n &quot;name&quot; &lt;=&gt; hexo new &quot;name&quot; #新建名为name的文章</span><br><span class="line">hexo g &lt;=&gt; hexo generate #生成博客</span><br><span class="line">hexo s &lt;=&gt; hexo server #启动服务，本地预览效果</span><br><span class="line">hexo d &lt;=&gt; hexo deploy #部署博客</span><br></pre></td></tr></table></figure>
+
+<h4 id="markdown-常用语法"><a href="#markdown-常用语法" class="headerlink" title="markdown 常用语法"></a>markdown 常用语法</h4><p><strong>标题</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 这是一级标题</span><br><span class="line">## 这是二级标题</span><br><span class="line">### 这是三级标题</span><br><span class="line">#### 这是四级标题</span><br><span class="line">##### 这是五级标题</span><br><span class="line">###### 这是六级标题</span><br></pre></td></tr></table></figure>
+
+<p><strong>字体</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">**这是加粗的文字**</span><br><span class="line">*这是倾斜的文字*`</span><br><span class="line">***这是斜体加粗的文字***</span><br><span class="line">~~这是加删除线的文字~~</span><br></pre></td></tr></table></figure>
+
+<p><strong>引用</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;这是引用的内容</span><br><span class="line">&gt;&gt;这是引用的内容</span><br><span class="line">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;这是引用的内容</span><br></pre></td></tr></table></figure>
+
+<p><strong>分割线</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">----</span><br><span class="line">***</span><br><span class="line">*****</span><br></pre></td></tr></table></figure>
+
+<p><strong>图片</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">![图片alt](图片地址 &apos;&apos;图片title&apos;&apos;)</span><br><span class="line">图片alt就是显示在图片下面的文字，相当于对图片内容的解释。</span><br><span class="line">图片title是图片的标题，当鼠标移到图片上时显示的内容。title可加可不加</span><br></pre></td></tr></table></figure>
+
+<p><strong>超链接</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[超链接名](超链接地址 &quot;超链接title&quot;) #title可加可不加</span><br><span class="line">&lt;a href=&quot;超链接地址&quot; target=&quot;_blank&quot;&gt;超链接名&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>列表</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">- 列表内容  #无序列表</span><br><span class="line">+ 列表内容</span><br><span class="line">* 列表内容</span><br><span class="line">1.列表内容  #有序列表</span><br><span class="line">2.列表内容</span><br><span class="line">3.列表内容</span><br></pre></td></tr></table></figure>
+
+<p><strong>表格</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">表头|表头|表头</span><br><span class="line">---|:--:|---:</span><br><span class="line">内容|内容|内容</span><br><span class="line">内容|内容|内容</span><br></pre></td></tr></table></figure>
+
+<p><strong>代码</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> `代码内容`  #单行</span><br><span class="line"></span><br><span class="line">(```)  #多行，空格不要，```后面可以写上语言类别，如javascript等</span><br><span class="line">  代码...</span><br><span class="line">  代码...</span><br><span class="line">  代码...</span><br><span class="line">(```)</span><br></pre></td></tr></table></figure>
+
+<p><strong>流程图</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">```flow</span><br><span class="line">st=&gt;start: 开始</span><br><span class="line">op=&gt;operation: My Operation</span><br><span class="line">cond=&gt;condition: Yes or No?</span><br><span class="line">e=&gt;end</span><br><span class="line">st-&gt;op-&gt;cond</span><br><span class="line">cond(yes)-&gt;e</span><br><span class="line">cond(no)-&gt;op</span><br><span class="line">&amp;```</span><br></pre></td></tr></table></figure>
+
+<p><strong>字体大小颜色、大小、背景色设置</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">红色文字: &lt;font color=&quot;#dd0000&quot;&gt;红色文字：&lt;/font&gt;&lt;br /&gt;</span><br><span class="line">字体大小: &lt;font size=&quot;1&quot;&gt;size为1&lt;/font&gt;&lt;br /&gt;</span><br><span class="line">背景色:   &lt;table&gt;&lt;tr&gt;&lt;td bgcolor=#FF00FF&gt;背景色的设置是按照十六进制颜色值：#7FFFD4&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>瞄点设置</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">- [测试](#测试)</span><br><span class="line">### &lt;a id=&quot;测试&quot;&gt;测试&lt;/a&gt;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2019/01/01/hexo+github部署个人博客教程/&title=《hexo+github部署个人博客教程》 — blog&pic=/images/banner.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/01/01/hexo+github部署个人博客教程/&title=《hexo+github部署个人博客教程》 — blog&source=hexo 官方文档
+这是我的个人博客效果: YP blog" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2019/01/01/hexo+github部署个人博客教程/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《hexo+github部署个人博客教程》 — blog&url=http://localhost:4000/2019/01/01/hexo+github部署个人博客教程/&via=http://localhost:4000" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2019/01/01/hexo+github部署个人博客教程/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2019/01/01/hexo+github部署个人博客教程/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#搭建的具体流程"><span class="post-toc-text">搭建的具体流程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#hexo-常用命令"><span class="post-toc-text">hexo 常用命令</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#markdown-常用语法"><span class="post-toc-text">markdown 常用语法</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/2019/01/03/关于linux上的环境部署/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          linux node项目环境部署
+        
+      </span>
+    </a>
+  
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2020 Yang Pei<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+    var mihoConfig = {
+        root: "http://localhost:4000",
+        animate: "false" ,
+        isHome: "false" ,
+        share: "true"
+    }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/categories/AI/">AI</a><a class="category-link" href="/categories/前端/">前端</a><a class="category-link" href="/categories/计算机/">计算机</a><a class="category-link" href="/categories/语言/">语言</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a  href="/">
+                    <i class="fa fa-home"></i><span>Home</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/archives">
+                    <i class="fa fa-archive"></i><span>Archives</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/about">
+                    <i class="fa fa-user"></i><span>About</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+    <div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+    <script src="/js/search.js"></script>
+        <script src="/js/main.js"></script>
+
+            
+                <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+                <div id="particles"></div>
+                <script src="/js/particles.js"></script>
+                    
+
+                        
+
+                                
+
+                                                
+                                                                
+                                                                    <script src="/js/pop-img.js"></script>
+                                                                        <script>
+                                                                            $(".article-entry p img").popImg();
+                                                                        </script>
+                                                                        
+  </div>
+</body>
+</html>
