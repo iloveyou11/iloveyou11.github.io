@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="blog">
 <meta property="og:description" content="由于设计模式和软件开发的语言，平台都没有关系，因此，前端工程师对设计模式也是有需求的。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-04T05:57:03.910Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ts设计模式详解">
 <meta name="twitter:description" content="由于设计模式和软件开发的语言，平台都没有关系，因此，前端工程师对设计模式也是有需求的。">
@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-typescript设计模式" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       ts设计模式详解
@@ -134,14 +134,21 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p>由于设计模式和软件开发的语言，平台都没有关系，因此，前端工程师对设计模式也是有需求的。</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#一、创建型模式"><span class="toc-text">一、创建型模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#工厂模式"><span class="toc-text">工厂模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#抽象工场模式"><span class="toc-text">抽象工场模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#建造者模式"><span class="toc-text">建造者模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#原型模式"><span class="toc-text">原型模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#单例模式"><span class="toc-text">单例模式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、结构型模式"><span class="toc-text">二、结构型模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#适配器模式"><span class="toc-text">适配器模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#职责链模式"><span class="toc-text">职责链模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#桥接模式"><span class="toc-text">桥接模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#组合模式"><span class="toc-text">组合模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#装饰器模式"><span class="toc-text">装饰器模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#外观模式"><span class="toc-text">外观模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#享元模式"><span class="toc-text">享元模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#代理模式"><span class="toc-text">代理模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#模板方法模式"><span class="toc-text">模板方法模式</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#三、行为型模式"><span class="toc-text">三、行为型模式</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#解释器模式"><span class="toc-text">解释器模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#命令模式"><span class="toc-text">命令模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#中介者模式"><span class="toc-text">中介者模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#观察者模式"><span class="toc-text">观察者模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#状态模式"><span class="toc-text">状态模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#策略模式"><span class="toc-text">策略模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#迭代器模式"><span class="toc-text">迭代器模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#备忘录模式"><span class="toc-text">备忘录模式</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#访问者模式"><span class="toc-text">访问者模式</span></a></li></ol></li></ol>
+    </div>
+    
+                                    <p>由于设计模式和软件开发的语言，平台都没有关系，因此，前端工程师对设计模式也是有需求的。</p>
 <a id="more"></a>
+
+
 
 <blockquote>
 <p><strong>创建型模式</strong><br><br>创建型模式一共有4个，分别为工厂（工厂，工厂方法，抽象工厂合并），建造者，原型，单例<br><br><strong>结构型模式</strong><br><br>结构型模式一共有7种：适配器，桥接，组合，装饰，外观，享元，代理<br><br><strong>行为型模式</strong><br><br>行为型模式一共有5种：命令，中介者，观察者，状态，策略<br></p>
@@ -262,11 +269,11 @@
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> VisitorPattern &#123;</span><br><span class="line">	<span class="keyword">export</span> <span class="keyword">namespace</span> Demo &#123;</span><br><span class="line"></span><br><span class="line">		<span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>) : <span class="title">void</span> </span>&#123;</span><br><span class="line">		    <span class="keyword">var</span> objs: VisitorPattern.Objs = <span class="keyword">new</span> VisitorPattern.Objs();</span><br><span class="line"></span><br><span class="line">			objs.attach(<span class="keyword">new</span> VisitorPattern.ConcreteElement1());</span><br><span class="line">			objs.attach(<span class="keyword">new</span> VisitorPattern.ConcreteElement2());</span><br><span class="line"></span><br><span class="line">			<span class="keyword">var</span> v1: VisitorPattern.ConcreteVisitor1 = <span class="keyword">new</span> VisitorPattern.ConcreteVisitor1(),</span><br><span class="line">				v2: VisitorPattern.ConcreteVisitor2 = <span class="keyword">new</span> VisitorPattern.ConcreteVisitor2();</span><br><span class="line"></span><br><span class="line">			objs.operate(v1);</span><br><span class="line">			objs.operate(v2);</span><br><span class="line"></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -314,24 +321,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一、创建型模式"><span class="post-toc-text">一、创建型模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#工厂模式"><span class="post-toc-text">工厂模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#抽象工场模式"><span class="post-toc-text">抽象工场模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#建造者模式"><span class="post-toc-text">建造者模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#原型模式"><span class="post-toc-text">原型模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#单例模式"><span class="post-toc-text">单例模式</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二、结构型模式"><span class="post-toc-text">二、结构型模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#适配器模式"><span class="post-toc-text">适配器模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#职责链模式"><span class="post-toc-text">职责链模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#桥接模式"><span class="post-toc-text">桥接模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#组合模式"><span class="post-toc-text">组合模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#装饰器模式"><span class="post-toc-text">装饰器模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#外观模式"><span class="post-toc-text">外观模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#享元模式"><span class="post-toc-text">享元模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#代理模式"><span class="post-toc-text">代理模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#模板方法模式"><span class="post-toc-text">模板方法模式</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三、行为型模式"><span class="post-toc-text">三、行为型模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#解释器模式"><span class="post-toc-text">解释器模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#命令模式"><span class="post-toc-text">命令模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#中介者模式"><span class="post-toc-text">中介者模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#观察者模式"><span class="post-toc-text">观察者模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#状态模式"><span class="post-toc-text">状态模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#策略模式"><span class="post-toc-text">策略模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#迭代器模式"><span class="post-toc-text">迭代器模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#备忘录模式"><span class="post-toc-text">备忘录模式</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#访问者模式"><span class="post-toc-text">访问者模式</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2019/08/11/jquery源码解析/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -352,10 +359,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

@@ -43,7 +43,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/03/23/INtbYW4eXKJcuAr.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/23/FagjoMOD3JS78VU.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/23/5rClbMTnG3XhHq9.jpg">
-<meta property="og:updated_time" content="2020-07-04T05:55:59.870Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="卷积神经网络的演变">
 <meta name="twitter:description" content="本文主要介绍深度学习种卷积神经网络的发展历史，以及典型的卷积神经网络。">
@@ -133,10 +133,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-卷积神经网络演变" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       卷积神经网络的演变
@@ -162,14 +162,21 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p>本文主要介绍深度学习种卷积神经网络的发展历史，以及典型的卷积神经网络。</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#基础介绍"><span class="toc-text">基础介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是深度学习"><span class="toc-text">什么是深度学习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是卷积神经网"><span class="toc-text">什么是卷积神经网</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#深度学习模型"><span class="toc-text">深度学习模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#相关知识"><span class="toc-text">相关知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#激活函数"><span class="toc-text">激活函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优化器（梯度下降算法）"><span class="toc-text">优化器（梯度下降算法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#权值-w-偏置-b-初始化"><span class="toc-text">权值(w)偏置(b)初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#过拟合和欠拟合"><span class="toc-text">过拟合和欠拟合</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#常见问题"><span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#为什么需要激活函数？"><span class="toc-text">为什么需要激活函数？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#网络加深就一定好吗？"><span class="toc-text">网络加深就一定好吗？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卷积神经网络演变"><span class="toc-text">卷积神经网络演变</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#LeNet——雏形网络"><span class="toc-text">LeNet——雏形网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AlexLet"><span class="toc-text">AlexLet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SPPNet——空间金字塔"><span class="toc-text">SPPNet——空间金字塔</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#VGGNet"><span class="toc-text">VGGNet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GoogLeNet"><span class="toc-text">GoogLeNet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ResNet——残差网络"><span class="toc-text">ResNet——残差网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DenseNet——密连网络"><span class="toc-text">DenseNet——密连网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CatNet——拼接网络"><span class="toc-text">CatNet——拼接网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#R-CNN——区域卷积网络"><span class="toc-text">R-CNN——区域卷积网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fast-R-CNN"><span class="toc-text">Fast R-CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Faster-R-CNN"><span class="toc-text">Faster R-CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mask-R-CNN"><span class="toc-text">Mask R-CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#YOLO"><span class="toc-text">YOLO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSD"><span class="toc-text">SSD</span></a></li></ol></li></ol>
+    </div>
+    
+                                    <p>本文主要介绍深度学习种卷积神经网络的发展历史，以及典型的卷积神经网络。</p>
 <a id="more"></a>
+
+
 
 <h3 id="基础介绍"><a href="#基础介绍" class="headerlink" title="基础介绍"></a>基础介绍</h3><h4 id="什么是深度学习"><a href="#什么是深度学习" class="headerlink" title="什么是深度学习"></a>什么是深度学习</h4><p>深度学习是指一类对具有深层结构的神经网络进行有效训练的方法。神经网络是一种由许多非线性计算单元（神经元）组成的分层系统，网络深度是不包括输入层的层数。</p>
 <h4 id="什么是卷积神经网"><a href="#什么是卷积神经网" class="headerlink" title="什么是卷积神经网"></a>什么是卷积神经网</h4><p>卷积神经网络是一种特殊的多层感知机或前馈神经网络，具有局部连接、权值共享的特点，其中大量神经元按照一定方式组织起来对视野中的交叠区域产生反应。</p>
@@ -360,11 +367,11 @@
 
 <h4 id="SSD"><a href="#SSD" class="headerlink" title="SSD"></a>SSD</h4><p>单次检测器（SSD）是一种新型的深度神经网络目标检测器，不用对边框假设重采像素或特征，也不会损失精度，但速度比Faster R-CNN、YOLO都要快。SSD提高速度的根本改进措施是消除边框推荐和随后的像素或特征重采样阶段，还包括使用小卷积核在变量位置预测对象的类别和偏移，使用独立预测器负责不同高度比的检测，并用这些滤波器在网络后期的多个特征图种执行多尺度检测。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -412,24 +419,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#基础介绍"><span class="post-toc-text">基础介绍</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是深度学习"><span class="post-toc-text">什么是深度学习</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#什么是卷积神经网"><span class="post-toc-text">什么是卷积神经网</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#深度学习模型"><span class="post-toc-text">深度学习模型</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#相关知识"><span class="post-toc-text">相关知识</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#激活函数"><span class="post-toc-text">激活函数</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#优化器（梯度下降算法）"><span class="post-toc-text">优化器（梯度下降算法）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#权值-w-偏置-b-初始化"><span class="post-toc-text">权值(w)偏置(b)初始化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#过拟合和欠拟合"><span class="post-toc-text">过拟合和欠拟合</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#常见问题"><span class="post-toc-text">常见问题</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#为什么需要激活函数？"><span class="post-toc-text">为什么需要激活函数？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#网络加深就一定好吗？"><span class="post-toc-text">网络加深就一定好吗？</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#卷积神经网络演变"><span class="post-toc-text">卷积神经网络演变</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#LeNet——雏形网络"><span class="post-toc-text">LeNet——雏形网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#AlexLet"><span class="post-toc-text">AlexLet</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SPPNet——空间金字塔"><span class="post-toc-text">SPPNet——空间金字塔</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#VGGNet"><span class="post-toc-text">VGGNet</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GoogLeNet"><span class="post-toc-text">GoogLeNet</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ResNet——残差网络"><span class="post-toc-text">ResNet——残差网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DenseNet——密连网络"><span class="post-toc-text">DenseNet——密连网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CatNet——拼接网络"><span class="post-toc-text">CatNet——拼接网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#R-CNN——区域卷积网络"><span class="post-toc-text">R-CNN——区域卷积网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Fast-R-CNN"><span class="post-toc-text">Fast R-CNN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Faster-R-CNN"><span class="post-toc-text">Faster R-CNN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Mask-R-CNN"><span class="post-toc-text">Mask R-CNN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#YOLO"><span class="post-toc-text">YOLO</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SSD"><span class="post-toc-text">SSD</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2020/03/19/NLP-01/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -450,10 +457,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

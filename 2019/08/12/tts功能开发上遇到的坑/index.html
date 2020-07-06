@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-tts功能开发上遇到的坑" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       tts功能开发上遇到的坑
@@ -134,13 +134,18 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p><strong>tts功能开发上遇到的坑</strong></p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        
+    </div>
+    
+                                    <p><strong>tts功能开发上遇到的坑</strong></p>
 <ol>
 <li>使用request库请求音频，返回文件的文件无法试听——应该设置encoing:null，这样可以返回buffer</li>
 </ol>
@@ -172,11 +177,11 @@
 <li>在异步下载版本中，下载文件数量过大时，会导致很多请求返回502.因为后端限制了并发数量，因此应该改为同步版本进行下载。解决方案：使用request-promise库可以解决，具体参考<a href="https://www.npmjs.com/package/request-promise" target="_blank" rel="noopener">npm文档</a></li>
 </ol>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -227,18 +232,18 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
-
+    
+        
 <nav id="article-nav">
   
     <a href="/2019/09/16/jest详解/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -259,10 +264,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

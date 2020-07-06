@@ -8,18 +8,18 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="koa一、开始">
+  <meta name="description" content="koa一、开始  async/await 使用 123456789101112131415161718192021222324252627function getSyncTime() &amp;#123;  return new Promise((resolve, reject) =&amp;gt; &amp;#123;    try &amp;#123;      let startTime = new Date().">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="koa+nuxt基础">
 <meta property="og:url" content="http://localhost:4000/2019/06/10/koa+nuxt基础/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="koa一、开始">
+<meta property="og:description" content="koa一、开始  async/await 使用 123456789101112131415161718192021222324252627function getSyncTime() &amp;#123;  return new Promise((resolve, reject) =&amp;gt; &amp;#123;    try &amp;#123;      let startTime = new Date().">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-04T05:57:53.025Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="koa+nuxt基础">
-<meta name="twitter:description" content="koa一、开始">
+<meta name="twitter:description" content="koa一、开始  async/await 使用 123456789101112131415161718192021222324252627function getSyncTime() &amp;#123;  return new Promise((resolve, reject) =&amp;gt; &amp;#123;    try &amp;#123;      let startTime = new Date().">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-koa+nuxt基础" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       koa+nuxt基础
@@ -134,13 +134,22 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <h4 id="koa"><a href="#koa" class="headerlink" title="koa"></a>koa</h4><h5 id="一、开始"><a href="#一、开始" class="headerlink" title="一、开始"></a>一、开始</h5><a id="more"></a>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#koa"><span class="toc-text">koa</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#一、开始"><span class="toc-text">一、开始</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二、路由"><span class="toc-text">二、路由</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#三、请求数据"><span class="toc-text">三、请求数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四、静态资源加载"><span class="toc-text">四、静态资源加载</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#五、cookie-和-session"><span class="toc-text">五、cookie 和 session</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#六、模板引擎"><span class="toc-text">六、模板引擎</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#七、文件上传"><span class="toc-text">七、文件上传</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#八、数据库-mysql"><span class="toc-text">八、数据库 mysql</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#九、jsonp"><span class="toc-text">九、jsonp</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#十、单元测试"><span class="toc-text">十、单元测试</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nuxt"><span class="toc-text">nuxt</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#nuxt-官方文档-https-zh-nuxtjs-org-guide"><span class="toc-text">nuxt 官方文档 https://zh.nuxtjs.org/guide/</span></a></li></ol></li></ol>
+    </div>
+    
+                                    <a id="more"></a>
+
+
+
+<h4 id="koa"><a href="#koa" class="headerlink" title="koa"></a>koa</h4><h5 id="一、开始"><a href="#一、开始" class="headerlink" title="一、开始"></a>一、开始</h5><!-- more -->
 
 <p><strong>async/await 使用</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getSyncTime</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      <span class="keyword">let</span> startTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> endTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line">        <span class="keyword">let</span> data = endTime - startTime;</span><br><span class="line">        resolve(data);</span><br><span class="line">      &#125;, <span class="number">500</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (err) &#123;</span><br><span class="line">      reject(err);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getSyncData</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> time = <span class="keyword">await</span> getSyncTime();</span><br><span class="line">  <span class="keyword">let</span> data = <span class="string">`endTime - startTime = <span class="subst">$&#123;time&#125;</span>`</span>;</span><br><span class="line">  <span class="keyword">return</span> data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">getData</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> data = <span class="keyword">await</span> getSyncData();</span><br><span class="line">  <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">getData();</span><br></pre></td></tr></table></figure>
@@ -214,11 +223,11 @@
 <p>动态特效<br>1、全局过渡动效设置<br>2、页面过渡动效设置</p>
 <p>中间件<br><strong>nuxt 视图</strong><br><strong>nuxt 异步数据</strong><br>asyncData 方法会在组件（限于页面组件）每次加载之前被调用。它可以在服务端或路由更新之前被调用。<br><strong>nuxt 资源文件</strong><br><strong>nuxt 插件</strong><br><strong>nuxt 模块</strong><br>Nuxt.js 团队提供 官方 模块:<br>@nuxt/http: 基于 ky-universal 的轻量级和通用的 HTTP 请求<br>@nuxtjs/axios: 安全和使用简单 Axios 与 Nuxt.js 集成用来请求 HTTP<br>@nuxtjs/pwa: 使用经过严格测试，更新且稳定的 PWA 解决方案来增强 Nuxt<br>@nuxtjs/auth: Nuxt.js 的身份验证模块，提供不同的方案和验证策略<br>Nuxt.js 社区制作的模块列表可在 <a href="https://github.com/topics/nuxt-module" target="_blank" rel="noopener">https://github.com/topics/nuxt-module</a> 中查询<br><strong>nuxt 状态树</strong><br><strong>支持 typescript</strong><br><strong>命令和部署</strong></p>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -236,7 +245,7 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/06/10/koa+nuxt基础/&title=《koa+nuxt基础》 — blog&source=koa一、开始" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/06/10/koa+nuxt基础/&title=《koa+nuxt基础》 — blog&source=一个专注web开发技术的网站" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
@@ -266,24 +275,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#koa"><span class="post-toc-text">koa</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一、开始"><span class="post-toc-text">一、开始</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#二、路由"><span class="post-toc-text">二、路由</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#三、请求数据"><span class="post-toc-text">三、请求数据</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#四、静态资源加载"><span class="post-toc-text">四、静态资源加载</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#五、cookie-和-session"><span class="post-toc-text">五、cookie 和 session</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#六、模板引擎"><span class="post-toc-text">六、模板引擎</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#七、文件上传"><span class="post-toc-text">七、文件上传</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#八、数据库-mysql"><span class="post-toc-text">八、数据库 mysql</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#九、jsonp"><span class="post-toc-text">九、jsonp</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#十、单元测试"><span class="post-toc-text">十、单元测试</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#nuxt"><span class="post-toc-text">nuxt</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#nuxt-官方文档-https-zh-nuxtjs-org-guide"><span class="post-toc-text">nuxt 官方文档 https://zh.nuxtjs.org/guide/</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2019/07/25/iframe和定时器的思考/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -304,10 +313,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

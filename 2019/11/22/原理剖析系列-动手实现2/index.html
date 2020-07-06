@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="blog">
 <meta property="og:description" content="在前端的世界里，不仅要会使用，更要懂原理。第二弹。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-04T05:58:21.927Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原理剖析系列-手写实现（二）">
 <meta name="twitter:description" content="在前端的世界里，不仅要会使用，更要懂原理。第二弹。">
@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-原理剖析系列-动手实现2" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       原理剖析系列-手写实现（二）
@@ -134,14 +134,21 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p>在前端的世界里，不仅要会使用，更要懂原理。第二弹。</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#手写express"><span class="toc-text">手写express</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手写koa"><span class="toc-text">手写koa</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手写Promise"><span class="toc-text">手写Promise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#封装ajax"><span class="toc-text">封装ajax</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#手写深拷贝"><span class="toc-text">手写深拷贝</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨域实现原理"><span class="toc-text">跨域实现原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#oauth原理"><span class="toc-text">oauth原理</span></a></li></ol>
+    </div>
+    
+                                    <p>在前端的世界里，不仅要会使用，更要懂原理。第二弹。</p>
 <a id="more"></a>
+
+
 
 <h3 id="手写express"><a href="#手写express" class="headerlink" title="手写express"></a>手写express</h3><p>采用express第三方包实现的话，app.js如下：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> express = <span class="built_in">require</span>(<span class="string">'express'</span>)</span><br><span class="line"><span class="keyword">const</span> app = express()</span><br><span class="line"></span><br><span class="line"><span class="comment">// 我们在这里模拟一些get、post方法</span></span><br><span class="line">app.get(<span class="string">'/'</span>, (req, res) =&gt; &#123;</span><br><span class="line">    res.end(<span class="string">'welcome'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">app.get(<span class="string">'/name'</span>, (req, res) =&gt; &#123;</span><br><span class="line">    res.end(<span class="string">'yyyyy'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">app.get(<span class="string">'/age'</span>, (req, res) =&gt; &#123;</span><br><span class="line">    res.end(<span class="string">'12'</span>)</span><br><span class="line">&#125;)</span><br><span class="line">app.post(<span class="string">'/name'</span>, (req, res) =&gt; &#123;</span><br><span class="line">    res.end(<span class="string">'yes!'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>, () =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'3000'</span>);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -353,11 +360,11 @@
 <li>返回头像、昵称</li>
 </ol>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -405,24 +412,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#手写express"><span class="post-toc-text">手写express</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#手写koa"><span class="post-toc-text">手写koa</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#手写Promise"><span class="post-toc-text">手写Promise</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#封装ajax"><span class="post-toc-text">封装ajax</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#手写深拷贝"><span class="post-toc-text">手写深拷贝</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#跨域实现原理"><span class="post-toc-text">跨域实现原理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#oauth原理"><span class="post-toc-text">oauth原理</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2019/11/26/react源码分析笔记/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -443,10 +450,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

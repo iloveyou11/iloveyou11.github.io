@@ -8,18 +8,18 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="基本配置（自动编译）vscode 配置自动编译 ts 代码  运行 tsc –init，生成配置文件，改 outDir 运行任务，选择监视 tsconfig">
+  <meta name="description" content="基本配置（自动编译）vscode 配置自动编译 ts 代码  运行 tsc –init，生成配置文件，改 outDir 运行任务，选择监视 tsconfig    一、typescript 的数据类型(存在类型校验)布尔、数字、字符串 123let flag: boolean = true;let num: number = 123;let str: string = &quot;hello&quot;;">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="typescript详解">
 <meta property="og:url" content="http://localhost:4000/2019/07/29/typescript详解/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="基本配置（自动编译）vscode 配置自动编译 ts 代码  运行 tsc –init，生成配置文件，改 outDir 运行任务，选择监视 tsconfig">
+<meta property="og:description" content="基本配置（自动编译）vscode 配置自动编译 ts 代码  运行 tsc –init，生成配置文件，改 outDir 运行任务，选择监视 tsconfig    一、typescript 的数据类型(存在类型校验)布尔、数字、字符串 123let flag: boolean = true;let num: number = 123;let str: string = &quot;hello&quot;;">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-04T05:56:58.691Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="typescript详解">
-<meta name="twitter:description" content="基本配置（自动编译）vscode 配置自动编译 ts 代码  运行 tsc –init，生成配置文件，改 outDir 运行任务，选择监视 tsconfig">
+<meta name="twitter:description" content="基本配置（自动编译）vscode 配置自动编译 ts 代码  运行 tsc –init，生成配置文件，改 outDir 运行任务，选择监视 tsconfig    一、typescript 的数据类型(存在类型校验)布尔、数字、字符串 123let flag: boolean = true;let num: number = 123;let str: string = &quot;hello&quot;;">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-typescript详解" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       typescript详解
@@ -134,18 +134,27 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <h5 id="基本配置（自动编译）"><a href="#基本配置（自动编译）" class="headerlink" title="基本配置（自动编译）"></a>基本配置（自动编译）</h5><p><strong>vscode 配置自动编译 ts 代码</strong></p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#基本配置（自动编译）"><span class="toc-text">基本配置（自动编译）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#一、typescript-的数据类型-存在类型校验"><span class="toc-text">一、typescript 的数据类型(存在类型校验)</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#二、typescript-函数"><span class="toc-text">二、typescript 函数</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#三、typescript-中类"><span class="toc-text">三、typescript 中类</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#四、typescript-接口（定义标准）"><span class="toc-text">四、typescript 接口（定义标准）</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#五-typescript-泛型"><span class="toc-text">五 typescript 泛型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#六、其他补充"><span class="toc-text">六、其他补充</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#七、高级特性"><span class="toc-text">七、高级特性</span></a></li></ol></li></ol>
+    </div>
+    
+                                    <a id="more"></a>
+
+
+
+<h5 id="基本配置（自动编译）"><a href="#基本配置（自动编译）" class="headerlink" title="基本配置（自动编译）"></a>基本配置（自动编译）</h5><p><strong>vscode 配置自动编译 ts 代码</strong></p>
 <ol>
 <li>运行 tsc –init，生成配置文件，改 outDir</li>
 <li>运行任务，选择监视 tsconfig</li>
 </ol>
-<a id="more"></a>
+<!-- more -->
 
 <h5 id="一、typescript-的数据类型-存在类型校验"><a href="#一、typescript-的数据类型-存在类型校验" class="headerlink" title="一、typescript 的数据类型(存在类型校验)"></a>一、typescript 的数据类型(存在类型校验)</h5><p><strong>布尔、数字、字符串</strong></p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> flag: <span class="built_in">boolean</span> = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">let</span> num: <span class="built_in">number</span> = <span class="number">123</span>;</span><br><span class="line"><span class="keyword">let</span> str: <span class="built_in">string</span> = <span class="string">"hello"</span>;</span><br></pre></td></tr></table></figure>
@@ -413,11 +422,11 @@
 
 <p><strong>TIP：</strong><br>「混合」是一个函数：<br>传入一个构造函数；<br>创建一个带有新功能，并且扩展构造函数的新类；<br>返回这个新类。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -435,11 +444,7 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/07/29/typescript详解/&title=《typescript详解》 — blog&source=基本配置（自动编译）vscode 配置自动编译 ts 代码
-
-运行 tsc –init，生成配置文件，改 outDir
-运行任务，选择监视 tsconfig
-" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/07/29/typescript详解/&title=《typescript详解》 — blog&source=一个专注web开发技术的网站" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
@@ -469,24 +474,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#基本配置（自动编译）"><span class="post-toc-text">基本配置（自动编译）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一、typescript-的数据类型-存在类型校验"><span class="post-toc-text">一、typescript 的数据类型(存在类型校验)</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二、typescript-函数"><span class="post-toc-text">二、typescript 函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#三、typescript-中类"><span class="post-toc-text">三、typescript 中类</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#四、typescript-接口（定义标准）"><span class="post-toc-text">四、typescript 接口（定义标准）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#五-typescript-泛型"><span class="post-toc-text">五 typescript 泛型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#六、其他补充"><span class="post-toc-text">六、其他补充</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#七、高级特性"><span class="post-toc-text">七、高级特性</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2019/08/10/typescript设计模式/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -507,10 +512,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

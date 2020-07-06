@@ -8,18 +8,18 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="xssXSS (Cross-Site Scripting)，跨站脚本攻击，因为缩写和 CSS 重叠，所以只能叫 XSS。跨站脚本攻击是指通过存在安全漏洞的 Web 网站注册用户的浏览器内运行非法的 HTML 标签或 JavaScript 进行的一种攻击。跨站脚本攻击有可能造成以下影响:利用虚假输入表单骗取用户个人信息。利用脚本窃取用户的 Cookie 值，被害者在不知情的情况下，帮助攻击者发送恶意">
+  <meta name="description" content="xssXSS (Cross-Site Scripting)，跨站脚本攻击，因为缩写和 CSS 重叠，所以只能叫 XSS。跨站脚本攻击是指通过存在安全漏洞的 Web 网站注册用户的浏览器内运行非法的 HTML 标签或 JavaScript 进行的一种攻击。跨站脚本攻击有可能造成以下影响:利用虚假输入表单骗取用户个人信息。利用脚本窃取用户的 Cookie 值，被害者在不知情的情况下，帮助攻击者">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="web安全">
 <meta property="og:url" content="http://localhost:4000/2019/06/05/web安全/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="xssXSS (Cross-Site Scripting)，跨站脚本攻击，因为缩写和 CSS 重叠，所以只能叫 XSS。跨站脚本攻击是指通过存在安全漏洞的 Web 网站注册用户的浏览器内运行非法的 HTML 标签或 JavaScript 进行的一种攻击。跨站脚本攻击有可能造成以下影响:利用虚假输入表单骗取用户个人信息。利用脚本窃取用户的 Cookie 值，被害者在不知情的情况下，帮助攻击者发送恶意">
+<meta property="og:description" content="xssXSS (Cross-Site Scripting)，跨站脚本攻击，因为缩写和 CSS 重叠，所以只能叫 XSS。跨站脚本攻击是指通过存在安全漏洞的 Web 网站注册用户的浏览器内运行非法的 HTML 标签或 JavaScript 进行的一种攻击。跨站脚本攻击有可能造成以下影响:利用虚假输入表单骗取用户个人信息。利用脚本窃取用户的 Cookie 值，被害者在不知情的情况下，帮助攻击者">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-04T05:56:49.757Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="web安全">
-<meta name="twitter:description" content="xssXSS (Cross-Site Scripting)，跨站脚本攻击，因为缩写和 CSS 重叠，所以只能叫 XSS。跨站脚本攻击是指通过存在安全漏洞的 Web 网站注册用户的浏览器内运行非法的 HTML 标签或 JavaScript 进行的一种攻击。跨站脚本攻击有可能造成以下影响:利用虚假输入表单骗取用户个人信息。利用脚本窃取用户的 Cookie 值，被害者在不知情的情况下，帮助攻击者发送恶意">
+<meta name="twitter:description" content="xssXSS (Cross-Site Scripting)，跨站脚本攻击，因为缩写和 CSS 重叠，所以只能叫 XSS。跨站脚本攻击是指通过存在安全漏洞的 Web 网站注册用户的浏览器内运行非法的 HTML 标签或 JavaScript 进行的一种攻击。跨站脚本攻击有可能造成以下影响:利用虚假输入表单骗取用户个人信息。利用脚本窃取用户的 Cookie 值，被害者在不知情的情况下，帮助攻击者">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-web安全" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       web安全
@@ -134,13 +134,22 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <h3 id="xss"><a href="#xss" class="headerlink" title="xss"></a>xss</h3><p>XSS (Cross-Site Scripting)，跨站脚本攻击，因为缩写和 CSS 重叠，所以只能叫 XSS。跨站脚本攻击是指通过存在安全漏洞的 Web 网站注册用户的浏览器内运行非法的 HTML 标签或 JavaScript 进行的一种攻击。<br><strong>跨站脚本攻击有可能造成以下影响:</strong><br>利用虚假输入表单骗取用户个人信息。<br>利用脚本窃取用户的 Cookie 值，被害者在不知情的情况下，帮助攻击者发送恶意请求。<br>显示伪造的文章或图片。<br>XSS 的原理是恶意攻击者往 Web 页面里插入恶意可执行网页脚本代码，当用户浏览该页之时，嵌入其中 Web 里面的脚本代码会被执行，从而可以达到攻击者盗取用户信息或其他侵犯用户安全隐私的目的。<br><strong>类型</strong><br>反射性 xss<br>存储型 xss<br><strong>如何防御</strong><br><strong>1）CSP</strong><br>CSP 本质上就是建立白名单，开发者明确告诉浏览器哪些外部资源可以加载和执行。我们只需要配置规则，如何拦截是由浏览器自己实现的。我们可以通过这种方式来尽量减少 XSS 攻击。<br>通常可以通过两种方式来开启 CSP：<br>设置 HTTP Header 中的 Content-Security-Policy<br>设置 meta 标签的方式<br><strong>2）转义字符</strong><br>用户的输入永远不可信任的，最普遍的做法就是转义输入输出的内容，对于引号、尖括号、斜杠进行转义<br>但是对于显示富文本来说，显然不能通过上面的办法来转义所有字符，因为这样会把需要的格式也过滤掉。对于这种情况，通常采用白名单过滤的办法，当然也可以通过黑名单过滤，但是考虑到需要过滤的标签和标签属性实在太多，更加推荐使用白名单的方式。</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#xss"><span class="toc-text">xss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#csrf"><span class="toc-text">csrf</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#点击劫持-操作是用户完成，但非用户意愿"><span class="toc-text">点击劫持(操作是用户完成，但非用户意愿)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#URL-跳转漏洞"><span class="toc-text">URL 跳转漏洞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SQL-注入"><span class="toc-text">SQL 注入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OS-命令注入攻击"><span class="toc-text">OS 命令注入攻击</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传输安全"><span class="toc-text">传输安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#密码安全"><span class="toc-text">密码安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cookie-安全"><span class="toc-text">cookie 安全</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#接入层上传问题"><span class="toc-text">接入层上传问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他问题"><span class="toc-text">其他问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#问题"><span class="toc-text">问题:</span></a></li></ol>
+    </div>
+    
+                                    <a id="more"></a>
+
+
+
+<h3 id="xss"><a href="#xss" class="headerlink" title="xss"></a>xss</h3><p>XSS (Cross-Site Scripting)，跨站脚本攻击，因为缩写和 CSS 重叠，所以只能叫 XSS。跨站脚本攻击是指通过存在安全漏洞的 Web 网站注册用户的浏览器内运行非法的 HTML 标签或 JavaScript 进行的一种攻击。<br><strong>跨站脚本攻击有可能造成以下影响:</strong><br>利用虚假输入表单骗取用户个人信息。<br>利用脚本窃取用户的 Cookie 值，被害者在不知情的情况下，帮助攻击者发送恶意请求。<br>显示伪造的文章或图片。<br>XSS 的原理是恶意攻击者往 Web 页面里插入恶意可执行网页脚本代码，当用户浏览该页之时，嵌入其中 Web 里面的脚本代码会被执行，从而可以达到攻击者盗取用户信息或其他侵犯用户安全隐私的目的。<br><strong>类型</strong><br>反射性 xss<br>存储型 xss<br><strong>如何防御</strong><br><strong>1）CSP</strong><br>CSP 本质上就是建立白名单，开发者明确告诉浏览器哪些外部资源可以加载和执行。我们只需要配置规则，如何拦截是由浏览器自己实现的。我们可以通过这种方式来尽量减少 XSS 攻击。<br>通常可以通过两种方式来开启 CSP：<br>设置 HTTP Header 中的 Content-Security-Policy<br>设置 meta 标签的方式<br><strong>2）转义字符</strong><br>用户的输入永远不可信任的，最普遍的做法就是转义输入输出的内容，对于引号、尖括号、斜杠进行转义<br>但是对于显示富文本来说，显然不能通过上面的办法来转义所有字符，因为这样会把需要的格式也过滤掉。对于这种情况，通常采用白名单过滤的办法，当然也可以通过黑名单过滤，但是考虑到需要过滤的标签和标签属性实在太多，更加推荐使用白名单的方式。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> xss = <span class="built_in">require</span>(<span class="string">"xss"</span>);</span><br><span class="line"><span class="keyword">let</span> html = xss(<span class="string">'&lt;h1 id="title"&gt;XSS Demo&lt;/h1&gt;&lt;script&gt;alert("xss");&lt;/script&gt;'</span>);</span><br><span class="line"><span class="comment">// -&gt; &lt;h1&gt;XSS Demo&lt;/h1&gt;&amp;lt;script&amp;gt;alert("xss");&amp;lt;/script&amp;gt;</span></span><br><span class="line"><span class="built_in">console</span>.log(html);</span><br></pre></td></tr></table></figure>
 
 <p>以上示例使用了 js-xss 来实现，可以看到在输出中保留了 h1 标签且过滤了 script 标签。<br><strong>3）HttpOnly Cookie</strong><br>这是预防 XSS 攻击窃取用户 cookie 最有效的防御手段。Web 应用程序在设置 cookie 时，将其属性设为 HttpOnly，就可以避免该网页的 cookie 被客户端恶意 JavaScript 窃取，保护用户 cookie 信息。</p>
@@ -163,11 +172,11 @@
 <p>加密 https、加时间戳、token、nonce、签名</p>
 <h3 id="问题"><a href="#问题" class="headerlink" title="问题:"></a>问题:</h3><p>1）xss 原理、xss 防御、xss 防御需要注意的点<br>2）csrf 原理、危害、csrf 防御<br>3）cookies 作用、和其他存储方式的区别、cookies 和 session 的关系、cookies 有哪些特性、属性、如何删除一个 cookie（设置过期时间为过去的时间即可）<br>4）https 是如何保证数据不被窃听、https 如何保证不被中间人攻击（证书机制)、部署 https 的步骤<br>5）SQL 注入的原理、危害、nodejs 如何防止 sql 注入（ORM、参数化查询）<br>6）文件上传漏洞的原理、如何防范文件上传漏洞<br>7）如何设计用户密码存储、如何设计登录过程、如何保证密码不被窃听</p>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -215,24 +224,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#xss"><span class="post-toc-text">xss</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#csrf"><span class="post-toc-text">csrf</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#点击劫持-操作是用户完成，但非用户意愿"><span class="post-toc-text">点击劫持(操作是用户完成，但非用户意愿)</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#URL-跳转漏洞"><span class="post-toc-text">URL 跳转漏洞</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SQL-注入"><span class="post-toc-text">SQL 注入</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#OS-命令注入攻击"><span class="post-toc-text">OS 命令注入攻击</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#传输安全"><span class="post-toc-text">传输安全</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#密码安全"><span class="post-toc-text">密码安全</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#cookie-安全"><span class="post-toc-text">cookie 安全</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#接入层上传问题"><span class="post-toc-text">接入层上传问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他问题"><span class="post-toc-text">其他问题</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#问题"><span class="post-toc-text">问题:</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2019/06/06/前端面试题整理/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -253,10 +262,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

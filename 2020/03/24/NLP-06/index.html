@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/03/31/xDhEYdRyCwU97NG.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/31/snFX5OGP2TV9aRv.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/31/R3oic7n2LBD5hex.jpg">
-<meta property="og:updated_time" content="2020-07-04T05:57:29.870Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP系列6：词向量与文本生成">
 <meta name="twitter:description" content="核心内容：词向量、xgboost、RNN、LSTM、GRU、attention机制、self-attention、good-representation、seq2seq、看图说话、深度文本匹配、BERT、LDA、transform">
@@ -116,10 +116,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-NLP-06" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       NLP系列6：词向量与文本生成
@@ -145,13 +145,18 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p>核心内容：词向量、xgboost、RNN、LSTM、GRU、attention机制、self-attention、good-representation、seq2seq、看图说话、深度文本匹配、BERT、LDA、transform</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#词向量（wordvector）"><span class="toc-text">词向量（wordvector）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CBow（连续词袋模型）"><span class="toc-text">CBow（连续词袋模型）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Skip-Gram"><span class="toc-text">Skip-Gram</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#subword"><span class="toc-text">subword</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ELMo"><span class="toc-text">ELMo</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xgboost"><span class="toc-text">xgboost</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RNN"><span class="toc-text">RNN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LSTM与GRU"><span class="toc-text">LSTM与GRU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#attention机制"><span class="toc-text">attention机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#self-attention"><span class="toc-text">self-attention</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#good-representation"><span class="toc-text">good-representation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#seq2seq"><span class="toc-text">seq2seq</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BERT"><span class="toc-text">BERT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题模型（LDA）"><span class="toc-text">主题模型（LDA）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transform"><span class="toc-text">transform</span></a></li></ol>
+    </div>
+    
+                                    <p>核心内容：词向量、xgboost、RNN、LSTM、GRU、attention机制、self-attention、good-representation、seq2seq、看图说话、深度文本匹配、BERT、LDA、transform</p>
 <a id="more"></a>
 
 <p><a href="https://iloveyou11.github.io/2020/03/19/NLP-01/" target="_blank" rel="noopener">NLP系列1：NLP简介</a><br><a href="https://iloveyou11.github.io/2020/03/20/NLP-02/" target="_blank" rel="noopener">NLP系列2：分词与文本表示</a><br><a href="https://iloveyou11.github.io/2020/03/21/NLP-03/" target="_blank" rel="noopener">NLP系列3：语言系统与NLP基础</a><br><a href="https://iloveyou11.github.io/2020/03/22/NLP-04/" target="_blank" rel="noopener">NLP系列4：NLP核心任务</a><br><a href="https://iloveyou11.github.io/2020/03/23/NLP-05/" target="_blank" rel="noopener">NLP系列5：重要模型与算法</a><br><a href="https://iloveyou11.github.io/2020/03/24/NLP-06/" target="_blank" rel="noopener">NLP系列6：词向量与文本生成</a></p>
@@ -266,11 +271,11 @@
 </ol>
 <p>每一个encoder和decoder的内部结构如下图：</p>
 <img width="50%" src="https://i.loli.net/2020/03/31/R3oic7n2LBD5hex.jpg" alt="transformer block">
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -318,24 +323,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#词向量（wordvector）"><span class="post-toc-text">词向量（wordvector）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CBow（连续词袋模型）"><span class="post-toc-text">CBow（连续词袋模型）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Skip-Gram"><span class="post-toc-text">Skip-Gram</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#subword"><span class="post-toc-text">subword</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ELMo"><span class="post-toc-text">ELMo</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#xgboost"><span class="post-toc-text">xgboost</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RNN"><span class="post-toc-text">RNN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LSTM与GRU"><span class="post-toc-text">LSTM与GRU</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#attention机制"><span class="post-toc-text">attention机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#self-attention"><span class="post-toc-text">self-attention</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#good-representation"><span class="post-toc-text">good-representation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#seq2seq"><span class="post-toc-text">seq2seq</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#BERT"><span class="post-toc-text">BERT</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主题模型（LDA）"><span class="post-toc-text">主题模型（LDA）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#transform"><span class="post-toc-text">transform</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2020/03/26/目标检测算法/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -356,10 +361,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

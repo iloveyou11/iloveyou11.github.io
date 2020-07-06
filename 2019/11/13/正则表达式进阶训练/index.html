@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-正则表达式进阶训练" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       正则表达式进阶训练
@@ -134,13 +134,18 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p>正则在前端的世界里是多么重要，业务离不开它，二次封装离不开它，工具库也离不开它。想要提高自己的开发效率，那就马上拿下它！</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        
+    </div>
+    
+                                    <p>正则在前端的世界里是多么重要，业务离不开它，二次封装离不开它，工具库也离不开它。想要提高自己的开发效率，那就马上拿下它！</p>
 <a id="more"></a>
 
 <p><strong>正则元字符</strong></p>
@@ -192,11 +197,11 @@
 
 <p>应用5：时间格式化 —— 将”2015-6-10 9:12:00”变为”2015年6月10日 9时12分00秒”</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> oldTime = <span class="string">'2015-6-10 9:12:00'</span></span><br><span class="line"><span class="keyword">const</span> timeReg = <span class="regexp">/&#123;(\d+)&#125;/g</span></span><br><span class="line">    <span class="comment">// 先获取timeArr</span></span><br><span class="line"><span class="keyword">const</span> preReg = <span class="regexp">/^(\d&#123;4&#125;)[-/](\d&#123;1,2&#125;)[-/](\d&#123;1,2&#125;) +(\d&#123;1,2&#125;):(\d&#123;1,2&#125;):(\d&#123;1,2&#125;)$/g</span></span><br><span class="line"><span class="keyword">let</span> timeArr = []</span><br><span class="line">oldTime.replace(preReg, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    timeArr = [].slice.call(<span class="built_in">arguments</span>)</span><br><span class="line">    timeArr = timeArr.slice(<span class="number">1</span>, <span class="number">7</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(timeArr) <span class="comment">//[ '2015', '6', '10', '9', '12', '00' ]</span></span><br><span class="line">    <span class="comment">// 设定好目标时间格式，直接进行正则替换</span></span><br><span class="line"><span class="keyword">let</span> formatTime = <span class="string">'&#123;0&#125;年&#123;1&#125;月&#123;2&#125;日 &#123;3&#125;时&#123;4&#125;分&#123;5&#125;秒'</span></span><br><span class="line">formatTime = formatTime.replace(timeReg, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> timeArr[<span class="built_in">arguments</span>[<span class="number">1</span>]]</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(formatTime) <span class="comment">//2015年6月10日 9时12分00秒</span></span><br></pre></td></tr></table></figure>
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -244,18 +249,18 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
-
+    
+        
 <nav id="article-nav">
   
     <a href="/2019/11/14/前端进阶必知必会/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -276,10 +281,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

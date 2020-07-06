@@ -8,18 +8,18 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="持续集成、持续交付、持续部署1. 持续集成（CI）持续集成是指软件个人研发的部分向软件整体部分交付，频繁进行集成以便更快地发现其中的错误。持续集成的目的，就是让产品可以快速迭代，同时还能保持高质量。它的核心措施是，代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。好处：  快速发现错误。每完成一点更新，就集成到主干，可以快速发现错误，定位错误也比较容易。 防止分支大幅">
+  <meta name="description" content="持续集成、持续交付、持续部署1. 持续集成（CI）持续集成是指软件个人研发的部分向软件整体部分交付，频繁进行集成以便更快地发现其中的错误。持续集成的目的，就是让产品可以快速迭代，同时还能保持高质量。它的核心措施是，代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。好处：  快速发现错误。每完成一点更新，就集成到主干，可以快速发现错误，定位错误也比较容易。 防止分支">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="jenkins实战">
 <meta property="og:url" content="http://localhost:4000/2020/04/07/jenkins实战/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="持续集成、持续交付、持续部署1. 持续集成（CI）持续集成是指软件个人研发的部分向软件整体部分交付，频繁进行集成以便更快地发现其中的错误。持续集成的目的，就是让产品可以快速迭代，同时还能保持高质量。它的核心措施是，代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。好处：  快速发现错误。每完成一点更新，就集成到主干，可以快速发现错误，定位错误也比较容易。 防止分支大幅">
+<meta property="og:description" content="持续集成、持续交付、持续部署1. 持续集成（CI）持续集成是指软件个人研发的部分向软件整体部分交付，频繁进行集成以便更快地发现其中的错误。持续集成的目的，就是让产品可以快速迭代，同时还能保持高质量。它的核心措施是，代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。好处：  快速发现错误。每完成一点更新，就集成到主干，可以快速发现错误，定位错误也比较容易。 防止分支">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-04T05:58:02.335Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="jenkins实战">
-<meta name="twitter:description" content="持续集成、持续交付、持续部署1. 持续集成（CI）持续集成是指软件个人研发的部分向软件整体部分交付，频繁进行集成以便更快地发现其中的错误。持续集成的目的，就是让产品可以快速迭代，同时还能保持高质量。它的核心措施是，代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。好处：  快速发现错误。每完成一点更新，就集成到主干，可以快速发现错误，定位错误也比较容易。 防止分支大幅">
+<meta name="twitter:description" content="持续集成、持续交付、持续部署1. 持续集成（CI）持续集成是指软件个人研发的部分向软件整体部分交付，频繁进行集成以便更快地发现其中的错误。持续集成的目的，就是让产品可以快速迭代，同时还能保持高质量。它的核心措施是，代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。好处：  快速发现错误。每完成一点更新，就集成到主干，可以快速发现错误，定位错误也比较容易。 防止分支">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-jenkins实战" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       jenkins实战
@@ -134,13 +134,20 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <a id="more"></a>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#持续集成、持续交付、持续部署"><span class="toc-text">持续集成、持续交付、持续部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#传统网站部署流程"><span class="toc-text">传统网站部署流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主流网站部署流程"><span class="toc-text">主流网站部署流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Jenkins"><span class="toc-text">Jenkins</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#是什么"><span class="toc-text">是什么</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#持续集成组件"><span class="toc-text">持续集成组件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#初始化"><span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#创建任务"><span class="toc-text">创建任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现git钩子功能"><span class="toc-text">实现git钩子功能</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现自动化构建"><span class="toc-text">实现自动化构建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实现自动化部署"><span class="toc-text">实现自动化部署</span></a></li></ol></li></ol>
+    </div>
+    
+                                    <a id="more"></a>
+
+
 
 <h3 id="持续集成、持续交付、持续部署"><a href="#持续集成、持续交付、持续部署" class="headerlink" title="持续集成、持续交付、持续部署"></a>持续集成、持续交付、持续部署</h3><p><strong>1. 持续集成（CI）</strong><br>持续集成是指软件个人研发的部分向软件整体部分交付，频繁进行集成以便更快地发现其中的错误。<br>持续集成的目的，就是让产品可以快速迭代，同时还能保持高质量。它的核心措施是，代码集成到主干之前，必须通过自动化测试。只要有一个测试用例失败，就不能集成。<br><code>好处：</code></p>
 <ul>
@@ -178,11 +185,11 @@
 </ol>
 <p>至此，基础准备工作已经完成，我们在服务器上安装了Jenkins并启动，然后进行了初始化配置，建立了一个新任务。</p>
 <h4 id="实现git钩子功能"><a href="#实现git钩子功能" class="headerlink" title="实现git钩子功能"></a>实现git钩子功能</h4><h4 id="实现自动化构建"><a href="#实现自动化构建" class="headerlink" title="实现自动化构建"></a>实现自动化构建</h4><h4 id="实现自动化部署"><a href="#实现自动化部署" class="headerlink" title="实现自动化部署"></a>实现自动化部署</h4>
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -230,24 +237,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#持续集成、持续交付、持续部署"><span class="post-toc-text">持续集成、持续交付、持续部署</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#传统网站部署流程"><span class="post-toc-text">传统网站部署流程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主流网站部署流程"><span class="post-toc-text">主流网站部署流程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Jenkins"><span class="post-toc-text">Jenkins</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#是什么"><span class="post-toc-text">是什么</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#持续集成组件"><span class="post-toc-text">持续集成组件</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#安装"><span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#初始化"><span class="post-toc-text">初始化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#创建任务"><span class="post-toc-text">创建任务</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现git钩子功能"><span class="post-toc-text">实现git钩子功能</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现自动化构建"><span class="post-toc-text">实现自动化构建</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现自动化部署"><span class="post-toc-text">实现自动化部署</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2020/04/07/git基础/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -268,10 +275,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

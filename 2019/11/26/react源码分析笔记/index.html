@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="blog">
 <meta property="og:description" content="react作为一个优秀的前端前端框架，必定有着它的过人之处。Facebook团队花费三年多打造的这个框架，如今已经成为了企业追捧的框架选择，让我们来学习react优秀的设计思想吧！">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-04T05:57:20.094Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react源码分析笔记">
 <meta name="twitter:description" content="react作为一个优秀的前端前端框架，必定有着它的过人之处。Facebook团队花费三年多打造的这个框架，如今已经成为了企业追捧的框架选择，让我们来学习react优秀的设计思想吧！">
@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-react源码分析笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       react源码分析笔记
@@ -134,14 +134,21 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p>react作为一个优秀的前端前端框架，必定有着它的过人之处。Facebook团队花费三年多打造的这个框架，如今已经成为了企业追捧的框架选择，让我们来学习react优秀的设计思想吧！</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#jsx到js代码的转换"><span class="toc-text">jsx到js代码的转换</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ReactElement"><span class="toc-text">ReactElement</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Component"><span class="toc-text">Component</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#createRef和ref"><span class="toc-text">createRef和ref</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#forwardRef"><span class="toc-text">forwardRef</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Context"><span class="toc-text">Context</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#ConcurrentMode"><span class="toc-text">ConcurrentMode</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Suspense"><span class="toc-text">Suspense</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#Hooks"><span class="toc-text">Hooks</span></a></li></ol>
+    </div>
+    
+                                    <p>react作为一个优秀的前端前端框架，必定有着它的过人之处。Facebook团队花费三年多打造的这个框架，如今已经成为了企业追捧的框架选择，让我们来学习react优秀的设计思想吧！</p>
 <a id="more"></a>
+
+
 
 <h5 id="jsx到js代码的转换"><a href="#jsx到js代码的转换" class="headerlink" title="jsx到js代码的转换"></a>jsx到js代码的转换</h5><p>建议使用<code>babel-playground</code>查看转换过程</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>lala<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">span</span>&gt;</span>hello<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
@@ -203,11 +210,11 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useState, useEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> () =&gt; &#123;</span><br><span class="line">  <span class="comment">//useState返回变量 和 改变变量的方法</span></span><br><span class="line">  <span class="keyword">const</span> [name, setName] = useState(<span class="string">'haha'</span>) </span><br><span class="line"></span><br><span class="line">  <span class="comment">// 生命周期方法</span></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'unbind'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, [])</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;&gt;</span><br><span class="line">      &lt;p&gt;My Name is: &#123;name&#125;&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">      &lt;input type="text" value=&#123;name&#125; onChange=&#123;e =&gt; setName(e.target.value)&#125; /</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
 
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -255,24 +262,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#jsx到js代码的转换"><span class="post-toc-text">jsx到js代码的转换</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ReactElement"><span class="post-toc-text">ReactElement</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Component"><span class="post-toc-text">Component</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#createRef和ref"><span class="post-toc-text">createRef和ref</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#forwardRef"><span class="post-toc-text">forwardRef</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Context"><span class="post-toc-text">Context</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#ConcurrentMode"><span class="post-toc-text">ConcurrentMode</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Suspense"><span class="post-toc-text">Suspense</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Hooks"><span class="post-toc-text">Hooks</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2019/11/27/小程序云开发笔记/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -293,10 +300,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

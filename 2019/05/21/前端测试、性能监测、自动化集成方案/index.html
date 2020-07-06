@@ -8,18 +8,18 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="一、前端性能监测方案性能监测：  chrome 的 performance：DNS 查询耗时 ：domainLookupEnd - domainLookupStartTCP 链接耗时 ：connectEnd - connectStart">
+  <meta name="description" content="一、前端性能监测方案性能监测：  chrome 的 performance：DNS 查询耗时 ：domainLookupEnd - domainLookupStartTCP 链接耗时 ：connectEnd - connectStart   request 请求耗时 ：responseEnd - responseStart解析 dom 树耗时 ： domComplete - domInte">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端测试、性能监测、自动化集成方案">
 <meta property="og:url" content="http://localhost:4000/2019/05/21/前端测试、性能监测、自动化集成方案/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="一、前端性能监测方案性能监测：  chrome 的 performance：DNS 查询耗时 ：domainLookupEnd - domainLookupStartTCP 链接耗时 ：connectEnd - connectStart">
+<meta property="og:description" content="一、前端性能监测方案性能监测：  chrome 的 performance：DNS 查询耗时 ：domainLookupEnd - domainLookupStartTCP 链接耗时 ：connectEnd - connectStart   request 请求耗时 ：responseEnd - responseStart解析 dom 树耗时 ： domComplete - domInte">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-04T05:56:13.856Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="前端测试、性能监测、自动化集成方案">
-<meta name="twitter:description" content="一、前端性能监测方案性能监测：  chrome 的 performance：DNS 查询耗时 ：domainLookupEnd - domainLookupStartTCP 链接耗时 ：connectEnd - connectStart">
+<meta name="twitter:description" content="一、前端性能监测方案性能监测：  chrome 的 performance：DNS 查询耗时 ：domainLookupEnd - domainLookupStartTCP 链接耗时 ：connectEnd - connectStart   request 请求耗时 ：responseEnd - responseStart解析 dom 树耗时 ： domComplete - domInte">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-前端测试、性能监测、自动化集成方案" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       前端测试、性能监测、自动化集成方案
@@ -134,16 +134,25 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <h5 id="一、前端性能监测方案"><a href="#一、前端性能监测方案" class="headerlink" title="一、前端性能监测方案"></a>一、前端性能监测方案</h5><p><strong>性能监测：</strong></p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-5"><a class="toc-link" href="#一、前端性能监测方案"><span class="toc-text">一、前端性能监测方案</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#二、前端单元测试和持续集成"><span class="toc-text">二、前端单元测试和持续集成</span></a></li></ol>
+    </div>
+    
+                                    <a id="more"></a>
+
+
+
+<h5 id="一、前端性能监测方案"><a href="#一、前端性能监测方案" class="headerlink" title="一、前端性能监测方案"></a>一、前端性能监测方案</h5><p><strong>性能监测：</strong></p>
 <ol>
 <li><p><strong>chrome 的 performance：</strong><br>DNS 查询耗时 ：domainLookupEnd - domainLookupStart<br>TCP 链接耗时 ：connectEnd - connectStart</p>
-<a id="more"></a>
+<!-- more -->
 
 <p>request 请求耗时 ：responseEnd - responseStart<br>解析 dom 树耗时 ： domComplete - domInteractive<br>白屏时间 ：responseStart - navigationStart<br>domready 时间(用户可操作时间节点) ：domContentLoadedEventEnd - navigationStart<br>onload 时间(总下载时间) ：loadEventEnd - navigationStart<br>获取所有资源请求的时间数据,这个函数返回一个按 startTime 排序的对象数组 getEntries: ƒ getEntries()</p>
 </li>
@@ -178,11 +187,11 @@
 <li><strong>Travis.CI:</strong> 提供的是持续集成服务（Continuous Integration，简称 CI）。它绑定 Github 上面的项目，只要有新的代码，就会自动抓取。然后，提供一个运行环境，执行测试，完成构建，还能部署到服务器。</li>
 </ol>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -200,9 +209,7 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/05/21/前端测试、性能监测、自动化集成方案/&title=《前端测试、性能监测、自动化集成方案》 — blog&source=一、前端性能监测方案性能监测：
-
-chrome 的 performance：DNS 查询耗时 ：domainLookupEnd - domainLooku..." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/05/21/前端测试、性能监测、自动化集成方案/&title=《前端测试、性能监测、自动化集成方案》 — blog&source=一个专注web开发技术的网站" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
@@ -232,24 +239,24 @@ chrome 的 performance：DNS 查询耗时 ：domainLookupEnd - domainLooku..." d
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一、前端性能监测方案"><span class="post-toc-text">一、前端性能监测方案</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#二、前端单元测试和持续集成"><span class="post-toc-text">二、前端单元测试和持续集成</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2019/05/25/前端适配与性能优化/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -270,10 +277,10 @@ chrome 的 performance：DNS 查询耗时 ：domainLookupEnd - domainLooku..." d
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

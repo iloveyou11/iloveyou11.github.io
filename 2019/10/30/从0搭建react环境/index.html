@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="blog">
 <meta property="og:description" content="目前react、vue项目都提供了对应的脚手架工具，让大家都能够轻易地创建项目，直接进行开发，省去了繁琐的打包配置问题。但是，这些脚手架生成的初始化项目中，到底做了哪些工作呢？这些webpack配置、性能优化等等知识都是前端工程师学习发展路上需要掌握的内容。因此我们是有必要学会不依靠脚手架工具亲自搭建vue、react项目环境的。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-04T05:55:17.768Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="从零搭建react环境">
 <meta name="twitter:description" content="目前react、vue项目都提供了对应的脚手架工具，让大家都能够轻易地创建项目，直接进行开发，省去了繁琐的打包配置问题。但是，这些脚手架生成的初始化项目中，到底做了哪些工作呢？这些webpack配置、性能优化等等知识都是前端工程师学习发展路上需要掌握的内容。因此我们是有必要学会不依靠脚手架工具亲自搭建vue、react项目环境的。">
@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-从0搭建react环境" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       从零搭建react环境
@@ -134,13 +134,18 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p>目前react、vue项目都提供了对应的脚手架工具，让大家都能够轻易地创建项目，直接进行开发，省去了繁琐的打包配置问题。但是，这些脚手架生成的初始化项目中，到底做了哪些工作呢？这些webpack配置、性能优化等等知识都是前端工程师学习发展路上需要掌握的内容。因此我们是有必要学会不依靠脚手架工具亲自搭建vue、react项目环境的。</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-webpack"><span class="toc-text">1. webpack</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-babel"><span class="toc-text">2. babel</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-react"><span class="toc-text">3. react</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-react-router"><span class="toc-text">4. react-router</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-webpack-dev-server"><span class="toc-text">5. webpack-dev-server</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-模块热更新（HMR）"><span class="toc-text">6. 模块热更新（HMR）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-redux"><span class="toc-text">7. redux</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-异步action"><span class="toc-text">8. 异步action</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-devtool优化"><span class="toc-text">9. devtool优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-编译css"><span class="toc-text">10. 编译css</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-编译图片"><span class="toc-text">11. 编译图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-按需加载"><span class="toc-text">12. 按需加载</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#13-缓存"><span class="toc-text">13. 缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#14-HtmlWebpackPlugin"><span class="toc-text">14. HtmlWebpackPlugin</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#15-提取公共代码"><span class="toc-text">15. 提取公共代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#16-生产坏境构建"><span class="toc-text">16. 生产坏境构建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#17-文件压缩"><span class="toc-text">17. 文件压缩</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#18-指定环境"><span class="toc-text">18. 指定环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#19-优化缓存"><span class="toc-text">19. 优化缓存</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#20-public-path"><span class="toc-text">20. public path</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#21-打包优化"><span class="toc-text">21. 打包优化</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#22-抽取css"><span class="toc-text">22. 抽取css</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#23-axios和middleware"><span class="toc-text">23. axios和middleware</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#24-合并提取公共配置"><span class="toc-text">24. 合并提取公共配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#25-增加404页面"><span class="toc-text">25. 增加404页面</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#26-polyfill"><span class="toc-text">26. polyfill</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#27-集成PostCSS"><span class="toc-text">27. 集成PostCSS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#28-redux-模块热替换配置"><span class="toc-text">28. redux 模块热替换配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#29-模拟AJAX数据Mock-js"><span class="toc-text">29. 模拟AJAX数据Mock.js</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#30-使用-CSS-Modules"><span class="toc-text">30. 使用 CSS Modules</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#31-json-server"><span class="toc-text">31. json-server</span></a></li></ol>
+    </div>
+    
+                                    <p>目前react、vue项目都提供了对应的脚手架工具，让大家都能够轻易地创建项目，直接进行开发，省去了繁琐的打包配置问题。但是，这些脚手架生成的初始化项目中，到底做了哪些工作呢？这些webpack配置、性能优化等等知识都是前端工程师学习发展路上需要掌握的内容。因此我们是有必要学会不依靠脚手架工具亲自搭建vue、react项目环境的。</p>
 <a id="more"></a>
 
 <p>以下内容均来自：brickspert的<a href="https://github.com/brickspert/blog/issues/1" target="_blank" rel="noopener">《从零搭建React全家桶框架教程》</a>，详细内容点击原文链接进行阅读。</p>
@@ -458,11 +463,11 @@
 <h4 id="31-json-server"><a href="#31-json-server" class="headerlink" title="31. json-server"></a>31. json-server</h4><p>json-server和Mock.js一样，都是用来模拟接口数据的。<br>json-server功能更强大，支持分页，排序，筛选等等。</p>
 <p>具体使用方法参考官方文档~</p>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -510,24 +515,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-webpack"><span class="post-toc-text">1. webpack</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-babel"><span class="post-toc-text">2. babel</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-react"><span class="post-toc-text">3. react</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-react-router"><span class="post-toc-text">4. react-router</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#5-webpack-dev-server"><span class="post-toc-text">5. webpack-dev-server</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#6-模块热更新（HMR）"><span class="post-toc-text">6. 模块热更新（HMR）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#7-redux"><span class="post-toc-text">7. redux</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#8-异步action"><span class="post-toc-text">8. 异步action</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#9-devtool优化"><span class="post-toc-text">9. devtool优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#10-编译css"><span class="post-toc-text">10. 编译css</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#11-编译图片"><span class="post-toc-text">11. 编译图片</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#12-按需加载"><span class="post-toc-text">12. 按需加载</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#13-缓存"><span class="post-toc-text">13. 缓存</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#14-HtmlWebpackPlugin"><span class="post-toc-text">14. HtmlWebpackPlugin</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#15-提取公共代码"><span class="post-toc-text">15. 提取公共代码</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#16-生产坏境构建"><span class="post-toc-text">16. 生产坏境构建</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#17-文件压缩"><span class="post-toc-text">17. 文件压缩</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#18-指定环境"><span class="post-toc-text">18. 指定环境</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#19-优化缓存"><span class="post-toc-text">19. 优化缓存</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#20-public-path"><span class="post-toc-text">20. public path</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#21-打包优化"><span class="post-toc-text">21. 打包优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#22-抽取css"><span class="post-toc-text">22. 抽取css</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#23-axios和middleware"><span class="post-toc-text">23. axios和middleware</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#24-合并提取公共配置"><span class="post-toc-text">24. 合并提取公共配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#25-增加404页面"><span class="post-toc-text">25. 增加404页面</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#26-polyfill"><span class="post-toc-text">26. polyfill</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#27-集成PostCSS"><span class="post-toc-text">27. 集成PostCSS</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#28-redux-模块热替换配置"><span class="post-toc-text">28. redux 模块热替换配置</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#29-模拟AJAX数据Mock-js"><span class="post-toc-text">29. 模拟AJAX数据Mock.js</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#30-使用-CSS-Modules"><span class="post-toc-text">30. 使用 CSS Modules</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#31-json-server"><span class="post-toc-text">31. json-server</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2019/11/13/正则表达式进阶训练/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -548,10 +553,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

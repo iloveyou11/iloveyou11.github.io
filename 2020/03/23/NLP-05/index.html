@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/03/25/5zEHtFvjQcOTuYK.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/25/y6mPZ3IndWJBcMk.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/25/zyU6rQ9qwuvjgl2.jpg">
-<meta property="og:updated_time" content="2020-07-04T05:57:32.862Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP系列5：重要模型与算法">
 <meta name="twitter:description" content="核心内容：HMM、隐变量模型、EM算法、k-means算法、GMM、CRF">
@@ -118,10 +118,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-NLP-05" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       NLP系列5：重要模型与算法
@@ -147,13 +147,18 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p>核心内容：HMM、隐变量模型、EM算法、k-means算法、GMM、CRF</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#隐马尔可夫模型（HMM）"><span class="toc-text">隐马尔可夫模型（HMM）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#生成模型-vs-判别模型"><span class="toc-text">生成模型 vs 判别模型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#EM算法、HMM、CRF的比较"><span class="toc-text">EM算法、HMM、CRF的比较</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#HMM参数含义"><span class="toc-text">HMM参数含义</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何寻找最好的Z"><span class="toc-text">如何寻找最好的Z</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#相关算法"><span class="toc-text">相关算法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何计算三大参数"><span class="toc-text">如何计算三大参数</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#隐变量模型"><span class="toc-text">隐变量模型</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#SVD"><span class="toc-text">SVD</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FM"><span class="toc-text">FM</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#EM算法"><span class="toc-text">EM算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#k-means算法"><span class="toc-text">k-means算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#高斯混合模型（GMM）"><span class="toc-text">高斯混合模型（GMM）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#条件随机场（CRF）"><span class="toc-text">条件随机场（CRF）</span></a></li></ol>
+    </div>
+    
+                                    <p>核心内容：HMM、隐变量模型、EM算法、k-means算法、GMM、CRF</p>
 <a id="more"></a>
 
 <p><a href="https://iloveyou11.github.io/2020/03/19/NLP-01/" target="_blank" rel="noopener">NLP系列1：NLP简介</a><br><a href="https://iloveyou11.github.io/2020/03/20/NLP-02/" target="_blank" rel="noopener">NLP系列2：分词与文本表示</a><br><a href="https://iloveyou11.github.io/2020/03/21/NLP-03/" target="_blank" rel="noopener">NLP系列3：语言系统与NLP基础</a><br><a href="https://iloveyou11.github.io/2020/03/22/NLP-04/" target="_blank" rel="noopener">NLP系列4：NLP核心任务</a><br><a href="https://iloveyou11.github.io/2020/03/23/NLP-05/" target="_blank" rel="noopener">NLP系列5：重要模型与算法</a><br><a href="https://iloveyou11.github.io/2020/03/24/NLP-06/" target="_blank" rel="noopener">NLP系列6：词向量与文本生成</a></p>
@@ -235,11 +240,11 @@
 <h4 id="条件随机场（CRF）"><a href="#条件随机场（CRF）" class="headerlink" title="条件随机场（CRF）"></a>条件随机场（CRF）</h4><p>Log-Linear Model for Sequential Data</p>
 <p><code>CRF即条件随机场</code>（Conditional Random Fields），是在给定一组输入随机变量条件下另外一组输出随机变量的条件概率分布模型，它是一种判别式的概率无向图模型，既然是判别式，那就是对条件概率分布建模。<br>CRF较多用在自然语言处理和图像处理领域，在NLP中，它是用于标注和划分序列数据的概率化模型，根据CRF的定义，相对序列就是给定观测序列X和输出序列Y，然后通过定义条件概率<code>P(Y|X)</code>来描述模型。<br><code>CRF的输出随机变量假设是一个无向图模型或者马尔科夫随机场，而输入随机变量作为条件不假设为马尔科夫随机场</code>，CRF的图模型结构理论上可以任意给定，但我们常见的是定义在线性链上的特殊的条件随机场，称为线性链条件随机场。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -287,24 +292,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#隐马尔可夫模型（HMM）"><span class="post-toc-text">隐马尔可夫模型（HMM）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#生成模型-vs-判别模型"><span class="post-toc-text">生成模型 vs 判别模型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#EM算法、HMM、CRF的比较"><span class="post-toc-text">EM算法、HMM、CRF的比较</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#HMM参数含义"><span class="post-toc-text">HMM参数含义</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#如何寻找最好的Z"><span class="post-toc-text">如何寻找最好的Z</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#相关算法"><span class="post-toc-text">相关算法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#如何计算三大参数"><span class="post-toc-text">如何计算三大参数</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#隐变量模型"><span class="post-toc-text">隐变量模型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#SVD"><span class="post-toc-text">SVD</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#FM"><span class="post-toc-text">FM</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#EM算法"><span class="post-toc-text">EM算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#k-means算法"><span class="post-toc-text">k-means算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#高斯混合模型（GMM）"><span class="post-toc-text">高斯混合模型（GMM）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#条件随机场（CRF）"><span class="post-toc-text">条件随机场（CRF）</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2020/03/24/NLP-06/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -325,10 +330,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

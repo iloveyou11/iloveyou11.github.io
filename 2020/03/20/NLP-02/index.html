@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/03/24/UOtBQIfdwMDNJnq.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/rkECxu3j9W6UPKO.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/9EfpiKge6r3mxZF.jpg">
-<meta property="og:updated_time" content="2020-07-04T05:57:41.311Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP系列2：分词与文本表示">
 <meta name="twitter:description" content="核心内容：中文分词、拼写错误纠正、停用词过滤、stemming操作、文本表示、文本相似度计算、倒排表、语言模型LM、masked LM、平滑算法">
@@ -115,10 +115,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-NLP-02" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       NLP系列2：分词与文本表示
@@ -144,13 +144,18 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p>核心内容：中文分词、拼写错误纠正、停用词过滤、stemming操作、文本表示、文本相似度计算、倒排表、语言模型LM、masked LM、平滑算法</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#分词"><span class="toc-text">分词</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#拼写错误纠正"><span class="toc-text">拼写错误纠正</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#停用词过滤、stemming"><span class="toc-text">停用词过滤、stemming</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文本表示"><span class="toc-text">文本表示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文本相似度计算"><span class="toc-text">文本相似度计算</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#倒排表"><span class="toc-text">倒排表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#语言模型LM"><span class="toc-text">语言模型LM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#masked-LM"><span class="toc-text">masked LM</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#平滑算法"><span class="toc-text">平滑算法</span></a></li></ol>
+    </div>
+    
+                                    <p>核心内容：中文分词、拼写错误纠正、停用词过滤、stemming操作、文本表示、文本相似度计算、倒排表、语言模型LM、masked LM、平滑算法</p>
 <a id="more"></a>
 
 <p><a href="https://iloveyou11.github.io/2020/03/19/NLP-01/" target="_blank" rel="noopener">NLP系列1：NLP简介</a><br><a href="https://iloveyou11.github.io/2020/03/20/NLP-02/" target="_blank" rel="noopener">NLP系列2：分词与文本表示</a><br><a href="https://iloveyou11.github.io/2020/03/21/NLP-03/" target="_blank" rel="noopener">NLP系列3：语言系统与NLP基础</a><br><a href="https://iloveyou11.github.io/2020/03/22/NLP-04/" target="_blank" rel="noopener">NLP系列4：NLP核心任务</a><br><a href="https://iloveyou11.github.io/2020/03/23/NLP-05/" target="_blank" rel="noopener">NLP系列5：重要模型与算法</a><br><a href="https://iloveyou11.github.io/2020/03/24/NLP-06/" target="_blank" rel="noopener">NLP系列6：词向量与文本生成</a></p>
@@ -233,11 +238,11 @@
 
 <p>其中，<code>add-k smoothing</code>的分母加V是为了确保概率和为1，<code>interpolation</code>是使用unigram、bigram、trigram分别做加权平均，<code>good-turning smoothing</code>方法存在一个问题，就是Nc有数据，但Nc依赖于Nc+1，而Nc+1可能不存在（仅出现过c+1次的单词不存在），这时应该采用曲线拟合来解决。<br><strong>思考：</strong>为什么这些算法会成立呢？</p>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -285,24 +290,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#分词"><span class="post-toc-text">分词</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#拼写错误纠正"><span class="post-toc-text">拼写错误纠正</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#停用词过滤、stemming"><span class="post-toc-text">停用词过滤、stemming</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文本表示"><span class="post-toc-text">文本表示</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文本相似度计算"><span class="post-toc-text">文本相似度计算</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#倒排表"><span class="post-toc-text">倒排表</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#语言模型LM"><span class="post-toc-text">语言模型LM</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#masked-LM"><span class="post-toc-text">masked LM</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#平滑算法"><span class="post-toc-text">平滑算法</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2020/03/21/NLP-03/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -323,10 +328,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

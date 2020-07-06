@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="blog">
 <meta property="og:description" content="核心内容：以下介绍tensorflow的进阶使用(以tensorflow v2.0为例)。如果上手机器学习直接接触的是tensorflow v2.0，则没有必要去学习tensorflow v1的版本。tensorflow v2.0极大地简化了使用，对用户非常友好。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-04T05:57:13.502Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="tensorflow入门-2">
 <meta name="twitter:description" content="核心内容：以下介绍tensorflow的进阶使用(以tensorflow v2.0为例)。如果上手机器学习直接接触的是tensorflow v2.0，则没有必要去学习tensorflow v1的版本。tensorflow v2.0极大地简化了使用，对用户非常友好。">
@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-tensorflow入门02" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       tensorflow入门-2
@@ -134,14 +134,21 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p>核心内容：以下介绍tensorflow的进阶使用(以tensorflow v2.0为例)。如果上手机器学习直接接触的是tensorflow v2.0，则没有必要去学习tensorflow v1的版本。tensorflow v2.0极大地简化了使用，对用户非常友好。</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、tensorflow2-0安装"><span class="toc-text">一、tensorflow2.0安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、tensorflow2-0使用"><span class="toc-text">二、tensorflow2.0使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Keras-快速入门"><span class="toc-text">Keras 快速入门</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#keras-函数api"><span class="toc-text">keras 函数api</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用keras训练模型"><span class="toc-text">使用keras训练模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#用keras构建自己的网络层"><span class="toc-text">用keras构建自己的网络层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#keras模型保存和序列化"><span class="toc-text">keras模型保存和序列化</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#三、tensorflow2-0基础网络结构"><span class="toc-text">三、tensorflow2.0基础网络结构</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#基础MLP网络"><span class="toc-text">基础MLP网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MLP及深度学习常见技巧"><span class="toc-text">MLP及深度学习常见技巧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基础CNN网络"><span class="toc-text">基础CNN网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CNN变体网络"><span class="toc-text">CNN变体网络</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文本卷积"><span class="toc-text">文本卷积</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#LSTM和GRU"><span class="toc-text">LSTM和GRU</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自编码器"><span class="toc-text">自编码器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#卷积自编码器"><span class="toc-text">卷积自编码器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#词嵌入"><span class="toc-text">词嵌入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DCGAN"><span class="toc-text">DCGAN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用Estimator构建Boosted-trees"><span class="toc-text">使用Estimator构建Boosted trees</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RNN文本分类"><span class="toc-text">RNN文本分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Transformer"><span class="toc-text">Transformer</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#五、eager模式"><span class="toc-text">五、eager模式</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#张量极其操作"><span class="toc-text">张量极其操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义层"><span class="toc-text">自定义层</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自动求导"><span class="toc-text">自动求导</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用低级api训练-非tf-keras"><span class="toc-text">使用低级api训练(非tf.keras)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自定义训练实战-非tf-keras"><span class="toc-text">自定义训练实战(非tf.keras)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#TF-fuction和AutoGraph"><span class="toc-text">TF fuction和AutoGraph</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#六、tensorflow-js"><span class="toc-text">六、tensorflow.js</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#如何安装"><span class="toc-text">如何安装</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#python与js模型的互转"><span class="toc-text">python与js模型的互转</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模型加速"><span class="toc-text">模型加速</span></a></li></ol></li></ol>
+    </div>
+    
+                                    <p>核心内容：以下介绍tensorflow的进阶使用(以tensorflow v2.0为例)。如果上手机器学习直接接触的是tensorflow v2.0，则没有必要去学习tensorflow v1的版本。tensorflow v2.0极大地简化了使用，对用户非常友好。</p>
 <a id="more"></a>
+
+
 
 <p>具体教程详见<a href="https://zhuanlan.zhihu.com/p/59507137" target="_blank" rel="noopener">最全Tensorflow2.0 入门教程持续更新</a></p>
 <h3 id="一、tensorflow2-0安装"><a href="#一、tensorflow2-0安装" class="headerlink" title="一、tensorflow2.0安装"></a>一、tensorflow2.0安装</h3><p>Tensorflow2.0可以直接用pip安装:<code>pip install tensorflow==2.0.0-alpha0</code><br>如果速度比较慢，可以换国内清华源， 在终端执行下面命令：</p>
@@ -331,11 +338,11 @@
 <li>通过转为tfjs_graph_model来加速模型——内部实现了凸优化(–output_format=tf_graph_model)<br><code>tensorflowjs_converter --input_format=tf_layers_model --output_format=tf_graph_model [input_path] [output_path]</code></li>
 </ol>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -383,24 +390,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#一、tensorflow2-0安装"><span class="post-toc-text">一、tensorflow2.0安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#二、tensorflow2-0使用"><span class="post-toc-text">二、tensorflow2.0使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Keras-快速入门"><span class="post-toc-text">Keras 快速入门</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#keras-函数api"><span class="post-toc-text">keras 函数api</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用keras训练模型"><span class="post-toc-text">使用keras训练模型</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#用keras构建自己的网络层"><span class="post-toc-text">用keras构建自己的网络层</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#keras模型保存和序列化"><span class="post-toc-text">keras模型保存和序列化</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、tensorflow2-0基础网络结构"><span class="post-toc-text">三、tensorflow2.0基础网络结构</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基础MLP网络"><span class="post-toc-text">基础MLP网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#MLP及深度学习常见技巧"><span class="post-toc-text">MLP及深度学习常见技巧</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基础CNN网络"><span class="post-toc-text">基础CNN网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CNN变体网络"><span class="post-toc-text">CNN变体网络</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文本卷积"><span class="post-toc-text">文本卷积</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#LSTM和GRU"><span class="post-toc-text">LSTM和GRU</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自编码器"><span class="post-toc-text">自编码器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#卷积自编码器"><span class="post-toc-text">卷积自编码器</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#词嵌入"><span class="post-toc-text">词嵌入</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DCGAN"><span class="post-toc-text">DCGAN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用Estimator构建Boosted-trees"><span class="post-toc-text">使用Estimator构建Boosted trees</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RNN文本分类"><span class="post-toc-text">RNN文本分类</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Transformer"><span class="post-toc-text">Transformer</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#五、eager模式"><span class="post-toc-text">五、eager模式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#张量极其操作"><span class="post-toc-text">张量极其操作</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自定义层"><span class="post-toc-text">自定义层</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自动求导"><span class="post-toc-text">自动求导</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用低级api训练-非tf-keras"><span class="post-toc-text">使用低级api训练(非tf.keras)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#自定义训练实战-非tf-keras"><span class="post-toc-text">自定义训练实战(非tf.keras)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#TF-fuction和AutoGraph"><span class="post-toc-text">TF fuction和AutoGraph</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#六、tensorflow-js"><span class="post-toc-text">六、tensorflow.js</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#如何安装"><span class="post-toc-text">如何安装</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#python与js模型的互转"><span class="post-toc-text">python与js模型的互转</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模型加速"><span class="post-toc-text">模型加速</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2020/04/06/目标检测精华版本/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -421,10 +428,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

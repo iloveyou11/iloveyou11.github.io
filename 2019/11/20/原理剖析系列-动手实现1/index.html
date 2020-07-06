@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="blog">
 <meta property="og:description" content="在前端的世界里，不仅要会使用，更要懂原理。第一弹。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-04T05:58:25.408Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="原理剖析系列-手写实现（一）">
 <meta name="twitter:description" content="在前端的世界里，不仅要会使用，更要懂原理。第一弹。">
@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-原理剖析系列-动手实现1" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       原理剖析系列-手写实现（一）
@@ -134,14 +134,21 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p>在前端的世界里，不仅要会使用，更要懂原理。第一弹。</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#webpack简易版实现"><span class="toc-text">webpack简易版实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#react-router实现"><span class="toc-text">react-router实现</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DOM-diff算法"><span class="toc-text">DOM diff算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vue中mvvm深度解读"><span class="toc-text">vue中mvvm深度解读</span></a></li></ol>
+    </div>
+    
+                                    <p>在前端的世界里，不仅要会使用，更要懂原理。第一弹。</p>
 <a id="more"></a>
+
+
 
 <h3 id="webpack简易版实现"><a href="#webpack简易版实现" class="headerlink" title="webpack简易版实现"></a>webpack简易版实现</h3><p><strong>简单实现commonjs规范</strong></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 实现commonjs</span></span><br><span class="line"><span class="comment">// a.js</span></span><br><span class="line"><span class="comment">// module.exports = 'hello'</span></span><br><span class="line"><span class="comment">// b.js</span></span><br><span class="line"><span class="comment">// let str=require('./a.js')</span></span><br><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">req</span>(<span class="params">moduleName</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> content = fs.readFileSync(moduleName, <span class="string">'utf8'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 创建函数</span></span><br><span class="line">    <span class="comment">// function(exports, module, require, __dirname, __filename) &#123;</span></span><br><span class="line">    <span class="comment">//     module.exports = 'hello'</span></span><br><span class="line">    <span class="comment">//     return module.exports</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    <span class="keyword">let</span> fn = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'exports'</span>, <span class="string">'module'</span>, <span class="string">'require'</span>, <span class="string">'__dirname'</span>, <span class="string">'__filename'</span>, content + <span class="string">'\n return module.exports'</span>)</span><br><span class="line">    <span class="keyword">let</span> <span class="built_in">module</span> = &#123;</span><br><span class="line">        exports: &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> fn(<span class="built_in">module</span>.exports, <span class="built_in">module</span>, req, __dirname, __filename)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> str = req(<span class="string">'./a.js'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(str);</span><br></pre></td></tr></table></figure>
@@ -270,11 +277,11 @@
 
 <p>测试html页面，可以成功实现mvvm，view和model已经完成了双向绑定。</p>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -322,24 +329,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#webpack简易版实现"><span class="post-toc-text">webpack简易版实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#react-router实现"><span class="post-toc-text">react-router实现</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DOM-diff算法"><span class="post-toc-text">DOM diff算法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vue中mvvm深度解读"><span class="post-toc-text">vue中mvvm深度解读</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2019/11/22/原理剖析系列-动手实现2/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -360,10 +367,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

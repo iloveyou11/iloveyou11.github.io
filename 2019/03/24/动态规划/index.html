@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-动态规划" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       动态规划
@@ -134,13 +134,18 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <h4 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h4><p>1、递归+记忆化——递推<br>2、状态的定义<br>3、状态转移方程<br>4、最优子结构</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#基本流程"><span class="toc-text">基本流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#比较概念"><span class="toc-text">比较概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#实战演练"><span class="toc-text">实战演练</span></a></li></ol>
+    </div>
+    
+                                    <h4 id="基本流程"><a href="#基本流程" class="headerlink" title="基本流程"></a>基本流程</h4><p>1、递归+记忆化——递推<br>2、状态的定义<br>3、状态转移方程<br>4、最优子结构</p>
 <a id="more"></a>
 
 <h4 id="比较概念"><a href="#比较概念" class="headerlink" title="比较概念"></a>比较概念</h4><p><strong>DP vs 回溯（递归） vs 贪心</strong><br>DP——记录局部最优子结构/多种记录值<br>回溯（递归）——重复计算<br>贪心——永远局部最优</p>
@@ -171,11 +176,11 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">dp( i,j ) = Max( dp( i<span class="number">-1</span>, j ), dp( i<span class="number">-1</span>, j-w[i] ) + v[i] )</span><br><span class="line"><span class="comment">// DP[k,w]表示当背包容量还剩 w 时,在前 k 个物品中选择的最大价值</span></span><br><span class="line">DP[k, w] = DP[k - <span class="number">1</span>, w] <span class="comment">//(当第 k 件过重, 超出总容量)</span></span><br><span class="line">DP[k, w] = max(DP[k - <span class="number">1</span>, w], DP[k - <span class="number">1</span>][w(总) - w(k)] + v[k]) <span class="comment">//前者表示放入第 k 个物品, 后者表示不放入第 k 个物品 2)完全背包 3)多重背包</span></span><br></pre></td></tr></table></figure>
 
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -223,24 +228,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基本流程"><span class="post-toc-text">基本流程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#比较概念"><span class="post-toc-text">比较概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实战演练"><span class="post-toc-text">实战演练</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2019/03/30/项目开发笔记/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -261,10 +266,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

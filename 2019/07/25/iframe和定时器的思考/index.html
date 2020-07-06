@@ -8,18 +8,18 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="关于 iframe 的思考好处  方便插入第三方内容，但是由于发送了额外的 http 请求，会一定程度上影响整体页面加载，例如各种广告   iframe 能够原封不动的把嵌入的网页展现出来，如果有多个网页引用 iframe，那么你只需要修改 iframe 的内容，就可以实现调用的每一个页面内容的更改，方便快捷。">
+  <meta name="description" content="关于 iframe 的思考好处  方便插入第三方内容，但是由于发送了额外的 http 请求，会一定程度上影响整体页面加载，例如各种广告   iframe 能够原封不动的把嵌入的网页展现出来，如果有多个网页引用 iframe，那么你只需要修改 iframe 的内容，就可以实现调用的每一个页面内容的更改，方便快捷。     网页如果为了统一风格，头部和版本都是一样的，就可以写成一个页面，用 i">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iframe和定时器的思考">
 <meta property="og:url" content="http://localhost:4000/2019/07/25/iframe和定时器的思考/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="关于 iframe 的思考好处  方便插入第三方内容，但是由于发送了额外的 http 请求，会一定程度上影响整体页面加载，例如各种广告   iframe 能够原封不动的把嵌入的网页展现出来，如果有多个网页引用 iframe，那么你只需要修改 iframe 的内容，就可以实现调用的每一个页面内容的更改，方便快捷。">
+<meta property="og:description" content="关于 iframe 的思考好处  方便插入第三方内容，但是由于发送了额外的 http 请求，会一定程度上影响整体页面加载，例如各种广告   iframe 能够原封不动的把嵌入的网页展现出来，如果有多个网页引用 iframe，那么你只需要修改 iframe 的内容，就可以实现调用的每一个页面内容的更改，方便快捷。     网页如果为了统一风格，头部和版本都是一样的，就可以写成一个页面，用 i">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-04T05:58:04.703Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.628Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="iframe和定时器的思考">
-<meta name="twitter:description" content="关于 iframe 的思考好处  方便插入第三方内容，但是由于发送了额外的 http 请求，会一定程度上影响整体页面加载，例如各种广告   iframe 能够原封不动的把嵌入的网页展现出来，如果有多个网页引用 iframe，那么你只需要修改 iframe 的内容，就可以实现调用的每一个页面内容的更改，方便快捷。">
+<meta name="twitter:description" content="关于 iframe 的思考好处  方便插入第三方内容，但是由于发送了额外的 http 请求，会一定程度上影响整体页面加载，例如各种广告   iframe 能够原封不动的把嵌入的网页展现出来，如果有多个网页引用 iframe，那么你只需要修改 iframe 的内容，就可以实现调用的每一个页面内容的更改，方便快捷。     网页如果为了统一风格，头部和版本都是一样的，就可以写成一个页面，用 i">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -105,10 +105,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-iframe和定时器的思考" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       iframe和定时器的思考
@@ -134,20 +134,29 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <h4 id="关于-iframe-的思考"><a href="#关于-iframe-的思考" class="headerlink" title="关于 iframe 的思考"></a>关于 iframe 的思考</h4><p><strong>好处</strong></p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#关于-iframe-的思考"><span class="toc-text">关于 iframe 的思考</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#定时器性能"><span class="toc-text">定时器性能</span></a></li></ol>
+    </div>
+    
+                                    <a id="more"></a>
+
+
+
+<h4 id="关于-iframe-的思考"><a href="#关于-iframe-的思考" class="headerlink" title="关于 iframe 的思考"></a>关于 iframe 的思考</h4><p><strong>好处</strong></p>
 <ol>
 <li>方便插入第三方内容，但是由于发送了额外的 http 请求，会一定程度上影响整体页面加载，例如各种广告</li>
 </ol>
 <ul>
 <li>iframe 能够原封不动的把嵌入的网页展现出来，如果有多个网页引用 iframe，那么你只需要修改 iframe 的内容，就可以实现调用的每一个页面内容的更改，方便快捷。</li>
 </ul>
-<a id="more"></a>
+<!-- more -->
 
 <ul>
 <li>网页如果为了统一风格，头部和版本都是一样的，就可以写成一个页面，用 iframe 来嵌套，可以增加代码的可重用。但是随着现在前端使用的 MVVM 框架越来越流行，组件化开发方式也成为了大势所趋，越来越多的项目采用组件化编写的方式进行开发和维护，也逐渐抛弃了原有的 iframe。如果遇到加载缓慢的第三方内容如图标和广告，这些问题还是可以由 iframe 来解决。</li>
@@ -194,11 +203,11 @@
 <p><strong>需要使用到定时器的场景：</strong><br>1、轮询：当要时刻监视页面内容高度变化时，可以采用轮询方式，实时查询页面高度，可实现动态调整<br>2、轮播：鼠标不在轮播图上时，创建定时器进行轮播，鼠标移开时，销毁定时器<br>3、时钟：制作动态时钟时，需要使用定时器<br>4、函数防抖：延迟函数的执行，减少执行的次数，从而提高性能</p>
 <p><strong>创建和销毁定时器问题：</strong><br>在 vue 或 react 项目开发中，有时会在页面初始化时创建定时器，记得在页面销毁时删除定时器，防止内存泄漏；</p>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -216,12 +225,7 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/07/25/iframe和定时器的思考/&title=《iframe和定时器的思考》 — blog&source=关于 iframe 的思考好处
-
-方便插入第三方内容，但是由于发送了额外的 http 请求，会一定程度上影响整体页面加载，例如各种广告
-
-
-iframe ..." data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2019/07/25/iframe和定时器的思考/&title=《iframe和定时器的思考》 — blog&source=一个专注web开发技术的网站" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
@@ -251,24 +255,24 @@ iframe ..." data-title="QQ">
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关于-iframe-的思考"><span class="post-toc-text">关于 iframe 的思考</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#定时器性能"><span class="post-toc-text">定时器性能</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2019/07/25/LinValidator源码学习/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -289,10 +293,10 @@ iframe ..." data-title="QQ">
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

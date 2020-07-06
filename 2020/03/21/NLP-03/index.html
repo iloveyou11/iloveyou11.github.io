@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/03/24/7ZxLw4ldUJKfchr.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/4w97WlatRuHb85G.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/gDfd3BVZvr68kQX.jpg">
-<meta property="og:updated_time" content="2020-07-04T05:57:38.485Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP系列3：语言系统与NLP基础">
 <meta name="twitter:description" content="核心内容：专家系统、基于概率的系统、正则项、正则项的运用、正则参数搜索策略、MLE/MAP、lasso、set-coverage、SVM">
@@ -114,10 +114,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-NLP-03" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       NLP系列3：语言系统与NLP基础
@@ -143,13 +143,18 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <p>核心内容：专家系统、基于概率的系统、正则项、正则项的运用、正则参数搜索策略、MLE/MAP、lasso、set-coverage、SVM</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#专家系统"><span class="toc-text">专家系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基于概率的系统"><span class="toc-text">基于概率的系统</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#正则项"><span class="toc-text">正则项</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#关于正则项的灵活应用"><span class="toc-text">关于正则项的灵活应用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#参数搜索策略"><span class="toc-text">参数搜索策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#MLE-MAP"><span class="toc-text">MLE/MAP</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#lasso"><span class="toc-text">lasso</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#set-coverage-problem"><span class="toc-text">set-coverage problem</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SVM"><span class="toc-text">SVM</span></a></li></ol>
+    </div>
+    
+                                    <p>核心内容：专家系统、基于概率的系统、正则项、正则项的运用、正则参数搜索策略、MLE/MAP、lasso、set-coverage、SVM</p>
 <a id="more"></a>
 
 <p><a href="https://iloveyou11.github.io/2020/03/19/NLP-01/" target="_blank" rel="noopener">NLP系列1：NLP简介</a><br><a href="https://iloveyou11.github.io/2020/03/20/NLP-02/" target="_blank" rel="noopener">NLP系列2：分词与文本表示</a><br><a href="https://iloveyou11.github.io/2020/03/21/NLP-03/" target="_blank" rel="noopener">NLP系列3：语言系统与NLP基础</a><br><a href="https://iloveyou11.github.io/2020/03/22/NLP-04/" target="_blank" rel="noopener">NLP系列4：NLP核心任务</a><br><a href="https://iloveyou11.github.io/2020/03/23/NLP-05/" target="_blank" rel="noopener">NLP系列5：重要模型与算法</a><br><a href="https://iloveyou11.github.io/2020/03/24/NLP-06/" target="_blank" rel="noopener">NLP系列6：词向量与文本生成</a></p>
@@ -260,11 +265,11 @@
 <li>什么是kernal trick？</li>
 </ul>
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -312,24 +317,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#专家系统"><span class="post-toc-text">专家系统</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于概率的系统"><span class="post-toc-text">基于概率的系统</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#正则项"><span class="post-toc-text">正则项</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#关于正则项的灵活应用"><span class="post-toc-text">关于正则项的灵活应用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#参数搜索策略"><span class="post-toc-text">参数搜索策略</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#MLE-MAP"><span class="post-toc-text">MLE/MAP</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#lasso"><span class="post-toc-text">lasso</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#set-coverage-problem"><span class="post-toc-text">set-coverage problem</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SVM"><span class="post-toc-text">SVM</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2020/03/22/NLP-04/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -350,10 +355,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">

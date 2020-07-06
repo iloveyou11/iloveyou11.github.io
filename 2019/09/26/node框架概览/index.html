@@ -8,19 +8,19 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="导言Koa2和Koa1的区别，和express的区别？  异步流程控制Express 采用 callback 来处理异步，Koa v1 采用 generator，Koa v2 采用 async/await。generator 和 async/await 使用同步的写法来处理异步，明显好于 callback 和 promise，async/await 在语义化上又要比 generator 更强。 错">
+  <meta name="description" content="导言Koa2和Koa1的区别，和express的区别？  异步流程控制Express 采用 callback 来处理异步，Koa v1 采用 generator，Koa v2 采用 async/await。generator 和 async/await 使用同步的写法来处理异步，明显好于 callback 和 promise，async/await 在语义化上又要比 generator 更">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="浅析node">
 <meta property="og:url" content="http://localhost:4000/2019/09/26/node框架概览/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="导言Koa2和Koa1的区别，和express的区别？  异步流程控制Express 采用 callback 来处理异步，Koa v1 采用 generator，Koa v2 采用 async/await。generator 和 async/await 使用同步的写法来处理异步，明显好于 callback 和 promise，async/await 在语义化上又要比 generator 更强。 错">
+<meta property="og:description" content="导言Koa2和Koa1的区别，和express的区别？  异步流程控制Express 采用 callback 来处理异步，Koa v1 采用 generator，Koa v2 采用 async/await。generator 和 async/await 使用同步的写法来处理异步，明显好于 callback 和 promise，async/await 在语义化上又要比 generator 更">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2019/09/26/ZH2TNdJCfyxn9LW.png">
-<meta property="og:updated_time" content="2020-07-04T05:57:26.491Z">
+<meta property="og:updated_time" content="2020-07-06T06:21:54.627Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浅析node">
-<meta name="twitter:description" content="导言Koa2和Koa1的区别，和express的区别？  异步流程控制Express 采用 callback 来处理异步，Koa v1 采用 generator，Koa v2 采用 async/await。generator 和 async/await 使用同步的写法来处理异步，明显好于 callback 和 promise，async/await 在语义化上又要比 generator 更强。 错">
+<meta name="twitter:description" content="导言Koa2和Koa1的区别，和express的区别？  异步流程控制Express 采用 callback 来处理异步，Koa v1 采用 generator，Koa v2 采用 async/await。generator 和 async/await 使用同步的写法来处理异步，明显好于 callback 和 promise，async/await 在语义化上又要比 generator 更">
 <meta name="twitter:image" content="https://i.loli.net/2019/09/26/ZH2TNdJCfyxn9LW.png">
   
   
@@ -107,10 +107,10 @@
 </header>
       <div class="outer">
         <section id="main" class="body-wrap"><article id="post-node框架概览" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
+    <div class="article-inner">
         
+            <header class="article-header">
+                
   
     <h1 class="post-title" itemprop="name">
       浅析node
@@ -136,13 +136,22 @@
     </div>
   
 
-          
-      </header>
-    
-    <div class="article-entry post-content" itemprop="articleBody">
-      
+                    
+            </header>
             
-            <h4 id="导言"><a href="#导言" class="headerlink" title="导言"></a>导言</h4><p>Koa2和Koa1的区别，和express的区别？</p>
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#导言"><span class="toc-text">导言</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#koa"><span class="toc-text">koa</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#快速搭建项目"><span class="toc-text">快速搭建项目</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#koa洋葱模型"><span class="toc-text">koa洋葱模型</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#koa常用中间件"><span class="toc-text">koa常用中间件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#request和req的区别"><span class="toc-text">request和req的区别</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#koa项目的webpack配置"><span class="toc-text">koa项目的webpack配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#调试webpack"><span class="toc-text">调试webpack</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#vscode调试"><span class="toc-text">vscode调试</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#如何更新npm包"><span class="toc-text">如何更新npm包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#整合中间件"><span class="toc-text">整合中间件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#webpack-config分离与合并"><span class="toc-text">webpack config分离与合并</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#项目可优化部分"><span class="toc-text">项目可优化部分</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NodeMailer邮件服务"><span class="toc-text">NodeMailer邮件服务</span></a></li></ol>
+    </div>
+    
+                                    <a id="more"></a>
+
+
+
+<h4 id="导言"><a href="#导言" class="headerlink" title="导言"></a>导言</h4><p>Koa2和Koa1的区别，和express的区别？</p>
 <ol>
 <li>异步流程控制<br>Express 采用 callback 来处理异步，Koa v1 采用 generator，Koa v2 采用 async/await。<br>generator 和 async/await 使用同步的写法来处理异步，明显好于 callback 和 promise，async/await 在语义化上又要比 generator 更强。</li>
 <li>错误处理<br>Express 使用 callback 捕获异常，对于深层次的异常捕获不了，Koa 使用 try catch，能更好地解决异常捕获。</li>
@@ -230,11 +239,11 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line">const nodemailer = require(&apos;nodemailer&apos;);</span><br><span class="line">async function main() &#123;</span><br><span class="line">    let transporter = nodemailer.createTransport(&#123;</span><br><span class="line">        host: &apos;smtp.qq.com&apos;,</span><br><span class="line">        port: 587,</span><br><span class="line">        secure: false, //</span><br><span class="line">        auth: &#123;</span><br><span class="line">            user: &apos;xxx@qq.com&apos;, //发送人邮箱</span><br><span class="line">            pass: &apos;xxx&apos; //授权码</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    let info = await transporter.sendMail(&#123;</span><br><span class="line">        from: &apos;&quot;name&quot; &lt;xx@qq.com&gt;&apos;, // 发送人姓名和邮箱</span><br><span class="line">        to: &apos;xx@qq.com&apos;, //接收人邮箱</span><br><span class="line">        subject: &apos;Hello&apos;,</span><br><span class="line">        text: &apos;你爱我吗&apos;,</span><br><span class="line">        html: &apos;&lt;b&gt;你爱我吗？&lt;/b&gt;&apos;</span><br><span class="line">    &#125;);</span><br><span class="line">    console.log(&apos;Message sent: %s&apos;, info.messageId);</span><br><span class="line">&#125;</span><br><span class="line">main().catch(console.error);</span><br></pre></td></tr></table></figure>
 
 
-      
-    </div>
-    <footer class="article-footer">
-        
-        
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
 <div class="post-share">
     <a href="javascript:;" id="share-sub" class="post-share-fab">
         <i class="fa fa-share-alt"></i>
@@ -282,24 +291,24 @@
 
 <div class="mask"></div>
 
-        
-        <ul class="article-footer-menu">
-            
-            
-        </ul>
-        
-    </footer>
-  </div>
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-
+    
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
             <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#导言"><span class="post-toc-text">导言</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#koa"><span class="post-toc-text">koa</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#快速搭建项目"><span class="post-toc-text">快速搭建项目</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#koa洋葱模型"><span class="post-toc-text">koa洋葱模型</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#koa常用中间件"><span class="post-toc-text">koa常用中间件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#request和req的区别"><span class="post-toc-text">request和req的区别</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#koa项目的webpack配置"><span class="post-toc-text">koa项目的webpack配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#调试webpack"><span class="post-toc-text">调试webpack</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#vscode调试"><span class="post-toc-text">vscode调试</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#如何更新npm包"><span class="post-toc-text">如何更新npm包</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#整合中间件"><span class="post-toc-text">整合中间件</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#webpack-config分离与合并"><span class="post-toc-text">webpack config分离与合并</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#项目可优化部分"><span class="post-toc-text">项目可优化部分</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#NodeMailer邮件服务"><span class="post-toc-text">NodeMailer邮件服务</span></a></li></ol>
         </nav>
     </aside>
     
-
+        
 <nav id="article-nav">
   
     <a href="/2019/10/10/对于大前端的思考/" id="article-nav-newer" class="article-nav-link-wrap">
@@ -320,10 +329,10 @@
   
 </nav>
 
-
-
-    
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">
