@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/03/31/xDhEYdRyCwU97NG.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/31/snFX5OGP2TV9aRv.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/31/R3oic7n2LBD5hex.jpg">
-<meta property="og:updated_time" content="2020-07-06T06:21:54.627Z">
+<meta property="og:updated_time" content="2020-07-06T09:47:42.503Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP系列6：词向量与文本生成">
 <meta name="twitter:description" content="核心内容：词向量、xgboost、RNN、LSTM、GRU、attention机制、self-attention、good-representation、seq2seq、看图说话、深度文本匹配、BERT、LDA、transform">
@@ -65,11 +65,6 @@
                     <a  href="/archives">
                         <i class="fa fa-archive"></i>
                         <span>Archives</span>
-                    </a>
-                    
-                    <a  href="/about">
-                        <i class="fa fa-user"></i>
-                        <span>About</span>
                     </a>
                     
                 </nav>
@@ -153,7 +148,7 @@
                             
                                 
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#词向量（wordvector）"><span class="toc-text">词向量（wordvector）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CBow（连续词袋模型）"><span class="toc-text">CBow（连续词袋模型）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Skip-Gram"><span class="toc-text">Skip-Gram</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#subword"><span class="toc-text">subword</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ELMo"><span class="toc-text">ELMo</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xgboost"><span class="toc-text">xgboost</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RNN"><span class="toc-text">RNN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LSTM与GRU"><span class="toc-text">LSTM与GRU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#attention机制"><span class="toc-text">attention机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#self-attention"><span class="toc-text">self-attention</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#good-representation"><span class="toc-text">good-representation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#seq2seq"><span class="toc-text">seq2seq</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#BERT"><span class="toc-text">BERT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题模型（LDA）"><span class="toc-text">主题模型（LDA）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transform"><span class="toc-text">transform</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#词向量（wordvector）"><span class="toc-text">词向量（wordvector）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CBow（连续词袋模型）"><span class="toc-text">CBow（连续词袋模型）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Skip-Gram"><span class="toc-text">Skip-Gram</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#subword"><span class="toc-text">subword</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ELMo"><span class="toc-text">ELMo</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#xgboost"><span class="toc-text">xgboost</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#RNN"><span class="toc-text">RNN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LSTM与GRU"><span class="toc-text">LSTM与GRU</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#attention机制"><span class="toc-text">attention机制</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#self-attention"><span class="toc-text">self-attention</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#good-representation"><span class="toc-text">good-representation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#seq2seq"><span class="toc-text">seq2seq</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题模型（LDA）"><span class="toc-text">主题模型（LDA）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transform"><span class="toc-text">transform</span></a></li></ol>
     </div>
     
                                     <p>核心内容：词向量、xgboost、RNN、LSTM、GRU、attention机制、self-attention、good-representation、seq2seq、看图说话、深度文本匹配、BERT、LDA、transform</p>
@@ -239,9 +234,16 @@
 </li>
 </ol>
 <h3 id="good-representation"><a href="#good-representation" class="headerlink" title="good-representation"></a>good-representation</h3><p>1、    smoothness——平滑函数更容易优化，找到最优解<br>2、    multiple explanatory factors——具有强大的可解释性<br>3、  hierarchical representation——设计层次结构，方便迁移学习，越底层特征越基础，越高层特征越具体化<br>4、    shared factors across tasks——参数共享<br>5、    low dimensional manifold——低维空间得到更好表示，经过降维操作<br>6、    temporal/spatial coherence——时间/空间上一致性，使用正则项保持<br>7、    sparsity——稀疏性，提高可解释性</p>
-<h3 id="seq2seq"><a href="#seq2seq" class="headerlink" title="seq2seq"></a>seq2seq</h3><p>这里待补充……</p>
-<h3 id="BERT"><a href="#BERT" class="headerlink" title="BERT"></a>BERT</h3><p><code>BERT</code>的全称是<code>Bidirectional Encoder Representation from Transformers</code>，是Google2018年提出的预训练模型，即双向Transformer的<code>Encoder</code>，因为<code>decoder</code>是不能获要预测的信息的。模型的主要创新点都在pre-train方法上，即用了Masked LM和Next Sentence Prediction两种方法分别捕捉词语和句子级别的representation。</p>
-<p>这里待补充……</p>
+<h3 id="seq2seq"><a href="#seq2seq" class="headerlink" title="seq2seq"></a>seq2seq</h3><p>seq2seq属于encoder-decoder结构的一种，常见是encoder-decoder结构，基本思想就是利用两个RNN，一个RNN作为encoder，另一个RNN作为decoder。encoder负责将输入序列压缩成指定长度的向量，这个向量就可以看成是这个序列的语义，这个过程称为编码，获取语义向量最简单的方式就是直接将最后一个输入的隐状态作为语义向量C。也可以对最后一个隐含状态做一个变换得到语义向量，还可以将输入序列的所有隐含状态做一个变换得到语义变量。</p>
+<p>而decoder则负责根据语义向量生成指定的序列，这个过程也称为解码，如下图，最简单的方式是将encoder得到的语义变量作为初始状态输入到decoder的RNN中，得到输出序列。可以看到上一时刻的输出会作为当前时刻的输入，而且其中语义向量C只作为初始状态参与运算，后面的运算都与语义向量C无关。</p>
+<p>seq2seq的应用场景如下：</p>
+<ol>
+<li>机器翻译（当前最为著名的Google翻译，就是完全基于Seq2Seq+Attention机制开发出来的）。</li>
+<li>聊天机器人（小爱，微软小冰等也使用了Seq2Seq的技术（不是全部））。</li>
+<li>文本摘要自动生成（今日头条等使用了该技术）。</li>
+<li>图片描述自动生成。</li>
+<li>机器写诗歌、代码补全、生成 commit message、故事风格改写等。</li>
+</ol>
 <h3 id="主题模型（LDA）"><a href="#主题模型（LDA）" class="headerlink" title="主题模型（LDA）"></a>主题模型（LDA）</h3><p><strong>PLSA和LDA的区别：</strong>PLSA确定了主题概率，LDA未确定固定的主题概率，只规定了主题概率服从Dirichlet分布<br><strong>PLSA</strong>：</p>
 <ol>
 <li>按照概率p(di)选择一篇文档di</li>
@@ -336,7 +338,7 @@
     
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#词向量（wordvector）"><span class="post-toc-text">词向量（wordvector）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CBow（连续词袋模型）"><span class="post-toc-text">CBow（连续词袋模型）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Skip-Gram"><span class="post-toc-text">Skip-Gram</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#subword"><span class="post-toc-text">subword</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ELMo"><span class="post-toc-text">ELMo</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#xgboost"><span class="post-toc-text">xgboost</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RNN"><span class="post-toc-text">RNN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LSTM与GRU"><span class="post-toc-text">LSTM与GRU</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#attention机制"><span class="post-toc-text">attention机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#self-attention"><span class="post-toc-text">self-attention</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#good-representation"><span class="post-toc-text">good-representation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#seq2seq"><span class="post-toc-text">seq2seq</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#BERT"><span class="post-toc-text">BERT</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主题模型（LDA）"><span class="post-toc-text">主题模型（LDA）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#transform"><span class="post-toc-text">transform</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#词向量（wordvector）"><span class="post-toc-text">词向量（wordvector）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#CBow（连续词袋模型）"><span class="post-toc-text">CBow（连续词袋模型）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Skip-Gram"><span class="post-toc-text">Skip-Gram</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#subword"><span class="post-toc-text">subword</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#ELMo"><span class="post-toc-text">ELMo</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#xgboost"><span class="post-toc-text">xgboost</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RNN"><span class="post-toc-text">RNN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LSTM与GRU"><span class="post-toc-text">LSTM与GRU</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#attention机制"><span class="post-toc-text">attention机制</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#self-attention"><span class="post-toc-text">self-attention</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#good-representation"><span class="post-toc-text">good-representation</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#seq2seq"><span class="post-toc-text">seq2seq</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#主题模型（LDA）"><span class="post-toc-text">主题模型（LDA）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#transform"><span class="post-toc-text">transform</span></a></li></ol>
         </nav>
     </aside>
     
@@ -435,12 +437,6 @@
             <li>
                 <a  href="/archives">
                     <i class="fa fa-archive"></i><span>Archives</span>
-                </a>
-            </li>
-            
-            <li>
-                <a  href="/about">
-                    <i class="fa fa-user"></i><span>About</span>
                 </a>
             </li>
             
