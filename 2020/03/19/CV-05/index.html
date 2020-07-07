@@ -81,7 +81,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/04/07/BiLvoNbCFq6JXZP.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/04/07/eHZoD4v1fJlQASh.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/04/07/UTti65ofFDQ7zaK.jpg">
-<meta property="og:updated_time" content="2020-07-07T12:48:56.587Z">
+<meta property="og:updated_time" content="2020-07-07T12:56:15.087Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CV系列5：目标检测算法">
 <meta name="twitter:description" content="核心内容：传统目标检测算法（Viola-Jones、HOG+SVM、DPM），two-stage系列（R-CNN、SPP-Net、Fast R-CNN、Faster R-CNN、Mask R-CNN），one-stage系列（YOLO系列、SSD等）">
@@ -114,12 +114,32 @@
                     
                     <a  href="/">
                         <i class="fa fa-home"></i>
-                        <span>Home</span>
+                        <span>主页</span>
                     </a>
                     
                     <a  href="/archives">
                         <i class="fa fa-archive"></i>
-                        <span>Archives</span>
+                        <span>全部</span>
+                    </a>
+                    
+                    <a  href="/categories/AI/">
+                        <i class="fa fa-AI"></i>
+                        <span>AI</span>
+                    </a>
+                    
+                    <a  href="/categories/前端/">
+                        <i class="fa fa-前端"></i>
+                        <span>前端</span>
+                    </a>
+                    
+                    <a  href="/categories/计算机/">
+                        <i class="fa fa-计算机"></i>
+                        <span>计算机</span>
+                    </a>
+                    
+                    <a  href="/categories/语言/">
+                        <i class="fa fa-语言"></i>
+                        <span>语言</span>
                     </a>
                     
                 </nav>
@@ -203,13 +223,13 @@
                             
                                 
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是目标检测"><span class="toc-text">什么是目标检测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目标检测算法"><span class="toc-text">目标检测算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型指标评价"><span class="toc-text">模型指标评价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传统目标检测算法"><span class="toc-text">传统目标检测算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Viola-Jones算法"><span class="toc-text">Viola-Jones算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#HOG-SVM算法"><span class="toc-text">HOG+SVM算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#DPM算法"><span class="toc-text">DPM算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FCN"><span class="toc-text">FCN</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深度学习目标检测算法"><span class="toc-text">深度学习目标检测算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#two-stage"><span class="toc-text">two-stage</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#R-CNN"><span class="toc-text">R-CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SPP-Net"><span class="toc-text">SPP-Net</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fast-R-CNN"><span class="toc-text">Fast R-CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Faster-R-CNN"><span class="toc-text">Faster R-CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mask-R-CNN"><span class="toc-text">Mask R-CNN</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#one-stage"><span class="toc-text">one-stage</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#YOLO"><span class="toc-text">YOLO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#YOLO-V1"><span class="toc-text">YOLO V1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#YOLO-V2"><span class="toc-text">YOLO V2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#YOLO-V3"><span class="toc-text">YOLO V3</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSD"><span class="toc-text">SSD</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目标分割算法"><span class="toc-text">目标分割算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FCN-1"><span class="toc-text">FCN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mask-RCNN"><span class="toc-text">Mask RCNN</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是目标检测"><span class="toc-text">什么是目标检测</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目标检测算法"><span class="toc-text">目标检测算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型指标评价"><span class="toc-text">模型指标评价</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#传统目标检测算法"><span class="toc-text">传统目标检测算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Viola-Jones算法"><span class="toc-text">Viola-Jones算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HOG-SVM算法"><span class="toc-text">HOG+SVM算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DPM算法"><span class="toc-text">DPM算法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FCN"><span class="toc-text">FCN</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#深度学习目标检测算法"><span class="toc-text">深度学习目标检测算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#two-stage"><span class="toc-text">two-stage</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#R-CNN"><span class="toc-text">R-CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SPP-Net"><span class="toc-text">SPP-Net</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Fast-R-CNN"><span class="toc-text">Fast R-CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Faster-R-CNN"><span class="toc-text">Faster R-CNN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Mask-R-CNN"><span class="toc-text">Mask R-CNN</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#one-stage"><span class="toc-text">one-stage</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#YOLO"><span class="toc-text">YOLO</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#YOLO-V1"><span class="toc-text">YOLO V1</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#YOLO-V2"><span class="toc-text">YOLO V2</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#YOLO-V3"><span class="toc-text">YOLO V3</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SSD"><span class="toc-text">SSD</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#目标分割算法"><span class="toc-text">目标分割算法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#FCN-1"><span class="toc-text">FCN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Mask-RCNN"><span class="toc-text">Mask RCNN</span></a></li></ol></li></ol>
     </div>
     
                                     <p>核心内容：传统目标检测算法（Viola-Jones、HOG+SVM、DPM），two-stage系列（R-CNN、SPP-Net、Fast R-CNN、Faster R-CNN、Mask R-CNN），one-stage系列（YOLO系列、SSD等）</p>
 <a id="more"></a>
 
-<p><a href="https://iloveyou11.github.io/2020/03/16/CV-01/" target="_blank" rel="noopener">CV系列1：卷积神经网络的演变</a><br><a href="https://iloveyou11.github.io/2020/03/19/CV-02/" target="_blank" rel="noopener">CV系列2：目标检测算法</a><br><a href="https://iloveyou11.github.io/2020/03/21/CV-03/" target="_blank" rel="noopener">CV系列3：目标检测精华版本</a></p>
+<p><a href="https://iloveyou11.github.io/2020/02/16/CV-01/" target="_blank" rel="noopener">CV系列1：计算机视觉基础知识</a><br><a href="https://iloveyou11.github.io/2020/02/20/CV-02/" target="_blank" rel="noopener">CV系列2：卷积神经网络的演变</a><br><a href="https://iloveyou11.github.io/2020/03/01/CV-03/" target="_blank" rel="noopener">CV系列3：卷积神经网络代码实现</a><br><a href="https://iloveyou11.github.io/2020/03/12/CV-04/" target="_blank" rel="noopener">CV系列4：对抗生成网络</a><br><a href="https://iloveyou11.github.io/2020/03/19/CV-05/" target="_blank" rel="noopener">CV系列5：目标检测算法</a></p>
 <h2 id="什么是目标检测"><a href="#什么是目标检测" class="headerlink" title="什么是目标检测"></a>什么是目标检测</h2><p>如何理解一张图片？根据后续任务的需要，有三个主要的层次：</p>
 <img width="60%" src="https://i.loli.net/2020/03/25/fhDLCnFHlgGWmOU.jpg" alt="检测任务分类">
 
@@ -262,7 +282,7 @@
 </ol>
 <img width="80%" src="https://i.loli.net/2020/03/25/ok12gCjlupOwvXd.jpg" alt="传统目标检测流程">
 
-<h4 id="Viola-Jones算法"><a href="#Viola-Jones算法" class="headerlink" title="Viola-Jones算法"></a>Viola-Jones算法</h4><p>VJ算法，用于人脸检测</p>
+<h3 id="Viola-Jones算法"><a href="#Viola-Jones算法" class="headerlink" title="Viola-Jones算法"></a>Viola-Jones算法</h3><p>VJ算法，用于人脸检测</p>
 <ul>
 <li>Haar特征抽取</li>
 <li>训练人脸分类器（采用Adaboost算法，在训练同时不停更新样本权重）</li>
@@ -281,7 +301,7 @@
 </ul>
 <img width="40%" src="https://i.loli.net/2020/03/25/HRrfJgAQTGVi6St.jpg" alt="Adaboost">
 
-<h4 id="HOG-SVM算法"><a href="#HOG-SVM算法" class="headerlink" title="HOG+SVM算法"></a>HOG+SVM算法</h4><p>HOG+SVM算法主要用于行人检测，基本流程如下：</p>
+<h3 id="HOG-SVM算法"><a href="#HOG-SVM算法" class="headerlink" title="HOG+SVM算法"></a>HOG+SVM算法</h3><p>HOG+SVM算法主要用于行人检测，基本流程如下：</p>
 <ul>
 <li>提取HOG特征</li>
 <li>训练SVM分类器</li>
@@ -299,12 +319,11 @@
 <li>多个cell组成一个block，特征归一化</li>
 <li>多个block串联并归一化</li>
 </ul>
-<h4 id="DPM算法"><a href="#DPM算法" class="headerlink" title="DPM算法"></a>DPM算法</h4><p>DPM算法是对HOG特征的扩展，常用于物体检测，传统目标检测算法的巅峰之作。</p>
-<h4 id="FCN"><a href="#FCN" class="headerlink" title="FCN"></a>FCN</h4><p>原理：滑动窗口法+CNN提升识别的准确率<br>解决了传统目标检测中需要针对每个滑动窗口计算分类的效率问题，使用FCN可以一次性计算。</p>
+<h3 id="DPM算法"><a href="#DPM算法" class="headerlink" title="DPM算法"></a>DPM算法</h3><p>DPM算法是对HOG特征的扩展，常用于物体检测，传统目标检测算法的巅峰之作。</p>
+<h3 id="FCN"><a href="#FCN" class="headerlink" title="FCN"></a>FCN</h3><p>原理：滑动窗口法+CNN提升识别的准确率<br>解决了传统目标检测中需要针对每个滑动窗口计算分类的效率问题，使用FCN可以一次性计算。</p>
 <img width="50%" src="https://i.loli.net/2020/04/06/R81rLtlbj4uPNm2.jpg" alt="FCN">
 
 <img width="50%" src="https://i.loli.net/2020/04/06/YHGECgKUhsVJAjf.jpg" alt="FCN2">
-
 
 
 <h2 id="深度学习目标检测算法"><a href="#深度学习目标检测算法" class="headerlink" title="深度学习目标检测算法"></a>深度学习目标检测算法</h2><p>传统的计算机视觉方法常用精心设计的手工特征(如SIFT, HOG)描述图像，而深度学习的方法则倡导习得特征，从图像分类任务的经验来看，CNN网络自动习得的特征取得的效果已经超出了手工设计的特征。</p>
@@ -405,9 +424,9 @@
 
 <img width="60%" src="https://i.loli.net/2020/04/07/R7SAvjx18gwYuWn.jpg" alt="Faster RCNN训练流程">
 
-<h4 id="Mask-R-CNN"><a href="#Mask-R-CNN" class="headerlink" title="Mask R-CNN"></a>Mask R-CNN</h4><img width="80%" src="https://i.loli.net/2020/03/25/BN9DnWY3qeQfoE8.jpg" alt="Mask R-CNN">
+<h4 id="Mask-R-CNN"><a href="#Mask-R-CNN" class="headerlink" title="Mask R-CNN"></a>Mask R-CNN</h4><img width="60%" src="https://i.loli.net/2020/03/25/BN9DnWY3qeQfoE8.jpg" alt="Mask R-CNN">
 
-<img width="80%" src="https://i.loli.net/2020/03/25/y7HT1z4R3KbWDQ5.jpg" alt="R-CNN系列">
+<img width="60%" src="https://i.loli.net/2020/03/25/y7HT1z4R3KbWDQ5.jpg" alt="R-CNN系列">
 
 <h3 id="one-stage"><a href="#one-stage" class="headerlink" title="one-stage"></a>one-stage</h3><p>单阶段模型没有中间的区域检出过程，直接从图片获得预测结果，也被成为Region-free方法。</p>
 <p>one-stage系列目标检测算法的特点：</p>
@@ -577,7 +596,7 @@
     
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是目标检测"><span class="post-toc-text">什么是目标检测</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标检测算法"><span class="post-toc-text">目标检测算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模型指标评价"><span class="post-toc-text">模型指标评价</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#传统目标检测算法"><span class="post-toc-text">传统目标检测算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Viola-Jones算法"><span class="post-toc-text">Viola-Jones算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#HOG-SVM算法"><span class="post-toc-text">HOG+SVM算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#DPM算法"><span class="post-toc-text">DPM算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#FCN"><span class="post-toc-text">FCN</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#深度学习目标检测算法"><span class="post-toc-text">深度学习目标检测算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#two-stage"><span class="post-toc-text">two-stage</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#R-CNN"><span class="post-toc-text">R-CNN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SPP-Net"><span class="post-toc-text">SPP-Net</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Fast-R-CNN"><span class="post-toc-text">Fast R-CNN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Faster-R-CNN"><span class="post-toc-text">Faster R-CNN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Mask-R-CNN"><span class="post-toc-text">Mask R-CNN</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#one-stage"><span class="post-toc-text">one-stage</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#YOLO"><span class="post-toc-text">YOLO</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#YOLO-V1"><span class="post-toc-text">YOLO V1</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#YOLO-V2"><span class="post-toc-text">YOLO V2</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#YOLO-V3"><span class="post-toc-text">YOLO V3</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SSD"><span class="post-toc-text">SSD</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标分割算法"><span class="post-toc-text">目标分割算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#FCN-1"><span class="post-toc-text">FCN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mask-RCNN"><span class="post-toc-text">Mask RCNN</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是目标检测"><span class="post-toc-text">什么是目标检测</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标检测算法"><span class="post-toc-text">目标检测算法</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#模型指标评价"><span class="post-toc-text">模型指标评价</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#传统目标检测算法"><span class="post-toc-text">传统目标检测算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Viola-Jones算法"><span class="post-toc-text">Viola-Jones算法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#HOG-SVM算法"><span class="post-toc-text">HOG+SVM算法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DPM算法"><span class="post-toc-text">DPM算法</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#FCN"><span class="post-toc-text">FCN</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#深度学习目标检测算法"><span class="post-toc-text">深度学习目标检测算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#two-stage"><span class="post-toc-text">two-stage</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#R-CNN"><span class="post-toc-text">R-CNN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SPP-Net"><span class="post-toc-text">SPP-Net</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Fast-R-CNN"><span class="post-toc-text">Fast R-CNN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Faster-R-CNN"><span class="post-toc-text">Faster R-CNN</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Mask-R-CNN"><span class="post-toc-text">Mask R-CNN</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#one-stage"><span class="post-toc-text">one-stage</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#YOLO"><span class="post-toc-text">YOLO</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#YOLO-V1"><span class="post-toc-text">YOLO V1</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#YOLO-V2"><span class="post-toc-text">YOLO V2</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#YOLO-V3"><span class="post-toc-text">YOLO V3</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#SSD"><span class="post-toc-text">SSD</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#目标分割算法"><span class="post-toc-text">目标分割算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#FCN-1"><span class="post-toc-text">FCN</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mask-RCNN"><span class="post-toc-text">Mask RCNN</span></a></li></ol></li></ol>
         </nav>
     </aside>
     
@@ -661,7 +680,8 @@
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
-</div>
+</div>ß
+
 <div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
     <div class="mobile-header-menu-container">
         <span class="title">Menus</span>
@@ -669,13 +689,37 @@
             
             <li>
                 <a  href="/">
-                    <i class="fa fa-home"></i><span>Home</span>
+                    <i class="fa fa-home"></i><span>主页</span>
                 </a>
             </li>
             
             <li>
                 <a  href="/archives">
-                    <i class="fa fa-archive"></i><span>Archives</span>
+                    <i class="fa fa-archive"></i><span>全部</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/categories/AI/">
+                    <i class="fa fa-AI"></i><span>AI</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/categories/前端/">
+                    <i class="fa fa-前端"></i><span>前端</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/categories/计算机/">
+                    <i class="fa fa-计算机"></i><span>计算机</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/categories/语言/">
+                    <i class="fa fa-语言"></i><span>语言</span>
                 </a>
             </li>
             

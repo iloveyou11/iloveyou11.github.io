@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="blog">
 <meta property="og:description" content="本文主要介绍各类典型卷积神经网络的代码实现。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-07T12:48:45.285Z">
+<meta property="og:updated_time" content="2020-07-07T12:55:52.256Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CV系列3：卷积神经网络代码实现">
 <meta name="twitter:description" content="本文主要介绍各类典型卷积神经网络的代码实现。">
@@ -48,12 +48,32 @@
                     
                     <a  href="/">
                         <i class="fa fa-home"></i>
-                        <span>Home</span>
+                        <span>主页</span>
                     </a>
                     
                     <a  href="/archives">
                         <i class="fa fa-archive"></i>
-                        <span>Archives</span>
+                        <span>全部</span>
+                    </a>
+                    
+                    <a  href="/categories/AI/">
+                        <i class="fa fa-AI"></i>
+                        <span>AI</span>
+                    </a>
+                    
+                    <a  href="/categories/前端/">
+                        <i class="fa fa-前端"></i>
+                        <span>前端</span>
+                    </a>
+                    
+                    <a  href="/categories/计算机/">
+                        <i class="fa fa-计算机"></i>
+                        <span>计算机</span>
+                    </a>
+                    
+                    <a  href="/categories/语言/">
+                        <i class="fa fa-语言"></i>
+                        <span>语言</span>
                     </a>
                     
                 </nav>
@@ -142,7 +162,8 @@
     
                                     <p>本文主要介绍各类典型卷积神经网络的代码实现。</p>
 <a id="more"></a>
-<p><a href>CV系列1：计算机视觉基础知识</a><br><a href>CV系列2：卷积神经网络的演变</a><br><a href>CV系列3：卷积神经网络代码实现</a><br><a href>CV系列4：对抗生成网络</a><br><a href>CV系列5：目标检测算法</a><br><a href>CV系列6：人脸识别算法</a></p>
+
+<p><a href="https://iloveyou11.github.io/2020/02/16/CV-01/" target="_blank" rel="noopener">CV系列1：计算机视觉基础知识</a><br><a href="https://iloveyou11.github.io/2020/02/20/CV-02/" target="_blank" rel="noopener">CV系列2：卷积神经网络的演变</a><br><a href="https://iloveyou11.github.io/2020/03/01/CV-03/" target="_blank" rel="noopener">CV系列3：卷积神经网络代码实现</a><br><a href="https://iloveyou11.github.io/2020/03/12/CV-04/" target="_blank" rel="noopener">CV系列4：对抗生成网络</a><br><a href="https://iloveyou11.github.io/2020/03/19/CV-05/" target="_blank" rel="noopener">CV系列5：目标检测算法</a></p>
 <h4 id="LeNet-雏形网络"><a href="#LeNet-雏形网络" class="headerlink" title="LeNet-雏形网络"></a>LeNet-雏形网络</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf  </span><br><span class="line"><span class="keyword">import</span> input_data  </span><br><span class="line">  </span><br><span class="line">mnist = input_data.read_data_sets(<span class="string">'MNIST_data'</span>, one_hot=<span class="literal">True</span>)  </span><br><span class="line">  </span><br><span class="line">sess = tf.InteractiveSession()  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 训练数据</span></span><br><span class="line">x = tf.placeholder(<span class="string">"float"</span>, shape=[<span class="literal">None</span>, <span class="number">784</span>])  </span><br><span class="line"><span class="comment"># 训练标签数据</span></span><br><span class="line">y_ = tf.placeholder(<span class="string">"float"</span>, shape=[<span class="literal">None</span>, <span class="number">10</span>])  </span><br><span class="line"><span class="comment"># 把x更改为4维张量，第1维代表样本数量，第2维和第3维代表图像长宽， 第4维代表图像通道数, 1表示黑白</span></span><br><span class="line">x_image = tf.reshape(x, [<span class="number">-1</span>, <span class="number">28</span>, <span class="number">28</span>, <span class="number">1</span>])</span><br><span class="line"> </span><br><span class="line"><span class="comment"># 第一层：卷积层</span></span><br><span class="line"><span class="comment"># 过滤器大小为5*5, 当前层深度为1， 过滤器的深度为32</span></span><br><span class="line">conv1_weights = tf.get_variable(<span class="string">"conv1_weights"</span>, [<span class="number">5</span>, <span class="number">5</span>, <span class="number">1</span>, <span class="number">32</span>], initializer=tf.truncated_normal_initializer(stddev=<span class="number">0.1</span>))</span><br><span class="line">conv1_biases = tf.get_variable(<span class="string">"conv1_biases"</span>, [<span class="number">32</span>], initializer=tf.constant_initializer(<span class="number">0.0</span>))</span><br><span class="line"><span class="comment"># 移动步长为1, 使用全0填充</span></span><br><span class="line">conv1 = tf.nn.conv2d(x_image, conv1_weights, strides=[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)</span><br><span class="line"><span class="comment"># 激活函数Relu去线性化</span></span><br><span class="line">relu1 = tf.nn.relu(tf.nn.bias_add(conv1, conv1_biases))</span><br><span class="line">  </span><br><span class="line"><span class="comment">#第二层：最大池化层  </span></span><br><span class="line"><span class="comment">#池化层过滤器的大小为2*2, 移动步长为2，使用全0填充  </span></span><br><span class="line">pool1 = tf.nn.max_pool(relu1, ksize=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], strides=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)  </span><br><span class="line">  </span><br><span class="line"><span class="comment">#第三层：卷积层  </span></span><br><span class="line">conv2_weights = tf.get_variable(<span class="string">"conv2_weights"</span>, [<span class="number">5</span>, <span class="number">5</span>, <span class="number">32</span>, <span class="number">64</span>], initializer=tf.truncated_normal_initializer(stddev=<span class="number">0.1</span>)) <span class="comment">#过滤器大小为5*5, 当前层深度为32， 过滤器的深度为64  </span></span><br><span class="line">conv2_biases = tf.get_variable(<span class="string">"conv2_biases"</span>, [<span class="number">64</span>], initializer=tf.constant_initializer(<span class="number">0.0</span>))  </span><br><span class="line">conv2 = tf.nn.conv2d(pool1, conv2_weights, strides=[<span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>) <span class="comment">#移动步长为1, 使用全0填充  </span></span><br><span class="line">relu2 = tf.nn.relu( tf.nn.bias_add(conv2, conv2_biases) )  </span><br><span class="line">  </span><br><span class="line"><span class="comment">#第四层：最大池化层  </span></span><br><span class="line"><span class="comment">#池化层过滤器的大小为2*2, 移动步长为2，使用全0填充  </span></span><br><span class="line">pool2 = tf.nn.max_pool(relu2, ksize=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], strides=[<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">1</span>], padding=<span class="string">'SAME'</span>)  </span><br><span class="line">  </span><br><span class="line"><span class="comment">#第五层：全连接层  </span></span><br><span class="line">fc1_weights = tf.get_variable(<span class="string">"fc1_weights"</span>, [<span class="number">7</span> * <span class="number">7</span> * <span class="number">64</span>, <span class="number">1024</span>], initializer=tf.truncated_normal_initializer(stddev=<span class="number">0.1</span>)) <span class="comment">#7*7*64=3136把前一层的输出变成特征向量  </span></span><br><span class="line">fc1_baises = tf.get_variable(<span class="string">"fc1_baises"</span>, [<span class="number">1024</span>], initializer=tf.constant_initializer(<span class="number">0.1</span>))  </span><br><span class="line">pool2_vector = tf.reshape(pool2, [<span class="number">-1</span>, <span class="number">7</span> * <span class="number">7</span> * <span class="number">64</span>])  </span><br><span class="line">fc1 = tf.nn.relu(tf.matmul(pool2_vector, fc1_weights) + fc1_baises)  </span><br><span class="line">  </span><br><span class="line"><span class="comment">#为了减少过拟合，加入Dropout层  </span></span><br><span class="line">keep_prob = tf.placeholder(tf.float32)  </span><br><span class="line">fc1_dropout = tf.nn.dropout(fc1, keep_prob)  </span><br><span class="line">  </span><br><span class="line"><span class="comment">#第六层：全连接层  </span></span><br><span class="line">fc2_weights = tf.get_variable(<span class="string">"fc2_weights"</span>, [<span class="number">1024</span>, <span class="number">10</span>], initializer=tf.truncated_normal_initializer(stddev=<span class="number">0.1</span>)) <span class="comment">#神经元节点数1024, 分类节点10  </span></span><br><span class="line">fc2_biases = tf.get_variable(<span class="string">"fc2_biases"</span>, [<span class="number">10</span>], initializer=tf.constant_initializer(<span class="number">0.1</span>))  </span><br><span class="line">fc2 = tf.matmul(fc1_dropout, fc2_weights) + fc2_biases  </span><br><span class="line">  </span><br><span class="line"><span class="comment">#第七层：输出层  </span></span><br><span class="line"><span class="comment"># softmax  </span></span><br><span class="line">y_conv = tf.nn.softmax(fc2)  </span><br><span class="line">  </span><br><span class="line"><span class="comment">#定义交叉熵损失函数  </span></span><br><span class="line">cross_entropy = tf.reduce_mean(-tf.reduce_sum(y_ * tf.log(y_conv), reduction_indices=[<span class="number">1</span>]))  </span><br><span class="line">  </span><br><span class="line"><span class="comment">#选择优化器，并让优化器最小化损失函数/收敛, 反向传播  </span></span><br><span class="line">train_step = tf.train.AdamOptimizer(<span class="number">1e-4</span>).minimize(cross_entropy)  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># tf.argmax()返回的是某一维度上其数据最大所在的索引值，在这里即代表预测值和真实值  </span></span><br><span class="line"><span class="comment"># 判断预测值y和真实值y_中最大数的索引是否一致，y的值为1-10概率  </span></span><br><span class="line">correct_prediction = tf.equal(tf.argmax(y_conv,<span class="number">1</span>), tf.argmax(y_,<span class="number">1</span>))  </span><br><span class="line">  </span><br><span class="line"><span class="comment"># 用平均值来统计测试准确率  </span></span><br><span class="line">accuracy = tf.reduce_mean(tf.cast(correct_prediction, tf.float32))  </span><br><span class="line">  </span><br><span class="line"><span class="comment">#开始训练  </span></span><br><span class="line">sess.run(tf.global_variables_initializer())  </span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">10000</span>):  </span><br><span class="line">    batch = mnist.train.next_batch(<span class="number">100</span>)  </span><br><span class="line">    <span class="keyword">if</span> i%<span class="number">100</span> == <span class="number">0</span>:  </span><br><span class="line">        train_accuracy = accuracy.eval(feed_dict=&#123;x:batch[<span class="number">0</span>], y_: batch[<span class="number">1</span>], keep_prob: <span class="number">1.0</span>&#125;) <span class="comment">#评估阶段不使用Dropout  </span></span><br><span class="line">        print(<span class="string">"step %d, training accuracy %g"</span> % (i, train_accuracy))  </span><br><span class="line">    train_step.run(feed_dict=&#123;x: batch[<span class="number">0</span>], y_: batch[<span class="number">1</span>], keep_prob: <span class="number">0.5</span>&#125;) <span class="comment">#训练阶段使用50%的Dropout  </span></span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="comment">#在测试数据上测试准确率  </span></span><br><span class="line">print(<span class="string">"test accuracy %g"</span> % accuracy.eval(feed_dict=&#123;x: mnist.test.images, y_: mnist.test.labels, keep_prob: <span class="number">1.0</span>&#125;))</span><br></pre></td></tr></table></figure>
 
 <h4 id="AlexLet"><a href="#AlexLet" class="headerlink" title="AlexLet"></a>AlexLet</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">第一层：卷积层</span><br><span class="line"></span><br><span class="line">该层的输入是原始图像的像素值，以MNIST数据集为例，则是28x28x1，第一层过滤器尺寸为5x5，深度设置为6，不适用0去填充，因此该层的输出尺寸是28-5+1=24，深度也为6.</span><br><span class="line"></span><br><span class="line">第二层：池化层</span><br><span class="line"></span><br><span class="line">接受第一层的输出作为输入，过滤器大小选为2x2，步长2.</span><br><span class="line"></span><br><span class="line">第三层：卷积层</span><br><span class="line"></span><br><span class="line">卷积和大小5x5，深度为16，同样不使用0填充，步长为1.</span><br><span class="line"></span><br><span class="line">第四层：池化层</span><br><span class="line"></span><br><span class="line">卷积核采用2x2,步长2</span><br><span class="line"></span><br><span class="line">第五层：全连接</span><br><span class="line"></span><br><span class="line">卷积核为5x5，输出节点为120</span><br><span class="line"></span><br><span class="line">第六层：全连接层</span><br><span class="line"></span><br><span class="line">输入节点数120，输出节点数84</span><br><span class="line"></span><br><span class="line">第七层：全连接层</span><br><span class="line"></span><br><span class="line">输入84，输出10</span><br></pre></td></tr></table></figure>
@@ -310,7 +331,8 @@
         </div>
     </div>
     <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
-</div>
+</div>ß
+
 <div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
     <div class="mobile-header-menu-container">
         <span class="title">Menus</span>
@@ -318,13 +340,37 @@
             
             <li>
                 <a  href="/">
-                    <i class="fa fa-home"></i><span>Home</span>
+                    <i class="fa fa-home"></i><span>主页</span>
                 </a>
             </li>
             
             <li>
                 <a  href="/archives">
-                    <i class="fa fa-archive"></i><span>Archives</span>
+                    <i class="fa fa-archive"></i><span>全部</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/categories/AI/">
+                    <i class="fa fa-AI"></i><span>AI</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/categories/前端/">
+                    <i class="fa fa-前端"></i><span>前端</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/categories/计算机/">
+                    <i class="fa fa-计算机"></i><span>计算机</span>
+                </a>
+            </li>
+            
+            <li>
+                <a  href="/categories/语言/">
+                    <i class="fa fa-语言"></i><span>语言</span>
                 </a>
             </li>
             
