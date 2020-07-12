@@ -3,22 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Archives | blog</title>
+  <title>word2vec及其扩展模型 | blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="一个专注web开发技术的网站">
+  <meta name="description" content="Word2Vec核心不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。 Word2Vec扩展 挖掘文档一级的隐含信息，学习到比词更加高一层级单元的隐含向量 把 Word2Vec 的思想扩展到了另外一种离散数据图（Graph）的表达上。参考《线：大规模信息网络嵌入》（LINE: Large-">
 <meta name="keywords" content="web">
-<meta property="og:type" content="website">
-<meta property="og:title" content="blog">
-<meta property="og:url" content="http://localhost:4000/archives/page/4/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="word2vec及其扩展模型">
+<meta property="og:url" content="http://localhost:4000/2020/07/12/word2vec及其扩展模型/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="一个专注web开发技术的网站">
+<meta property="og:description" content="Word2Vec核心不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。 Word2Vec扩展 挖掘文档一级的隐含信息，学习到比词更加高一层级单元的隐含向量 把 Word2Vec 的思想扩展到了另外一种离散数据图（Graph）的表达上。参考《线：大规模信息网络嵌入》（LINE: Large-">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-07-12T03:36:29.855Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blog">
-<meta name="twitter:description" content="一个专注web开发技术的网站">
+<meta name="twitter:title" content="word2vec及其扩展模型">
+<meta name="twitter:description" content="Word2Vec核心不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。 Word2Vec扩展 挖掘文档一级的隐含信息，学习到比词更加高一层级单元的隐含向量 把 Word2Vec 的思想扩展到了另外一种离散数据图（Graph）的表达上。参考《线：大规模信息网络嵌入》（LINE: Large-">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -118,236 +119,150 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap">
+        <section id="main" class="body-wrap"><article id="post-word2vec及其扩展模型" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/11/27/小程序云开发笔记/" class="archive-article-date">
-  <time datetime="2019-11-26T16:00:00.000Z" itemprop="datePublished">11-27</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/27/小程序云开发笔记/"  >小程序云开发笔记</a>
+    <h1 class="post-title" itemprop="name">
+      word2vec及其扩展模型
     </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/AI/">AI</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-07-12
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
   
 
-    </header>
-      
-  </div>
+                    
+            </header>
+            
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Word2Vec核心"><span class="toc-text">Word2Vec核心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Word2Vec扩展"><span class="toc-text">Word2Vec扩展</span></a></li></ol>
+    </div>
+    
+                                    <a id="more"></a>
+
+<h3 id="Word2Vec核心"><a href="#Word2Vec核心" class="headerlink" title="Word2Vec核心"></a>Word2Vec核心</h3><p>不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。</p>
+<h3 id="Word2Vec扩展"><a href="#Word2Vec扩展" class="headerlink" title="Word2Vec扩展"></a>Word2Vec扩展</h3><ol>
+<li>挖掘文档一级的隐含信息，学习到比词更加高一层级单元的隐含向量</li>
+<li>把 Word2Vec 的思想扩展到了另外一种离散数据图（Graph）的表达上。参考《线：大规模信息网络嵌入》（LINE: Large-scale Information Network Embedding）</li>
+<li>尝试在查询关键词和用户点击的网页之间建立上下文关系，使得 Word2Vec 模型可以学习到查询关键词以及网页的隐含向量。参考《用于支持搜索中查询重写的上下文和内容感知嵌入》（Context- and Content-aware Embeddings for Query Rewriting in Sponsored Search）</li>
+</ol>
+
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2020/07/12/word2vec及其扩展模型/&title=《word2vec及其扩展模型》 — blog&pic=/images/banner.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2020/07/12/word2vec及其扩展模型/&title=《word2vec及其扩展模型》 — blog&source=一个专注web开发技术的网站" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2020/07/12/word2vec及其扩展模型/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《word2vec及其扩展模型》 — blog&url=http://localhost:4000/2020/07/12/word2vec及其扩展模型/&via=http://localhost:4000" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2020/07/12/word2vec及其扩展模型/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2020/07/12/word2vec及其扩展模型/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-  
     
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Word2Vec核心"><span class="post-toc-text">Word2Vec核心</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Word2Vec扩展"><span class="post-toc-text">Word2Vec扩展</span></a></li></ol>
+        </nav>
+    </aside>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/11/26/react源码分析笔记/" class="archive-article-date">
-  <time datetime="2019-11-25T16:00:00.000Z" itemprop="datePublished">11-26</time>
-</a>
-      
+        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/26/react源码分析笔记/"  >react源码分析笔记</a>
-    </h1>
-  
+    <a href="/2020/07/12/transformer结构/" id="article-nav-newer" class="article-nav-link-wrap">
 
-    </header>
-      
-  </div>
-</article>
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          transformer
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2020/07/06/前端智能化方向思考与解读/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">前端智能化方向思考与解读</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
 
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/11/22/原理剖析系列-动手实现2/" class="archive-article-date">
-  <time datetime="2019-11-21T16:00:00.000Z" itemprop="datePublished">11-22</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/22/原理剖析系列-动手实现2/"  >原理剖析系列-手写实现（二）</a>
-    </h1>
-  
-
-    </header>
-      
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/11/20/原理剖析系列-动手实现1/" class="archive-article-date">
-  <time datetime="2019-11-19T16:00:00.000Z" itemprop="datePublished">11-20</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/20/原理剖析系列-动手实现1/"  >原理剖析系列-手写实现（一）</a>
-    </h1>
-  
-
-    </header>
-      
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/11/18/励志/" class="archive-article-date">
-  <time datetime="2019-11-17T16:00:00.000Z" itemprop="datePublished">11-18</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/18/励志/"  >那些成长过程的话</a>
-    </h1>
-  
-
-    </header>
-      
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/11/14/前端进阶必知必会/" class="archive-article-date">
-  <time datetime="2019-11-13T16:00:00.000Z" itemprop="datePublished">11-14</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/14/前端进阶必知必会/"  >前端进阶必知必会</a>
-    </h1>
-  
-
-    </header>
-      
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/11/13/正则表达式进阶训练/" class="archive-article-date">
-  <time datetime="2019-11-12T16:00:00.000Z" itemprop="datePublished">11-13</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/11/13/正则表达式进阶训练/"  >正则表达式进阶训练</a>
-    </h1>
-  
-
-    </header>
-      
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/30/从0搭建react环境/" class="archive-article-date">
-  <time datetime="2019-10-29T16:00:00.000Z" itemprop="datePublished">10-30</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/30/从0搭建react环境/"  >从零搭建react环境</a>
-    </h1>
-  
-
-    </header>
-      
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/10/10/对于大前端的思考/" class="archive-article-date">
-  <time datetime="2019-10-09T16:00:00.000Z" itemprop="datePublished">10-10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/10/10/对于大前端的思考/"  >对于大前端的思考</a>
-    </h1>
-  
-
-    </header>
-      
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/09/26/node框架概览/" class="archive-article-date">
-  <time datetime="2019-09-25T16:00:00.000Z" itemprop="datePublished">09-26</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/09/26/node框架概览/"  >浅析node</a>
-    </h1>
-  
-
-    </header>
-      
-  </div>
-</article>
-
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/archives/page/3/"><< Prev</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/page/5/">5</a><a class="page-number" href="/archives/page/6/">6</a><a class="page-number" href="/archives/page/7/">7</a><a class="extend next" rel="next" href="/archives/page/5/">Next >></a>
-  </nav>
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">
