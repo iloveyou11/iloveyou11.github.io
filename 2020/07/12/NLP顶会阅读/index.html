@@ -3,34 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>transformer | blog</title>
+  <title>NLP顶会阅读 | blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="什么是transformer一句话解释：transformer是带有self-attention的seq2seq，输出能同时计算，可以代替RNN结构（必须按输入的顺序计算），因此transformer对于sequence to sequence的应用场景更为高效。 transformer结构解读transformer的模型结构图如下：   上图中，左半部分是Encoder，右半部分是Decod">
+  <meta name="description" content="本文整理ACL、EMNLP会议的获奖文章，均为NLP方向，学习其中的精髓。 其他AI方向的顶会、期刊名单如下： 123456机器学习领域会议：COLT、NIPS、ICML、AISTATS、UAI机器学习领域期刊：JMLR、PAMI、ML人工智能会议：IJCAI、AAAI人工智能期刊：AI数据挖掘会议：KDD, ICDM, WSDM, ICDE, CIKM, SDM, PKDD数据挖掘期刊：TK">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="transformer">
-<meta property="og:url" content="http://localhost:4000/2020/07/12/transformer结构/index.html">
+<meta property="og:title" content="NLP顶会阅读">
+<meta property="og:url" content="http://localhost:4000/2020/07/12/NLP顶会阅读/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="什么是transformer一句话解释：transformer是带有self-attention的seq2seq，输出能同时计算，可以代替RNN结构（必须按输入的顺序计算），因此transformer对于sequence to sequence的应用场景更为高效。 transformer结构解读transformer的模型结构图如下：   上图中，左半部分是Encoder，右半部分是Decod">
+<meta property="og:description" content="本文整理ACL、EMNLP会议的获奖文章，均为NLP方向，学习其中的精髓。 其他AI方向的顶会、期刊名单如下： 123456机器学习领域会议：COLT、NIPS、ICML、AISTATS、UAI机器学习领域期刊：JMLR、PAMI、ML人工智能会议：IJCAI、AAAI人工智能期刊：AI数据挖掘会议：KDD, ICDM, WSDM, ICDE, CIKM, SDM, PKDD数据挖掘期刊：TK">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://i.loli.net/2020/07/12/SdtenNQgPkjm6iJ.jpg">
-<meta property="og:image" content="https://i.loli.net/2020/07/12/2N6PSW1F5ORb4zD.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/12/LvVNyuGleXH84ba.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/12/NLS2CcavgdDGwUA.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/12/cV5HT1NZDBjloUf.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/12/HkTUR4qDAmXW3C8.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/12/KWYHyGko3eEFTmB.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/12/ryFezKHq2cv5TJl.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/12/oM3ZXHFuBzD67Wn.png">
-<meta property="og:image" content="https://i.loli.net/2020/07/12/UzZWQCG64Et9y5P.png">
-<meta property="og:updated_time" content="2020-07-12T15:04:36.668Z">
+<meta property="og:updated_time" content="2020-07-12T14:12:21.596Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="transformer">
-<meta name="twitter:description" content="什么是transformer一句话解释：transformer是带有self-attention的seq2seq，输出能同时计算，可以代替RNN结构（必须按输入的顺序计算），因此transformer对于sequence to sequence的应用场景更为高效。 transformer结构解读transformer的模型结构图如下：   上图中，左半部分是Encoder，右半部分是Decod">
-<meta name="twitter:image" content="https://i.loli.net/2020/07/12/SdtenNQgPkjm6iJ.jpg">
+<meta name="twitter:title" content="NLP顶会阅读">
+<meta name="twitter:description" content="本文整理ACL、EMNLP会议的获奖文章，均为NLP方向，学习其中的精髓。 其他AI方向的顶会、期刊名单如下： 123456机器学习领域会议：COLT、NIPS、ICML、AISTATS、UAI机器学习领域期刊：JMLR、PAMI、ML人工智能会议：IJCAI、AAAI人工智能期刊：AI数据挖掘会议：KDD, ICDM, WSDM, ICDE, CIKM, SDM, PKDD数据挖掘期刊：TK">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -130,14 +119,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-transformer结构" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-NLP顶会阅读" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
   
     <h1 class="post-title" itemprop="name">
-      transformer
+      NLP顶会阅读
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -168,66 +157,19 @@
                             
                                 
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是transformer"><span class="toc-text">什么是transformer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transformer结构解读"><span class="toc-text">transformer结构解读</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#transformer为何计算速度快"><span class="toc-text">transformer为何计算速度快</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#ACL"><span class="toc-text">ACL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EMNLP"><span class="toc-text">EMNLP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol>
     </div>
     
                                     <a id="more"></a>
 
-<h3 id="什么是transformer"><a href="#什么是transformer" class="headerlink" title="什么是transformer"></a>什么是transformer</h3><p>一句话解释：transformer是带有self-attention的seq2seq，输出能同时计算，可以代替RNN结构（必须按输入的顺序计算），因此transformer对于sequence to sequence的应用场景更为高效。</p>
-<h3 id="transformer结构解读"><a href="#transformer结构解读" class="headerlink" title="transformer结构解读"></a>transformer结构解读</h3><p>transformer的模型结构图如下：</p>
-<img src="https://i.loli.net/2020/07/12/SdtenNQgPkjm6iJ.jpg" width="40%" alt="transformer计算流程1">
+<p>本文整理<code>ACL、EMNLP</code>会议的获奖文章，均为NLP方向，学习其中的精髓。</p>
+<p>其他AI方向的顶会、期刊名单如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">机器学习领域会议：COLT、NIPS、ICML、AISTATS、UAI</span><br><span class="line">机器学习领域期刊：JMLR、PAMI、ML</span><br><span class="line">人工智能会议：IJCAI、AAAI</span><br><span class="line">人工智能期刊：AI</span><br><span class="line">数据挖掘会议：KDD, ICDM, WSDM, ICDE, CIKM, SDM, PKDD</span><br><span class="line">数据挖掘期刊：TKDE、TOIS、TIST</span><br></pre></td></tr></table></figure>
 
-<p>上图中，左半部分是Encoder，右半部分是Decoder。</p>
-<ol>
-<li>Encoder</li>
-</ol>
-<ul>
-<li><code>input</code>会通过<code>input embedding layer</code>变成一个<code>vector</code></li>
-<li>这个<code>vector</code>会加上<code>positional encoding</code></li>
-<li><code>positional encoding</code>接下来会进入灰色的block（灰色block会重复N次）</li>
-<li>其中，灰色block的第一层是<code>Muti-head Attention</code>，sequence通过此层会得到另一个sequence</li>
-<li>接下来通过<code>Add &amp; Norm</code>，作用是将<code>Muti-Head Attention</code>的<code>output</code>和<code>Muti-head Attention</code>的<code>input</code>加起来再做layer normalization（和batch normalization不同）</li>
-<li>接下来通过一个<code>Feed Forward layer</code>，会将sequence的每一个vector进行处理</li>
-<li>然后再接上另一个<code>Add &amp; Norm</code></li>
-</ul>
-<ol start="2">
-<li>Decoder</li>
-</ol>
-<ul>
-<li><code>outputs</code>会通过<code>output embedding layer</code>变成一个<code>vector</code></li>
-<li>这个<code>vector</code>会加上<code>positional encoding</code></li>
-<li><code>positional encoding</code>接下来会进入灰色的block（灰色block会重复N次）</li>
-<li>其中，灰色block的第一层是<code>Masked Muti-head Attention</code>（masked：attend on the generated sequence），sequence通过此层会得到另一个sequence</li>
-<li>接下来通过<code>Add &amp; Norm</code></li>
-<li>再进入<code>Muti-Head Attention layer</code>接到之前<code>Encoder</code>部分的输出</li>
-<li>接下来通过一个<code>Add &amp; Norm</code>、<code>Feed Forward layer</code>、<code>Add &amp; Norm</code></li>
-<li>再经过<code>Linear</code>、<code>Softmax</code>得到注重的输出。</li>
-</ul>
-<p><strong>计算的具体流程如下图：</strong></p>
-<p>第1步：根据Wq、Wk、Wv，计算每个vector对应的q、k、v，再根据右上角的公式计算αi</p>
-<img src="https://i.loli.net/2020/07/12/2N6PSW1F5ORb4zD.png" width="50%" alt="transformer计算流程1">
-
-<p>第2步：对每个αi计算softmax值</p>
-<img src="https://i.loli.net/2020/07/12/LvVNyuGleXH84ba.png" width="50%" alt="transformer计算流程2">
-
-<p>第3步：使用右上角的公式，计算每个vector对应的输出b</p>
-<img src="https://i.loli.net/2020/07/12/NLS2CcavgdDGwUA.png" width="50%" alt="transformer计算流程3">
-
-<p>【注意】以上从x1到xn的运算是可以同时进行的，通过attention值的大小，可以与其他的vector产生上下文关联。</p>
-<h3 id="transformer为何计算速度快"><a href="#transformer为何计算速度快" class="headerlink" title="transformer为何计算速度快"></a>transformer为何计算速度快</h3><p>我们可以将以上的计算过程使用一连串的矩阵乘法解决，而矩阵乘法可以轻易地使用GPU来加速。如下图所示：</p>
-<img src="https://i.loli.net/2020/07/12/cV5HT1NZDBjloUf.png" width="50%" alt="transformer矩阵计算1">
-
-<img src="https://i.loli.net/2020/07/12/HkTUR4qDAmXW3C8.png" width="50%" alt="transformer矩阵计算2">
-
-<img src="https://i.loli.net/2020/07/12/KWYHyGko3eEFTmB.png" width="50%" alt="transformer矩阵计算3">
-
-<img src="https://i.loli.net/2020/07/12/ryFezKHq2cv5TJl.png" width="50%" alt="transformer矩阵计算4">
-
-<img src="https://i.loli.net/2020/07/12/oM3ZXHFuBzD67Wn.png" width="50%" alt="transformer矩阵计算5">
-
-<img src="https://i.loli.net/2020/07/12/UzZWQCG64Et9y5P.png" width="50%" alt="transformer矩阵计算6">
-
-
+<p>想了解其他方向的发展，可以阅读以上会议、期刊的文章。</p>
+<h3 id="ACL"><a href="#ACL" class="headerlink" title="ACL"></a>ACL</h3><p><a href="https://www.sohu.com/a/323726599_99979179" target="_blank" rel="noopener">ACL 2019 | 精选8篇微软ACL论文解读，一览最新研究进展 </a><br>内容包括文本摘要、机器阅读理解、推荐系统、视频理解、语义解析、机器翻译、人机对话等多个热门领域。<br><a href="https://blog.csdn.net/tmb8z9vdm66wh68vx1/article/details/80617109" target="_blank" rel="noopener">干货 | 为你解读34篇ACL论文</a><br>共包括Long Papers、Short Papers、Student Research Workshop、System Demonstrations 等几个部分。</p>
+<h3 id="EMNLP"><a href="#EMNLP" class="headerlink" title="EMNLP"></a>EMNLP</h3><p><a href="https://developer.aliyun.com/article/726026" target="_blank" rel="noopener">EMNLP 2019 精彩会议论文解读大全</a><br><a href="https://blog.csdn.net/BitCs_zt/article/details/86650515" target="_blank" rel="noopener">论文列表——EMNLP 2018</a><br><a href="https://www.leiphone.com/news/201708/3bt3QcwNF3o1o3aA.html" target="_blank" rel="noopener">万字长文，深度解读11篇 EMNLP 2017 被录用论文</a><br><a href="https://www.sohu.com/a/272148949_114877" target="_blank" rel="noopener">EMNLP 2018 | 腾讯AI Lab解读16篇入选论文 </a><br><a href="https://zhuanlan.zhihu.com/p/154037507" target="_blank" rel="noopener">305篇EMNLP 2019代码开源的论文，全在这里了！</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p><a href="https://zhuanlan.zhihu.com/p/78675477" target="_blank" rel="noopener">NLP 优质文章记录</a><br><a href="https://www.zhihu.com/people/shenweichen/posts" target="_blank" rel="noopener">浅梦的知乎博客</a><br><a href="https://zhuanlan.zhihu.com/p/51279338" target="_blank" rel="noopener">练手|常见30种NLP任务的练手项目</a><br><a href="https://zhuanlan.zhihu.com/p/108442724" target="_blank" rel="noopener">2019 NLP大全：论文、博客、教程、工程进展全梳理（长文预警）</a><br><a href="https://zhuanlan.zhihu.com/p/69958662" target="_blank" rel="noopener">收藏 | NLP论文、代码、博客、视频资源（LSTM，指针模型，Attention， ELMo等）</a><br><a href="https://zhuanlan.zhihu.com/p/100567371" target="_blank" rel="noopener">NLP.TM[23] | NLP学习线路推荐</a><br><a href="https://looperxx.github.io/CS224n-2019-01-Introduction%20and%20Word%20Vectors/" target="_blank" rel="noopener">CS224n课程——NLP最为完善，理论和技术兼具的课程</a><br><a href="https://www.bilibili.com/video/BV1pt411h7aT?from=search&seid=7889569035650627369" target="_blank" rel="noopener">【官方】【中英】【视频】CS224n 斯坦福深度自然语言处理课 @雷锋字幕组</a></p>
 
                                         
                 </div>
@@ -241,7 +183,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2020/07/12/transformer结构/&title=《transformer》 — blog&pic=/images/banner.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2020/07/12/NLP顶会阅读/&title=《NLP顶会阅读》 — blog&pic=/images/banner.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -251,22 +193,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2020/07/12/transformer结构/&title=《transformer》 — blog&source=一个专注web开发技术的网站" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2020/07/12/NLP顶会阅读/&title=《NLP顶会阅读》 — blog&source=一个专注web开发技术的网站" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2020/07/12/transformer结构/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2020/07/12/NLP顶会阅读/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《transformer》 — blog&url=http://localhost:4000/2020/07/12/transformer结构/&via=http://localhost:4000" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《NLP顶会阅读》 — blog&url=http://localhost:4000/2020/07/12/NLP顶会阅读/&via=http://localhost:4000" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2020/07/12/transformer结构/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2020/07/12/NLP顶会阅读/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -276,7 +218,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2020/07/12/transformer结构/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2020/07/12/NLP顶会阅读/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -294,26 +236,26 @@
     
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是transformer"><span class="post-toc-text">什么是transformer</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#transformer结构解读"><span class="post-toc-text">transformer结构解读</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#transformer为何计算速度快"><span class="post-toc-text">transformer为何计算速度快</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#ACL"><span class="post-toc-text">ACL</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#EMNLP"><span class="post-toc-text">EMNLP</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#其他"><span class="post-toc-text">其他</span></a></li></ol>
         </nav>
     </aside>
     
         
 <nav id="article-nav">
   
-    <a href="/2020/07/12/NLP顶会阅读/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/12/LDA模型深入/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          NLP顶会阅读
+          LDA模型深入
         
       </span>
     </a>
   
   
-    <a href="/2020/07/12/word2vec及其扩展模型/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">word2vec及其扩展模型</span>
+    <a href="/2020/07/12/transformer结构/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">transformer</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
