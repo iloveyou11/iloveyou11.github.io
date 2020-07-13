@@ -120,6 +120,65 @@
       <div class="outer">
         <section id="main" class="body-wrap">
   
+    <article id="post-NLP顶会阅读" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/13/NLP顶会阅读/"  >AI顶会阅读</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                
+
+AI方向的顶会、期刊名单如下：
+
+机器学习领域会议：COLT、NIPS、ICML、AISTATS、UAI
+机器学习领域期刊：JMLR、PAMI、ML
+人工智能会议：IJCAI、AAAI
+人工智能期刊：AI
+数据挖掘会议：KDD, ICDM, WSDM, ICDE, CIKM, SDM, PKDD
+数据挖掘期刊：TKDE、TOIS、TIST
+计算机视觉：CVPR、ICC...
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-13
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/13/NLP顶会阅读/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
     <article id="post-LDA模型深入" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -173,59 +232,6 @@ LDA的目的就是要识别主题，即把文档—词汇矩阵变成文档—�
 
                 
   
-    <article id="post-NLP顶会阅读" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/12/NLP顶会阅读/"  >NLP顶会阅读</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                
-
-本文整理ACL、EMNLP会议的获奖文章，均为NLP方向，学习其中的精髓。
-其他AI方向的顶会、期刊名单如下：
-123456机器学习领域会议：COLT、NIPS、ICML、AISTATS、UAI机器学习领域期刊：JMLR、PAMI、ML人工智能会议：IJCAI、AAAI人工智能期刊：AI数据挖掘会议：KDD, ICDM, WSDM, ICDE, CIKM, SDM, ...
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-12
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/12/NLP顶会阅读/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
     <article id="post-transformer结构" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -251,7 +257,8 @@ LDA的目的就是要识别主题，即把文档—词汇矩阵变成文档—�
                     
                         <div class="article-feed">
                             <p>
-                                <h3 id="什么是transformer"><a href="#什么是transformer" class="headerlink" title="什么是transformer"></a>什么是transformer</h3><p>一句话解释：transformer是带有self-attention的seq2seq，输出能同时计算，可以代替RNN结构（必须按输入的顺序计算），因此transformer对于sequence to sequence的应用场景更为高效。</p>
+                                <h3 id="什么是transformer"><a href="#什么是transformer" class="headerlink" title="什么是transformer"></a>什么是transformer</h3><p>一句话解释：<code>transformer</code>是带有<code>self-attention</code>的<code>seq2seq</code>，输出能同时计算，可以代替RNN结构（必须按输入的顺序计算），因此transformer对于sequence to sequence的应用场景更为高效。</p>
+<p><strong>Transformer中抛弃了传统的CNN和RNN，整个网络结构完全是由Attention机制组成。</strong></p>
                             </p>
                         </div>
                         
@@ -302,10 +309,9 @@ LDA的目的就是要识别主题，即把文档—词汇矩阵变成文档—�
                             <p>
                                 
 
-Word2Vec核心不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。
-Word2Vec扩展
-挖掘文档一级的隐含信息，学习到比词更加高一层级单元的隐含向量
-把 Word2Vec 的思想扩展到了另外一种离散数据图（Graph）的表达上。参考《线：大规模信息网络嵌入》...
+Word2Vec核心将词转化为向量，在空间上的分布表示了其含义。两个词的含义越接近，词向量在空间上的距离也越近。（训练出的词向量有实际含义）
+不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。
+word2vec和word embedding的区别：word emb...
                             </p>
                         </div>
                         
