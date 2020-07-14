@@ -3,23 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>word2vec及其扩展模型 | blog</title>
+  <title>学术前沿ACL2020研究 | blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="Word2Vec核心将词转化为向量，在空间上的分布表示了其含义。两个词的含义越接近，词向量在空间上的距离也越近。（训练出的词向量有实际含义） 不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。 word2vec和word embedding的区别：word embedding 又包括很多不">
+  <meta name="description" content="基于Knowledge Embedding的多跳知识图谱问答论文：Improving Multi-hop Question Answering over Knowledge Graphs using Knowledge Base Embeddings多跳知识图谱问答指的是，该问答系统需要通过知识图谱上的多条边执行推理，以获得正确答案。 万能的BERT——文本纠错原生的 BERT 在一些NLP任务如">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
-<meta property="og:title" content="word2vec及其扩展模型">
-<meta property="og:url" content="http://localhost:4000/2020/07/12/word2vec及其扩展模型/index.html">
+<meta property="og:title" content="学术前沿ACL2020研究">
+<meta property="og:url" content="http://localhost:4000/2020/07/12/学术前沿ACL2020研究/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="Word2Vec核心将词转化为向量，在空间上的分布表示了其含义。两个词的含义越接近，词向量在空间上的距离也越近。（训练出的词向量有实际含义） 不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。 word2vec和word embedding的区别：word embedding 又包括很多不">
+<meta property="og:description" content="基于Knowledge Embedding的多跳知识图谱问答论文：Improving Multi-hop Question Answering over Knowledge Graphs using Knowledge Base Embeddings多跳知识图谱问答指的是，该问答系统需要通过知识图谱上的多条边执行推理，以获得正确答案。 万能的BERT——文本纠错原生的 BERT 在一些NLP任务如">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-13T06:24:21.429Z">
+<meta property="og:updated_time" content="2020-07-13T12:28:57.325Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="word2vec及其扩展模型">
-<meta name="twitter:description" content="Word2Vec核心将词转化为向量，在空间上的分布表示了其含义。两个词的含义越接近，词向量在空间上的距离也越近。（训练出的词向量有实际含义） 不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。 word2vec和word embedding的区别：word embedding 又包括很多不">
+<meta name="twitter:title" content="学术前沿ACL2020研究">
+<meta name="twitter:description" content="基于Knowledge Embedding的多跳知识图谱问答论文：Improving Multi-hop Question Answering over Knowledge Graphs using Knowledge Base Embeddings多跳知识图谱问答指的是，该问答系统需要通过知识图谱上的多条边执行推理，以获得正确答案。 万能的BERT——文本纠错原生的 BERT 在一些NLP任务如">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -119,14 +119,14 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-word2vec及其扩展模型" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main" class="body-wrap"><article id="post-学术前沿ACL2020研究" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
   
     <h1 class="post-title" itemprop="name">
-      word2vec及其扩展模型
+      学术前沿ACL2020研究
     </h1>
     <div class="post-title-bar">
       <ul>
@@ -157,19 +157,37 @@
                             
                                 
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Word2Vec核心"><span class="toc-text">Word2Vec核心</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Word2Vec扩展"><span class="toc-text">Word2Vec扩展</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#基于Knowledge-Embedding的多跳知识图谱问答"><span class="toc-text">基于Knowledge Embedding的多跳知识图谱问答</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#万能的BERT——文本纠错"><span class="toc-text">万能的BERT——文本纠错</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#突破瓶颈，打造更强大的Transformer"><span class="toc-text">突破瓶颈，打造更强大的Transformer(*)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Deformer：让笨重的BERT问答匹配模型变快"><span class="toc-text">Deformer：让笨重的BERT问答匹配模型变快</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#GPT-3诞生，Finetune也不再必要了"><span class="toc-text">GPT-3诞生，Finetune也不再必要了</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#变矮又能变瘦的DynaBERT了解一下"><span class="toc-text">变矮又能变瘦的DynaBERT了解一下(*)</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#FastBERT：放飞BERT的推理速度"><span class="toc-text">FastBERT：放飞BERT的推理速度(*)</span></a></li></ol>
     </div>
     
-                                    <a id="more"></a>
-
-<h3 id="Word2Vec核心"><a href="#Word2Vec核心" class="headerlink" title="Word2Vec核心"></a>Word2Vec核心</h3><p>将词转化为向量，在空间上的分布表示了其含义。两个词的含义越接近，词向量在空间上的距离也越近。（训练出的词向量有实际含义）</p>
-<p>不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。</p>
-<p><strong>word2vec和word embedding的区别：</strong><br>word embedding 又包括很多不同的算法集合，或者叫做实现工具，比如 SEENA、FastText、word2vec 等。具体的层次关系为Representation → Distributed Reprensentation → word embedding → word2vec。</p>
-<h3 id="Word2Vec扩展"><a href="#Word2Vec扩展" class="headerlink" title="Word2Vec扩展"></a>Word2Vec扩展</h3><ol>
-<li>挖掘文档一级的隐含信息，学习到比词更加高一层级单元的隐含向量</li>
-<li>把 Word2Vec 的思想扩展到了另外一种离散数据图（Graph）的表达上。参考《线：大规模信息网络嵌入》（LINE: Large-scale Information Network Embedding）</li>
-<li>尝试在查询关键词和用户点击的网页之间建立上下文关系，使得 Word2Vec 模型可以学习到查询关键词以及网页的隐含向量。参考《用于支持搜索中查询重写的上下文和内容感知嵌入》（Context- and Content-aware Embeddings for Query Rewriting in Sponsored Search）</li>
+                                    <h4 id="基于Knowledge-Embedding的多跳知识图谱问答"><a href="#基于Knowledge-Embedding的多跳知识图谱问答" class="headerlink" title="基于Knowledge Embedding的多跳知识图谱问答"></a>基于Knowledge Embedding的多跳知识图谱问答</h4><p>论文：<a href="https://arxiv.org/abs/1910.03262v1" target="_blank" rel="noopener">Improving Multi-hop Question Answering over Knowledge Graphs using Knowledge Base Embeddings</a><br>多跳知识图谱问答指的是，该问答系统需要通过知识图谱上的多条边执行推理，以获得正确答案。</p>
+<h4 id="万能的BERT——文本纠错"><a href="#万能的BERT——文本纠错" class="headerlink" title="万能的BERT——文本纠错"></a>万能的BERT——文本纠错</h4><p>原生的 BERT 在一些NLP任务如error detection、NER中表现欠佳，说明预训练阶段的学习目标中对相关模式的捕获非常有限，需要根据任务进行一定改造。为了提高错误检测能力，本文在SOTA方法的基础上又添加了一个错误检测网络。分错误检测和纠正两步走。先检测每一个字的错误概率，然后根据检测结果将可能的错别字 soft-mask,再输给基于Bert的修正网络。这样就强制修正网络学习了错别字的上下文。</p>
+<p><a href="https://arxiv.org/pdf/2005.07421.pdf" target="_blank" rel="noopener">论文链接</a></p>
+<h4 id="突破瓶颈，打造更强大的Transformer"><a href="#突破瓶颈，打造更强大的Transformer" class="headerlink" title="突破瓶颈，打造更强大的Transformer(*)"></a>突破瓶颈，打造更强大的Transformer(*)</h4><p><code>推荐阅读</code><br>针对Multi-Head Attention中可能存在建模瓶颈，提出了不同的方案来改进Multi-Head Attention</p>
+<ol>
+<li>再小也不能小key_size<br>如果固定一个比较大的key_size（比如128），那么我们可以调整模型的hidden_size和head数，使得参数量可以跟原始的BERT设计一致，但是效果更优！</li>
+<li>再缺也不能缺Talking<br>当前的Multi-Head Attention每个head的运算是相互孤立的，而通过将它们联系（Talking）起来，则可以得到更强的Attention设计</li>
 </ol>
+<h4 id="Deformer：让笨重的BERT问答匹配模型变快"><a href="#Deformer：让笨重的BERT问答匹配模型变快" class="headerlink" title="Deformer：让笨重的BERT问答匹配模型变快"></a>Deformer：让笨重的BERT问答匹配模型变快</h4><p><a href="https://awk.ai/assets/deformer.pdf" target="_blank" rel="noopener">《Deformer：Decomposing Pre-trained Transformers for Faster Question Answering》</a><br>这篇文章提主要提出了一种变形的计算方式DeFormer，使问题和文档编码在低层独立编码再在高层交互，从而使得可以离线计算文档编码来加速QA推理和节省内存。</p>
+<h4 id="GPT-3诞生，Finetune也不再必要了"><a href="#GPT-3诞生，Finetune也不再必要了" class="headerlink" title="GPT-3诞生，Finetune也不再必要了"></a>GPT-3诞生，Finetune也不再必要了</h4><p><a href="https://arxiv.org/abs/2005.14165" target="_blank" rel="noopener">《Language Models are Few-Shot Learners》</a><br>GPT-3主要聚焦于更通用的NLP模型，解决当前BERT类模型的两个缺点：</p>
+<ul>
+<li>对领域内有标签数据的过分依赖：虽然有了预训练+精调的两段式框架，但还是少不了一定量的领域标注数据，否则很难取得不错的效果，而标注数据的成本又是很高的。</li>
+<li>对于领域数据分布的过拟合：在精调阶段，因为领域数据有限，模型只能拟合训练数据分布，如果数据较少的话就可能造成过拟合，致使模型的泛化能力下降，更加无法应用到其他领域。</li>
+</ul>
+<h4 id="变矮又能变瘦的DynaBERT了解一下"><a href="#变矮又能变瘦的DynaBERT了解一下" class="headerlink" title="变矮又能变瘦的DynaBERT了解一下(*)"></a>变矮又能变瘦的DynaBERT了解一下(*)</h4><p><code>推荐阅读</code><br><a href>《DynaBERT: Dynamic BERT with Adaptive Width and Depth》</a><br>提出了新的训练算法，同时对不同尺寸的子网络进行训练，通过该方法训练后可以在推理阶段直接对模型裁剪。依靠新的训练算法，本文在效果上超越了众多压缩模型，比如DistillBERT、TinyBERT以及LayerDrop后的模型。</p>
+<p>说到模型压缩，常用的方法有以下几种：</p>
+<ol>
+<li>量化</li>
+<li>低轶近似／权重共享</li>
+<li>剪枝</li>
+<li>蒸馏</li>
+</ol>
+<p>论文对于BERT的压缩流程是这样的：</p>
+<ul>
+<li>训练时，对宽度和深度进行裁剪，训练不同的子网络</li>
+<li>推理时，根据速度需要直接裁剪，用裁剪后的子网络进行预测</li>
+</ul>
+<h4 id="FastBERT：放飞BERT的推理速度"><a href="#FastBERT：放飞BERT的推理速度" class="headerlink" title="FastBERT：放飞BERT的推理速度(*)"></a>FastBERT：放飞BERT的推理速度(*)</h4><p><code>推荐阅读</code><br>《FastBERT: a Self-distilling BERT with Adaptive Inference Time》<br>提出了一种新的inference速度提升方式，相比单纯的student蒸馏有更高的确定性，且可以自行权衡效果与速度，简单实用。</p>
 
                                         
                 </div>
@@ -183,7 +201,7 @@
     <div class="post-share-list" id="share-list">
         <ul class="share-icons">
           <li>
-            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2020/07/12/word2vec及其扩展模型/&title=《word2vec及其扩展模型》 — blog&pic=/images/banner.jpg" data-title="微博">
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2020/07/12/学术前沿ACL2020研究/&title=《学术前沿ACL2020研究》 — blog&pic=/images/banner.jpg" data-title="微博">
               <i class="fa fa-weibo"></i>
             </a>
           </li>
@@ -193,22 +211,22 @@
             </a>
           </li>
           <li>
-            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2020/07/12/word2vec及其扩展模型/&title=《word2vec及其扩展模型》 — blog&source=一个专注web开发技术的网站" data-title="QQ">
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2020/07/12/学术前沿ACL2020研究/&title=《学术前沿ACL2020研究》 — blog&source=一个专注web开发技术的网站" data-title="QQ">
               <i class="fa fa-qq"></i>
             </a>
           </li>
           <li>
-            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2020/07/12/word2vec及其扩展模型/" data-title="Facebook">
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2020/07/12/学术前沿ACL2020研究/" data-title="Facebook">
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li>
-            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《word2vec及其扩展模型》 — blog&url=http://localhost:4000/2020/07/12/word2vec及其扩展模型/&via=http://localhost:4000" data-title="Twitter">
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《学术前沿ACL2020研究》 — blog&url=http://localhost:4000/2020/07/12/学术前沿ACL2020研究/&via=http://localhost:4000" data-title="Twitter">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li>
-            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2020/07/12/word2vec及其扩展模型/" data-title="Google+">
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2020/07/12/学术前沿ACL2020研究/" data-title="Google+">
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -218,7 +236,7 @@
 <div class="post-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;" id="wxShare-close">×</a>
     <p>扫一扫，分享到微信</p>
-    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2020/07/12/word2vec及其扩展模型/" alt="微信分享二维码">
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2020/07/12/学术前沿ACL2020研究/" alt="微信分享二维码">
 </div>
 
 <div class="mask"></div>
@@ -236,26 +254,26 @@
     
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Word2Vec核心"><span class="post-toc-text">Word2Vec核心</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Word2Vec扩展"><span class="post-toc-text">Word2Vec扩展</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基于Knowledge-Embedding的多跳知识图谱问答"><span class="post-toc-text">基于Knowledge Embedding的多跳知识图谱问答</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#万能的BERT——文本纠错"><span class="post-toc-text">万能的BERT——文本纠错</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#突破瓶颈，打造更强大的Transformer"><span class="post-toc-text">突破瓶颈，打造更强大的Transformer(*)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Deformer：让笨重的BERT问答匹配模型变快"><span class="post-toc-text">Deformer：让笨重的BERT问答匹配模型变快</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#GPT-3诞生，Finetune也不再必要了"><span class="post-toc-text">GPT-3诞生，Finetune也不再必要了</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#变矮又能变瘦的DynaBERT了解一下"><span class="post-toc-text">变矮又能变瘦的DynaBERT了解一下(*)</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#FastBERT：放飞BERT的推理速度"><span class="post-toc-text">FastBERT：放飞BERT的推理速度(*)</span></a></li></ol>
         </nav>
     </aside>
     
         
 <nav id="article-nav">
   
-    <a href="/2020/07/12/transformer结构/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/12/word2vec及其扩展模型/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          transformer
+          word2vec及其扩展模型
         
       </span>
     </a>
   
   
-    <a href="/2020/07/12/学术前沿ACL2020研究/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">学术前沿ACL2020研究</span>
+    <a href="/2020/07/06/前端智能化方向思考与解读/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">前端智能化方向思考与解读</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
