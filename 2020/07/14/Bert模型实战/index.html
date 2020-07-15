@@ -3,22 +3,23 @@
 <head><meta name="generator" content="Hexo 3.9.0">
   <meta charset="utf-8">
   
-  <title>Category: AI | blog</title>
+  <title>Bert模型实战 | blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="一个专注web开发技术的网站">
+  <meta name="description" content="数据集介绍12345678CoLA:判断句子语法是否正确SST:电影评论情感分析数据集MRPC:判断两个句子是否具有相同语义STS-B:用1到5的分数来表示两个句子的语义相似性QQP:两个句子是否语义一致QNLI:给定一个问句，判断给定文本中是否包含该问句的正确答案RTE:判断两个句子是否能够推断或对齐WNLI:文本蕴含任务  Bert系列（一）——demo运行Bert系列（二）——模型主体源">
 <meta name="keywords" content="web">
-<meta property="og:type" content="website">
-<meta property="og:title" content="blog">
-<meta property="og:url" content="http://localhost:4000/categories/AI/page/3/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bert模型实战">
+<meta property="og:url" content="http://localhost:4000/2020/07/14/Bert模型实战/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="一个专注web开发技术的网站">
+<meta property="og:description" content="数据集介绍12345678CoLA:判断句子语法是否正确SST:电影评论情感分析数据集MRPC:判断两个句子是否具有相同语义STS-B:用1到5的分数来表示两个句子的语义相似性QQP:两个句子是否语义一致QNLI:给定一个问句，判断给定文本中是否包含该问句的正确答案RTE:判断两个句子是否能够推断或对齐WNLI:文本蕴含任务  Bert系列（一）——demo运行Bert系列（二）——模型主体源">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2020-07-14T07:05:11.733Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="blog">
-<meta name="twitter:description" content="一个专注web开发技术的网站">
+<meta name="twitter:title" content="Bert模型实战">
+<meta name="twitter:description" content="数据集介绍12345678CoLA:判断句子语法是否正确SST:电影评论情感分析数据集MRPC:判断两个句子是否具有相同语义STS-B:用1到5的分数来表示两个句子的语义相似性QQP:两个句子是否语义一致QNLI:给定一个问句，判断给定文本中是否包含该问句的正确答案RTE:判断两个句子是否能够推断或对齐WNLI:文本蕴含任务  Bert系列（一）——demo运行Bert系列（二）——模型主体源">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -118,162 +119,147 @@
     </div>
 </header>
       <div class="outer">
-        <section id="main" class="body-wrap">
+        <section id="main" class="body-wrap"><article id="post-Bert模型实战" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
   
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/01/10/ML-06/" class="archive-article-date">
-  <time datetime="2020-01-09T16:00:00.000Z" itemprop="datePublished">01-10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/10/ML-06/"  >ML系列6：tensorflow入门-2</a>
+    <h1 class="post-title" itemprop="name">
+      Bert模型实战
     </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/categories/AI/">AI</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2020-07-14
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
   
 
-    </header>
-      
-  </div>
+                    
+            </header>
+            
+                <div class="article-entry post-content" itemprop="articleBody">
+                    
+                            
+                                
+    <div id="toc">
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#数据集介绍"><span class="toc-text">数据集介绍</span></a></li></ol>
+    </div>
+    
+                                    <a id="more"></a>
+
+<h3 id="数据集介绍"><a href="#数据集介绍" class="headerlink" title="数据集介绍"></a>数据集介绍</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CoLA:判断句子语法是否正确</span><br><span class="line">SST:电影评论情感分析数据集</span><br><span class="line">MRPC:判断两个句子是否具有相同语义</span><br><span class="line">STS-B:用1到5的分数来表示两个句子的语义相似性</span><br><span class="line">QQP:两个句子是否语义一致</span><br><span class="line">QNLI:给定一个问句，判断给定文本中是否包含该问句的正确答案</span><br><span class="line">RTE:判断两个句子是否能够推断或对齐</span><br><span class="line">WNLI:文本蕴含任务</span><br></pre></td></tr></table></figure>
+
+<p><a href="https://www.jianshu.com/p/3d0bb34c488a" target="_blank" rel="noopener">Bert系列（一）——demo运行</a><br><a href="https://www.jianshu.com/p/d7ce41b58801" target="_blank" rel="noopener">Bert系列（二）——模型主体源码解读</a><br><a href="https://www.jianshu.com/p/22e462f01d8c" target="_blank" rel="noopener">Bert系列（三）——源码解读之Pre-train</a><br><a href="https://www.jianshu.com/p/116bfdb9119a" target="_blank" rel="noopener">Bert系列（四）——源码解读之Fine-tune</a></p>
+
+                                        
+                </div>
+                <footer class="article-footer">
+                    
+                        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://localhost:4000/2020/07/14/Bert模型实战/&title=《Bert模型实战》 — blog&pic=/images/banner.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://localhost:4000/2020/07/14/Bert模型实战/&title=《Bert模型实战》 — blog&source=一个专注web开发技术的网站" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:4000/2020/07/14/Bert模型实战/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Bert模型实战》 — blog&url=http://localhost:4000/2020/07/14/Bert模型实战/&via=http://localhost:4000" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://localhost:4000/2020/07/14/Bert模型实战/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=http://localhost:4000/2020/07/14/Bert模型实战/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+                            
+                                <ul class="article-footer-menu">
+                                    
+                                            
+                                </ul>
+                                
+                </footer>
+    </div>
 </article>
 
-  
     
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据集介绍"><span class="post-toc-text">数据集介绍</span></a></li></ol>
+        </nav>
+    </aside>
     
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2020/01/02/ML-05/" class="archive-article-date">
-  <time datetime="2020-01-01T16:00:00.000Z" itemprop="datePublished">01-02</time>
-</a>
-      
+        
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/01/02/ML-05/"  >ML系列5：tensorflow入门-1</a>
-    </h1>
-  
+    <a href="/2020/07/14/Bert变种与优化/" id="article-nav-newer" class="article-nav-link-wrap">
 
-    </header>
-      
-  </div>
-</article>
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          Bert变种与优化
+        
+      </span>
+    </a>
+  
+  
+    <a href="/2020/07/14/NLP项目实战/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">NLP项目实战</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
 
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/12/29/ML-04/" class="archive-article-date">
-  <time datetime="2019-12-28T16:00:00.000Z" itemprop="datePublished">12-29</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/29/ML-04/"  >ML系列4：深度学习中的问题解答</a>
-    </h1>
-  
-
-    </header>
-      
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/12/15/ML-03/" class="archive-article-date">
-  <time datetime="2019-12-14T16:00:00.000Z" itemprop="datePublished">12-15</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/15/ML-03/"  >ML系列3：传统机器学习算法-语雀</a>
-    </h1>
-  
-
-    </header>
-      
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/12/10/ML-02/" class="archive-article-date">
-  <time datetime="2019-12-09T16:00:00.000Z" itemprop="datePublished">12-10</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/10/ML-02/"  >ML系列2：机器学习必会算法</a>
-    </h1>
-  
-
-    </header>
-      
-  </div>
-</article>
-
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2019/12/04/ML-01/" class="archive-article-date">
-  <time datetime="2019-12-03T16:00:00.000Z" itemprop="datePublished">12-04</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/12/04/ML-01/"  >ML系列1：AI学习资源与知识点</a>
-    </h1>
-  
-
-    </header>
-      
-  </div>
-</article>
-
-  
-  
-    </div></section>
-  
-
-
-  <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/categories/AI/page/2/"><< Prev</a><a class="page-number" href="/categories/AI/">1</a><a class="page-number" href="/categories/AI/page/2/">2</a><span class="page-number current">3</span>
-  </nav>
-</section>
+            
+                
+                    
+                                                    </section>
         
       </div>
       <footer id="footer">
