@@ -4,63 +4,6 @@
   
     
     <entry>
-      <title>Bert变种与优化</title>
-      <link href="/2020/07/14/Bert%E5%8F%98%E7%A7%8D%E4%B8%8E%E4%BC%98%E5%8C%96/"/>
-      <url>/2020/07/14/Bert%E5%8F%98%E7%A7%8D%E4%B8%8E%E4%BC%98%E5%8C%96/</url>
-      
-        <content type="html"><![CDATA[<a id="more"></a>]]></content>
-      
-      
-      <categories>
-          
-          <category> AI </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>Bert模型实战</title>
-      <link href="/2020/07/14/Bert%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98/"/>
-      <url>/2020/07/14/Bert%E6%A8%A1%E5%9E%8B%E5%AE%9E%E6%88%98/</url>
-      
-        <content type="html"><![CDATA[<a id="more"></a><h3 id="数据集介绍"><a href="#数据集介绍" class="headerlink" title="数据集介绍"></a>数据集介绍</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">CoLA:判断句子语法是否正确</span><br><span class="line">SST:电影评论情感分析数据集</span><br><span class="line">MRPC:判断两个句子是否具有相同语义</span><br><span class="line">STS-B:用1到5的分数来表示两个句子的语义相似性</span><br><span class="line">QQP:两个句子是否语义一致</span><br><span class="line">QNLI:给定一个问句，判断给定文本中是否包含该问句的正确答案</span><br><span class="line">RTE:判断两个句子是否能够推断或对齐</span><br><span class="line">WNLI:文本蕴含任务</span><br></pre></td></tr></table></figure><p><a href="https://www.jianshu.com/p/3d0bb34c488a" target="_blank" rel="noopener">Bert系列（一）——demo运行</a><br><a href="https://www.jianshu.com/p/d7ce41b58801" target="_blank" rel="noopener">Bert系列（二）——模型主体源码解读</a><br><a href="https://www.jianshu.com/p/22e462f01d8c" target="_blank" rel="noopener">Bert系列（三）——源码解读之Pre-train</a><br><a href="https://www.jianshu.com/p/116bfdb9119a" target="_blank" rel="noopener">Bert系列（四）——源码解读之Fine-tune</a></p>]]></content>
-      
-      
-      <categories>
-          
-          <category> AI </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
-      <title>NLP项目实战</title>
-      <link href="/2020/07/14/NLP%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/"/>
-      <url>/2020/07/14/NLP%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/</url>
-      
-        <content type="html"><![CDATA[<a id="more"></a>]]></content>
-      
-      
-      <categories>
-          
-          <category> AI </category>
-          
-      </categories>
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>transformer</title>
       <link href="/2020/07/14/transformer%E7%BB%93%E6%9E%84/"/>
       <url>/2020/07/14/transformer%E7%BB%93%E6%9E%84/</url>
@@ -122,7 +65,7 @@
       <link href="/2020/07/12/word2vec%E5%8F%8A%E5%85%B6%E6%89%A9%E5%B1%95%E6%A8%A1%E5%9E%8B/"/>
       <url>/2020/07/12/word2vec%E5%8F%8A%E5%85%B6%E6%89%A9%E5%B1%95%E6%A8%A1%E5%9E%8B/</url>
       
-        <content type="html"><![CDATA[<a id="more"></a><h3 id="Word2Vec核心"><a href="#Word2Vec核心" class="headerlink" title="Word2Vec核心"></a>Word2Vec核心</h3><p>将词转化为向量，在空间上的分布表示了其含义。两个词的含义越接近，词向量在空间上的距离也越近。（训练出的词向量有实际含义）</p><p>不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。</p><p><strong>word2vec和word embedding的区别：</strong><br>word embedding 又包括很多不同的算法集合，或者叫做实现工具，比如 SEENA、FastText、word2vec 等。具体的层次关系为Representation → Distributed Reprensentation → word embedding → word2vec。</p><p>词向量模型：</p><img src alt="词向量模型" width="100%"><p>下面依次介绍各类词向量模型:</p><h4 id="one-hot"><a href="#one-hot" class="headerlink" title="one-hot"></a>one-hot</h4><p>one-hot编码，又称“独热编码”。每个状态都有独立的位置，且这些数字中只有一位有效，就是只能有一个状态。</p><p>one-hot编码具备以下缺点：</p><ul><li>词与词之间相互独立，在实际情况中词与词应该是相互关联的</li><li>得到的特征是离散的，稀疏的</li><li>没有考虑词与词之间的顺序问题</li></ul><ol><li><p><strong>Boolean representation</strong><br>如下面所示，出现在词表中的那个位置，则对应位置为1，其他均为0:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sample1 -&gt; [0,1,1,0,0,0,1,0,0]</span><br><span class="line">sample2 -&gt; [1,0,0,1,0,0,0,1,0]</span><br><span class="line">sample3 -&gt; [0,1,0,0,1,0,0,1,0]</span><br><span class="line">sample4 -&gt; [1,0,0,0,0,1,0,0,1]</span><br></pre></td></tr></table></figure></li><li><p><strong>count representation</strong><br>如下面所示，统计了单词出现的个数，未出现则为0:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sample1 -&gt; [0,2,1,3,0,0,2,0,0]</span><br><span class="line">sample2 -&gt; [1,0,0,1,0,2,0,1,0]</span><br><span class="line">sample3 -&gt; [0,1,3,0,1,1,0,1,0]</span><br><span class="line">sample4 -&gt; [1,0,4,0,0,3,0,0,1]</span><br></pre></td></tr></table></figure></li><li><p><strong>tf-idf representation</strong><br>考虑了单词在语料库中的频率（重要性）</p></li></ol><img src alt="tf-idf" width="60%"><h4 id="Skip-Gram"><a href="#Skip-Gram" class="headerlink" title="Skip-Gram"></a>Skip-Gram</h4><p>Skip-Gram：通过中间单词预测左右两侧的单词</p><img src alt="Skip-Gram" width="40%"><h4 id="CBOW"><a href="#CBOW" class="headerlink" title="CBOW"></a>CBOW</h4><p>CBow：通过两边的单词预测中间的单词</p><img src alt="CBOW" width="40%"><h4 id="Glove"><a href="#Glove" class="headerlink" title="Glove"></a>Glove</h4><img src alt="Glove" width="60%"><h4 id="Elmo（深度学习模型）"><a href="#Elmo（深度学习模型）" class="headerlink" title="Elmo（深度学习模型）"></a>Elmo（深度学习模型）</h4><h4 id="Bert"><a href="#Bert" class="headerlink" title="Bert"></a>Bert</h4><h3 id="Word2Vec扩展"><a href="#Word2Vec扩展" class="headerlink" title="Word2Vec扩展"></a>Word2Vec扩展</h3><ol><li>挖掘文档一级的隐含信息，学习到比词更加高一层级单元的隐含向量</li><li>把 Word2Vec 的思想扩展到了另外一种离散数据图（Graph）的表达上。参考《线：大规模信息网络嵌入》（LINE: Large-scale Information Network Embedding）</li><li>尝试在查询关键词和用户点击的网页之间建立上下文关系，使得 Word2Vec 模型可以学习到查询关键词以及网页的隐含向量。参考《用于支持搜索中查询重写的上下文和内容感知嵌入》（Context- and Content-aware Embeddings for Query Rewriting in Sponsored Search）</li></ol>]]></content>
+        <content type="html"><![CDATA[<a id="more"></a><h3 id="Word2Vec核心"><a href="#Word2Vec核心" class="headerlink" title="Word2Vec核心"></a>Word2Vec核心</h3><p>将词转化为向量，在空间上的分布表示了其含义。两个词的含义越接近，词向量在空间上的距离也越近。（训练出的词向量有实际含义）</p><p>不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。</p><p><strong>word2vec和word embedding的区别：</strong><br>word embedding 又包括很多不同的算法集合，或者叫做实现工具，比如 SEENA、FastText、word2vec 等。具体的层次关系为Representation → Distributed Reprensentation → word embedding → word2vec。</p><p>词向量模型：</p><img src="https://i.loli.net/2020/07/15/KFjOm8HULMqCdJw.png" alt="词向量模型" width="100%"><p>下面依次介绍各类词向量模型:</p><h4 id="one-hot"><a href="#one-hot" class="headerlink" title="one-hot"></a>one-hot</h4><p>one-hot编码，又称“独热编码”。每个状态都有独立的位置，且这些数字中只有一位有效，就是只能有一个状态。</p><p>one-hot编码具备以下缺点：</p><ul><li>词与词之间相互独立，在实际情况中词与词应该是相互关联的</li><li>得到的特征是离散的，稀疏的</li><li>没有考虑词与词之间的顺序问题</li></ul><ol><li><p><strong>Boolean representation</strong><br>如下面所示，出现在词表中的那个位置，则对应位置为1，其他均为0:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sample1 -&gt; [0,1,1,0,0,0,1,0,0]</span><br><span class="line">sample2 -&gt; [1,0,0,1,0,0,0,1,0]</span><br><span class="line">sample3 -&gt; [0,1,0,0,1,0,0,1,0]</span><br><span class="line">sample4 -&gt; [1,0,0,0,0,1,0,0,1]</span><br></pre></td></tr></table></figure></li><li><p><strong>count representation</strong><br>如下面所示，统计了单词出现的个数，未出现则为0:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sample1 -&gt; [0,2,1,3,0,0,2,0,0]</span><br><span class="line">sample2 -&gt; [1,0,0,1,0,2,0,1,0]</span><br><span class="line">sample3 -&gt; [0,1,3,0,1,1,0,1,0]</span><br><span class="line">sample4 -&gt; [1,0,4,0,0,3,0,0,1]</span><br></pre></td></tr></table></figure></li><li><p><strong>tf-idf representation</strong><br>考虑了单词在语料库中的频率（重要性）</p></li></ol><img src="https://i.loli.net/2020/07/15/8Gkp6KCn93bwhyF.png" alt="tf-idf" width="60%"><h4 id="Skip-Gram"><a href="#Skip-Gram" class="headerlink" title="Skip-Gram"></a>Skip-Gram</h4><p>Skip-Gram：通过中间单词预测左右两侧的单词</p><img src="https://i.loli.net/2020/07/15/i7fxzQqRgHBjcdv.png" alt="Skip-Gram" width="30%"><h4 id="CBOW"><a href="#CBOW" class="headerlink" title="CBOW"></a>CBOW</h4><p>CBow：通过两边的单词预测中间的单词</p><img src="https://i.loli.net/2020/07/15/1K7UB56wpfgjdPv.png" alt="CBOW" width="40%"><h4 id="Glove"><a href="#Glove" class="headerlink" title="Glove"></a>Glove</h4><img src="https://i.loli.net/2020/07/15/XdlEa7IGKW6zZvj.png" alt="Glove" width="80%"><h4 id="Elmo（深度学习模型）"><a href="#Elmo（深度学习模型）" class="headerlink" title="Elmo（深度学习模型）"></a>Elmo（深度学习模型）</h4><h4 id="Bert"><a href="#Bert" class="headerlink" title="Bert"></a>Bert</h4><h3 id="Word2Vec扩展"><a href="#Word2Vec扩展" class="headerlink" title="Word2Vec扩展"></a>Word2Vec扩展</h3><ol><li>挖掘文档一级的隐含信息，学习到比词更加高一层级单元的隐含向量</li><li>把 Word2Vec 的思想扩展到了另外一种离散数据图（Graph）的表达上。参考《线：大规模信息网络嵌入》（LINE: Large-scale Information Network Embedding）</li><li>尝试在查询关键词和用户点击的网页之间建立上下文关系，使得 Word2Vec 模型可以学习到查询关键词以及网页的隐含向量。参考《用于支持搜索中查询重写的上下文和内容感知嵌入》（Context- and Content-aware Embeddings for Query Rewriting in Sponsored Search）</li></ol>]]></content>
       
       
       <categories>

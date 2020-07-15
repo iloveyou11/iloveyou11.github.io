@@ -16,10 +16,16 @@
 <meta property="og:site_name" content="blog">
 <meta property="og:description" content="Word2Vec核心将词转化为向量，在空间上的分布表示了其含义。两个词的含义越接近，词向量在空间上的距离也越近。（训练出的词向量有实际含义） 不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。 word2vec和word embedding的区别：word embedding 又包括很多不">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-15T03:53:13.439Z">
+<meta property="og:image" content="https://i.loli.net/2020/07/15/KFjOm8HULMqCdJw.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/15/8Gkp6KCn93bwhyF.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/15/i7fxzQqRgHBjcdv.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/15/1K7UB56wpfgjdPv.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/15/XdlEa7IGKW6zZvj.png">
+<meta property="og:updated_time" content="2020-07-15T04:13:34.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="word2vec及其扩展模型">
 <meta name="twitter:description" content="Word2Vec核心将词转化为向量，在空间上的分布表示了其含义。两个词的含义越接近，词向量在空间上的距离也越近。（训练出的词向量有实际含义） 不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。 word2vec和word embedding的区别：word embedding 又包括很多不">
+<meta name="twitter:image" content="https://i.loli.net/2020/07/15/KFjOm8HULMqCdJw.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -166,7 +172,7 @@
 <p>不管是 SG(skip-gram) 还是 CBOW，本质上，就是希望能够利用文章的上下文信息学习到连续空间的词表达，这是 Word2Vec 所有模型的核心。</p>
 <p><strong>word2vec和word embedding的区别：</strong><br>word embedding 又包括很多不同的算法集合，或者叫做实现工具，比如 SEENA、FastText、word2vec 等。具体的层次关系为Representation → Distributed Reprensentation → word embedding → word2vec。</p>
 <p>词向量模型：</p>
-<img src alt="词向量模型" width="100%">
+<img src="https://i.loli.net/2020/07/15/KFjOm8HULMqCdJw.png" alt="词向量模型" width="100%">
 
 <p>下面依次介绍各类词向量模型:</p>
 <h4 id="one-hot"><a href="#one-hot" class="headerlink" title="one-hot"></a>one-hot</h4><p>one-hot编码，又称“独热编码”。每个状态都有独立的位置，且这些数字中只有一位有效，就是只能有一个状态。</p>
@@ -186,15 +192,15 @@
 <li><p><strong>tf-idf representation</strong><br>考虑了单词在语料库中的频率（重要性）</p>
 </li>
 </ol>
-<img src alt="tf-idf" width="60%">
+<img src="https://i.loli.net/2020/07/15/8Gkp6KCn93bwhyF.png" alt="tf-idf" width="60%">
 
 <h4 id="Skip-Gram"><a href="#Skip-Gram" class="headerlink" title="Skip-Gram"></a>Skip-Gram</h4><p>Skip-Gram：通过中间单词预测左右两侧的单词</p>
-<img src alt="Skip-Gram" width="40%">
+<img src="https://i.loli.net/2020/07/15/i7fxzQqRgHBjcdv.png" alt="Skip-Gram" width="30%">
 
 <h4 id="CBOW"><a href="#CBOW" class="headerlink" title="CBOW"></a>CBOW</h4><p>CBow：通过两边的单词预测中间的单词</p>
-<img src alt="CBOW" width="40%">
+<img src="https://i.loli.net/2020/07/15/1K7UB56wpfgjdPv.png" alt="CBOW" width="40%">
 
-<h4 id="Glove"><a href="#Glove" class="headerlink" title="Glove"></a>Glove</h4><img src alt="Glove" width="60%">
+<h4 id="Glove"><a href="#Glove" class="headerlink" title="Glove"></a>Glove</h4><img src="https://i.loli.net/2020/07/15/XdlEa7IGKW6zZvj.png" alt="Glove" width="80%">
 
 <h4 id="Elmo（深度学习模型）"><a href="#Elmo（深度学习模型）" class="headerlink" title="Elmo（深度学习模型）"></a>Elmo（深度学习模型）</h4><h4 id="Bert"><a href="#Bert" class="headerlink" title="Bert"></a>Bert</h4><h3 id="Word2Vec扩展"><a href="#Word2Vec扩展" class="headerlink" title="Word2Vec扩展"></a>Word2Vec扩展</h3><ol>
 <li>挖掘文档一级的隐含信息，学习到比词更加高一层级单元的隐含向量</li>
