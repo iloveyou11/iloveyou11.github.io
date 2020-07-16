@@ -16,6 +16,7 @@
 <meta property="og:site_name" content="blog">
 <meta property="og:description" content="核心内容：中文分词、拼写错误纠正、停用词过滤、stemming操作、文本表示、文本相似度计算、倒排表、语言模型LM、masked LM、平滑算法">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="https://i.loli.net/2020/07/16/kCRwasGEUoS8qzK.png">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/wEi7GCpbOzsnx38.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/iHqoPMawrx7Ehd8.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/6wJX5nP7zlx9MoL.jpg">
@@ -25,11 +26,11 @@
 <meta property="og:image" content="https://i.loli.net/2020/03/24/UOtBQIfdwMDNJnq.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/rkECxu3j9W6UPKO.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/9EfpiKge6r3mxZF.jpg">
-<meta property="og:updated_time" content="2020-07-07T09:47:11.819Z">
+<meta property="og:updated_time" content="2020-07-16T08:54:11.210Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP系列2：分词与文本表示">
 <meta name="twitter:description" content="核心内容：中文分词、拼写错误纠正、停用词过滤、stemming操作、文本表示、文本相似度计算、倒排表、语言模型LM、masked LM、平滑算法">
-<meta name="twitter:image" content="https://i.loli.net/2020/03/24/wEi7GCpbOzsnx38.jpg">
+<meta name="twitter:image" content="https://i.loli.net/2020/07/16/kCRwasGEUoS8qzK.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -174,6 +175,9 @@
 <a id="more"></a>
 
 <p><a href="https://iloveyou11.github.io/2020/03/19/NLP-01/" target="_blank" rel="noopener">NLP系列1：NLP简介</a><br><a href="https://iloveyou11.github.io/2020/03/20/NLP-02/" target="_blank" rel="noopener">NLP系列2：分词与文本表示</a><br><a href="https://iloveyou11.github.io/2020/03/21/NLP-03/" target="_blank" rel="noopener">NLP系列3：语言系统与NLP基础</a><br><a href="https://iloveyou11.github.io/2020/03/22/NLP-04/" target="_blank" rel="noopener">NLP系列4：NLP核心任务</a><br><a href="https://iloveyou11.github.io/2020/03/23/NLP-05/" target="_blank" rel="noopener">NLP系列5：重要模型与算法</a><br><a href="https://iloveyou11.github.io/2020/03/24/NLP-06/" target="_blank" rel="noopener">NLP系列6：词向量与文本生成</a></p>
+<p>以下是NLP相关模型的发展历程：</p>
+<img src="https://i.loli.net/2020/07/16/kCRwasGEUoS8qzK.png" alt="NLP模型发展" width="80%">
+
 <h4 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h4><ol>
 <li>最大匹配算法（贪心算法）<br>包括前向最大匹配和后向最大匹配，缺点是不能考虑语义，可能是局部最优</li>
 <li>考虑语义<br>基本思想：根据输入的句子，生成所有可能的分割，根据LM（语言模型，用来评估句子的合理程度，后面会讲到）选择其中最好的分割方式，但是效率低下。</li>
