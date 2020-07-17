@@ -18,7 +18,7 @@
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2020/07/12/UDbg9mChKXN61YL.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/12/GHMkD4ofsBpxw7J.png">
-<meta property="og:updated_time" content="2020-07-16T10:23:05.104Z">
+<meta property="og:updated_time" content="2020-07-17T04:54:02.030Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LDA模型深入">
 <meta name="twitter:description" content="什么是LDA？LDA（Latent Dirichlet Allocation）是一种文档主题生成模型，也称为一个三层贝叶斯概率模型，包含词、主题和文档三层结构。 LDA的目的就是要识别主题，即把文档—词汇矩阵变成文档—主题矩阵（分布）和主题—词汇矩阵（分布） 生成过程LDA 的产生过程描述了文档以及文档中文字的生成过程。在原始的 LDA 论文中，作者们描述了对于每一个文档而言有这么一种生成过程">
@@ -160,7 +160,7 @@
                             
                                 
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是LDA？"><span class="toc-text">什么是LDA？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成过程"><span class="toc-text">生成过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PLSA与LDA区别"><span class="toc-text">PLSA与LDA区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LDA模型变种"><span class="toc-text">LDA模型变种</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#作者LDA"><span class="toc-text">作者LDA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#时间动态LDA"><span class="toc-text">时间动态LDA</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是LDA？"><span class="toc-text">什么是LDA？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#生成过程"><span class="toc-text">生成过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PLSA与LDA区别"><span class="toc-text">PLSA与LDA区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LSA与LDA区别"><span class="toc-text">LSA与LDA区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LDA模型变种"><span class="toc-text">LDA模型变种</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#作者LDA"><span class="toc-text">作者LDA</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#时间动态LDA"><span class="toc-text">时间动态LDA</span></a></li></ol></li></ol>
     </div>
     
                                     <a id="more"></a>
@@ -191,6 +191,13 @@
 </ol>
 <img src="https://i.loli.net/2020/07/12/GHMkD4ofsBpxw7J.png" alt="PLSA与LDA" width="60%">
 
+<h3 id="LSA与LDA区别"><a href="#LSA与LDA区别" class="headerlink" title="LSA与LDA区别"></a>LSA与LDA区别</h3><p>LSA是latent semantic analysis，是一种信息检索模型，具体的流程如下：</p>
+<ol>
+<li>分析文档集合，建立词汇-文档矩阵（各词汇在各文档中的出现情况，矩阵非常稀疏）</li>
+<li>对词汇-文档矩阵进性奇异值分解（提取稀疏矩阵的特征）</li>
+<li>对SVD分解后的矩阵进行降维（提取这些特征中比较重要的特征）</li>
+<li>使用降维后的矩阵构建潜在语义空间（用比较重要的特征来表征词或文本）</li>
+</ol>
 <p><strong>LDA</strong></p>
 <ol>
 <li>按照先验概率<code>P(di)</code>选择一篇文档<code>di</code></li>
@@ -272,7 +279,7 @@
     
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是LDA？"><span class="post-toc-text">什么是LDA？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生成过程"><span class="post-toc-text">生成过程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PLSA与LDA区别"><span class="post-toc-text">PLSA与LDA区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LDA模型变种"><span class="post-toc-text">LDA模型变种</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#作者LDA"><span class="post-toc-text">作者LDA</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#时间动态LDA"><span class="post-toc-text">时间动态LDA</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#什么是LDA？"><span class="post-toc-text">什么是LDA？</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#生成过程"><span class="post-toc-text">生成过程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PLSA与LDA区别"><span class="post-toc-text">PLSA与LDA区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LSA与LDA区别"><span class="post-toc-text">LSA与LDA区别</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LDA模型变种"><span class="post-toc-text">LDA模型变种</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#作者LDA"><span class="post-toc-text">作者LDA</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#时间动态LDA"><span class="post-toc-text">时间动态LDA</span></a></li></ol></li></ol>
         </nav>
     </aside>
     

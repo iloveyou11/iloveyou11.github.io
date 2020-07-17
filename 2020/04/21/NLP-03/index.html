@@ -20,11 +20,13 @@
 <meta property="og:image" content="https://i.loli.net/2020/03/24/4aM9FzKUIkf2Qyq.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/NQPwGg37RjSTEA4.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/LrgJGIixyaWVPE5.jpg">
+<meta property="og:image" content="https://i.loli.net/2020/07/17/wxysWkM3ESdbqKY.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/17/Z1ncrgqLazU5sHM.png">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/FiHomXwWTuxqYfd.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/7ZxLw4ldUJKfchr.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/4w97WlatRuHb85G.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/gDfd3BVZvr68kQX.jpg">
-<meta property="og:updated_time" content="2020-07-16T10:15:07.377Z">
+<meta property="og:updated_time" content="2020-07-17T04:59:49.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP系列3：语言系统与NLP基础">
 <meta name="twitter:description" content="核心内容：专家系统、基于概率的系统、正则项、正则项的运用、正则参数搜索策略、MLE/MAP、lasso、set-coverage、SVM">
@@ -239,8 +241,14 @@
 <li>贝叶斯优化<br>不断调整先验，使后验概率不断变化，和遗传算法核心思想类似，但是采用的手段不同</li>
 </ol>
 <h4 id="MLE-MAP"><a href="#MLE-MAP" class="headerlink" title="MLE/MAP"></a>MLE/MAP</h4><p><strong>MLE：</strong>最大似然估计（仅仅考虑数据本身）<br><strong>MAP：</strong>最大后验估计（需要考虑先验知识）</p>
+<p>MLE与MAP的直观理解：<br>1、MLE（最大似然估计）：扔硬币，仅仅通过观测值2/3来预测正/反面向上的概率<br>2、MAP（最大后验估计）：扔硬币，仍然会得到观测值2/3，但拥有这个硬币的主人告诉我，出现正面的概率大概是80%，会与我的观测值2/3出现偏差（可能我观测到的样本不够多），这时计算正/反面向上的概率应结合先验概率（主人的想法）为66.7%~80%之间</p>
 <p>随着样本数杨的增大，先验所起到的作用会越来越小。当样本数N趋近于无穷大时，MAP的解趋近于MLE的解。</p>
-<p>高斯先验相当于加了L2正则项，拉普拉斯先验相当于加了L1正则项。</p>
+<p><code>adding prior is equivalent to regularization！</code><br><code>Gaussian Prior is L2 regularization</code>——高斯先验相当于加了L2正则项</p>
+<img src="https://i.loli.net/2020/07/17/wxysWkM3ESdbqKY.png" alt="L2" width="80%">
+
+<p><code>Laplace Prior is L1 regularization</code>——拉普拉斯先验相当于加了L1正则项</p>
+<img src="https://i.loli.net/2020/07/17/Z1ncrgqLazU5sHM.png" alt="L1" width="80%">
+
 <h4 id="lasso"><a href="#lasso" class="headerlink" title="lasso"></a>lasso</h4><p><strong>特征选择策略：</strong></p>
 <ol>
 <li>exhausted search：考虑所有可能的特征组合，评估各自准确率</li>

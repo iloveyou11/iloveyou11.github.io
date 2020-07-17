@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/03/24/UOtBQIfdwMDNJnq.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/rkECxu3j9W6UPKO.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/24/9EfpiKge6r3mxZF.jpg">
-<meta property="og:updated_time" content="2020-07-16T10:15:19.098Z">
+<meta property="og:updated_time" content="2020-07-17T04:55:03.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP系列2：分词与文本表示">
 <meta name="twitter:description" content="核心内容：中文分词、拼写错误纠正、停用词过滤、stemming操作、文本表示、文本相似度计算、倒排表、语言模型LM、masked LM、平滑算法">
@@ -222,7 +222,7 @@
 </ul>
 <p><strong>tf-idf</strong>的计算公式为： <code>tfidf(w)=tf(d,w)*idf(w)</code>，其中<code>tf(d,w)</code>表示文档d中w单词出现的词频，<code>idf(w)</code>表示单词的重要性，<code>idf(w)=log(N/N(w))</code><br>其中，TF是指计算词的词频，即某一个词出现在文本中的频率，注意需要进行归一化处理；IDF是指逆向文件频率，是一个词普遍重要性的度量。</p>
 <ol start="2">
-<li><strong>词向量表示法</strong>（考虑了单词的语义）<br>使用词向量word vector表示单词，称为分布式表示法。常见的深度学习模型有skip-gram、glove、CBow、RNN/LSTM、MF（矩阵分解）……</li>
+<li><strong>词向量表示法</strong>（考虑了单词的语义）<br>使用词向量word vector表示单词，称为分布式表示法。常见的深度学习模型有<code>skip-gram</code>、<code>glove</code>(global vectors for word representation)、<code>CBow</code>、<code>RNN/LSTM</code>、<code>MF</code>（矩阵分解）……</li>
 </ol>
 <img width="60%" src="https://i.loli.net/2020/03/24/1nK8ShFtClQ9mE3.png" alt="词向量可视化">
 
@@ -231,10 +231,14 @@
 <li>欧氏距离</li>
 <li>余弦相似度</li>
 </ol>
-<h4 id="倒排表"><a href="#倒排表" class="headerlink" title="倒排表"></a>倒排表</h4><p>在问答系统中，根据用户输入在知识库中匹配问题，找到相似度最大的问题。如果知识库有n个问题，则需要计算n次。复杂度为<code>o(n)*o(相似度计算)</code>，复杂度太高，不能满足实时性的要求。</p>
+<h4 id="倒排表"><a href="#倒排表" class="headerlink" title="倒排表"></a>倒排表</h4><p>问答系统需要进性相似度匹配，然后返回相似度最高的。时间复杂度为<code>o(n)*o(相似度计算)</code>，非常大，完全不能满足时间的要求。</p>
+<p>使用“层次过滤”思想，给定输入，先抛掉最不可能是答案的样本，再抛掉最不可能是答案的样本……一直到最后剩下的样本量就不大了，再计算相似度即可（余弦相似度）。过滤器的时间复杂度是层层递增的。</p>
 <img width="60%" src="https://i.loli.net/2020/03/24/UOtBQIfdwMDNJnq.jpg" alt="倒排表">
 
-<p>引入倒排表来提高系统的时间效率，核心思路是“层次过滤思想”。遇到输入问题时，做一层层的过滤，先抛掉毫不沾边的样本，再依次过滤……而不是一个个地计算余弦相似度。</p>
+<p>过滤器如何实现呢？需要引入倒排表：<br><strong>倒排表（Inverted Index）</strong>：有一个完整的词典库，分别记录每个单词出现在哪些文档中，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">我们：[Doc1，Doc13]</span><br><span class="line">昨天：[Doc2]</span><br><span class="line">在：[Doc1，Doc4，Doc5]</span><br><span class="line">运动：[Doc1，Doc3，Doc5]</span><br><span class="line">什么：[Doc1，Doc6]</span><br></pre></td></tr></table></figure>
+
+<p>这样可以快速找到哪个单词出现在哪个文档中（否则根据单词一个个去搜索文档时间复杂度非常高）</p>
 <h4 id="语言模型LM"><a href="#语言模型LM" class="headerlink" title="语言模型LM"></a>语言模型LM</h4><p>是否一句话从语法上通顺<br>unigram<br><code>p(w1,w2,w3,w4,w5)=p(w1)+p(w2)+p(w3)+p(w4)+p(w5)</code><br>bigram:<br><code>p(w1,w2,w3,w4,w5)= p(w1)+p(w2|w1)+p(w3|w2)+p(w4|w3)+p(w5|w4)</code><br>trigram:<br><code>p(w1,w2,w3,w4,w5)= p(w1)+p(w2|w1)+p(w3|w1w2)+p(w4|w2w3)+p(w5|w3w4)</code><br>依此类推可得n-gram</p>
 <p>N-Gram语言模型的评价方法：</p>
 <ol>
@@ -244,6 +248,7 @@
 <p>评价LM的质量（计算perplexity）：<br><code>perplexity=2^(-x)   x是最大似然估计</code></p>
 <img width="70%" src="https://i.loli.net/2020/03/24/rkECxu3j9W6UPKO.jpg" alt="perplexity">
 
+<p>perplexity（衡量语言模型的好坏）计算方法：<code>perplexity=2*(-x)</code>，perplexity越小越好。<br>每个likelihood都要计算（后一个词相对前一个词出现的概率），然后分别求对数，再求解平均值，即可得到x。</p>
 <p>例如，训练的三个模型unigram、bigram、trigram，perplexity分别为300、200、100，可知此次训练的trigram模型最好。</p>
 <h4 id="masked-LM"><a href="#masked-LM" class="headerlink" title="masked LM"></a>masked LM</h4><p>把部分单词“挖掉”，再来做预测（增加噪声，提高模型稳定性）</p>
 <h4 id="平滑算法"><a href="#平滑算法" class="headerlink" title="平滑算法"></a>平滑算法</h4><p>解决的问题：有些单词会未存在语料库中（新单词），如何评判它的重要程度？</p>

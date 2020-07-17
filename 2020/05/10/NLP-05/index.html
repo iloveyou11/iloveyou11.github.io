@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/03/25/5zEHtFvjQcOTuYK.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/25/y6mPZ3IndWJBcMk.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/25/zyU6rQ9qwuvjgl2.jpg">
-<meta property="og:updated_time" content="2020-07-16T10:14:46.302Z">
+<meta property="og:updated_time" content="2020-07-17T04:56:19.752Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP系列5：重要模型与算法">
 <meta name="twitter:description" content="核心内容：HMM、隐变量模型、EM算法、k-means算法、GMM、CRF">
@@ -244,6 +244,9 @@
 <p>高斯混合模型（GMM）具有更好的灵活性比K-means。使用GMMs，我们需要假设数据点是高斯分布，相对于环形的数据而言，这个假设的严格程度与均值相比弱很多。这样的话，我们有两个参数来描述簇的形状：均值和标准差。以二维为例，意味簇可以是任何一种椭圆形（因为我们有两个标准差在x和y方向）。因此，每个高斯分布会被分配到单一的聚类簇。</p>
 <p>为了在每个聚类簇中找到这两个高斯参数（e.g均值和标准差），我们将使用的优化算法称为expectation–maximization（EM）。请看下面的图片，以说明将高斯拟合聚类簇。然后，我们可以处理EM聚类过程使用GMM。</p>
 <h4 id="高斯混合模型（GMM）"><a href="#高斯混合模型（GMM）" class="headerlink" title="高斯混合模型（GMM）"></a>高斯混合模型（GMM）</h4><p>高斯混合模型（Gaussian Mixture Model）通常简称GMM，是一种业界广泛使用的聚类算法，该方法使用了高斯分布作为参数模型，并使用了期望最大（Expectation Maximization，简称EM）算法进行训练。</p>
+<p>GMM是高斯混合模型，属于<code>soft clustering</code>，而k-means是<code>hard clustering</code>，将多个高斯分布叠加在一起，拟合数据的能力更强。example:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">k-means：一个人-&gt;体育</span><br><span class="line">GMM：一个人-&gt;概率分布，体育（30%），科技（50%），音乐（20%）</span><br></pre></td></tr></table></figure>
+
 <p>高斯分布（Gaussian distribution）有时也被称为正态分布（normal distribution），是一种在自然界大量的存在的、最为常见的分布形式。</p>
 <p>模型的<code>EM训练过程</code>，直观的来讲是这样：我们通过观察采样的概率值和模型概率值的接近程度，来判断一个模型是否拟合良好。然后我们通过调整模型以让新模型更适配采样的概率值。反复迭代这个过程很多次，直到两个概率值非常接近时，我们停止更新并完成模型训练。</p>
 <p>现在我们要将这个过程用算法来实现，所使用的方法是模型生成的数据来决定似然值，即通过模型来计算数据的期望值。通过更新参数μ和σ来让期望值最大化。这个过程可以不断迭代直到两次迭代中生成的参数变化非常小为止。该过程和k-means的算法训练过程很相似（k-means不断更新类中心来让结果最大化），只不过在这里的高斯模型中，我们需要同时更新两个参数：分布的均值和标准差。</p>

@@ -19,11 +19,12 @@
 <meta property="og:image" content="https://i.loli.net/2020/07/13/4HJVnyOFmdNA9Eh.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/13/9wmjBbWXN5pTseY.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/16/wJriGV7cQYLtfNq.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/17/iWoAPZ1TOuDqhnk.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/16/t84cMzRsrFAhoJT.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/16/Y3ILtDFR7MkczoK.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/16/mgYp7IFyKun9OoD.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/16/LDcEvnGglPxHiYO.png">
-<meta property="og:updated_time" content="2020-07-16T08:53:11.690Z">
+<meta property="og:updated_time" content="2020-07-17T04:58:26.428Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Bert模型及其变种">
 <meta name="twitter:description" content="Bert（Bidirectional Encoder Representations from Transformers）说白了就是transformer中的encoder部分，就是怎么将transformer模型中的特征学习出来，是Word2Vec的替代者。  使用了Transformer作为算法的主要框架，能更彻底的捕捉语句中的双向关系； 使用了Mask Language Model(MLM)">
@@ -174,6 +175,12 @@
 <li>使用了Mask Language Model(MLM) 和 Next Sentence Prediction(NSP) 的多任务训练目标；</li>
 <li>使用更强大的机器训练更大规模的数据，使BERT的结果达到了全新的高度，并且Google开源了BERT模型，用户可以直接使用BERT作为Word2Vec的转换矩阵并高效的将其应用到自己的任务中。</li>
 </ol>
+<p><strong>bert的缺点：</strong></p>
+<ol>
+<li>测试数据是没有mask token的，训练数据与测试数据不匹配</li>
+<li>缺乏生成能力</li>
+<li>针对每个mask预测时没有考虑相关性（互相独立）</li>
+</ol>
 <h4 id="什么是预训练模型"><a href="#什么是预训练模型" class="headerlink" title="什么是预训练模型"></a>什么是预训练模型</h4><p>假设我们有大量的维基百科数据，那么我们可以用这部分巨大的数据来训练一个泛化能力很强的模型，当我们需要在特定场景使用时，例如做文本相似度计算，那么，只需要简单的修改一些输出层，再用我们自己的数据进行一个增量训练，对权重进行一个轻微的调整。预训练的好处在于在特定场景使用时不需要用大量的语料来进行训练，节约时间效率高效，bert就是这样的一个泛化能力较强的预训练模型。</p>
 <p>BERT预训练模型的输出结果，无非就是一个或多个向量。下游任务可以通过精调（改变预训练模型参数）或者特征抽取（不改变预训练模型参数，只是把预训练模型的输出作为特征输入到下游任务）两种方式进行使用。</p>
 <h4 id="如何训练Bert"><a href="#如何训练Bert" class="headerlink" title="如何训练Bert"></a>如何训练Bert</h4><p>BERT是一个多任务模型，它的任务是由两个自监督任务组成，即MLM和NSP。</p>
@@ -201,6 +208,9 @@
 <li>XLNet融合了Bert的结构和GPT的有向预测。</li>
 </ol>
 <img src="https://i.loli.net/2020/07/16/wJriGV7cQYLtfNq.png" alt="XLNet" width="80%">
+
+<p>XLNet解决了Bert的以下缺点：</p>
+<img src="https://i.loli.net/2020/07/17/iWoAPZ1TOuDqhnk.png" alt="XLNet改进" width="80%">
 
 <h5 id="SpanBert"><a href="#SpanBert" class="headerlink" title="SpanBert"></a>SpanBert</h5><p>对应论文：《Improving Pre-training by Representing and Predicting Spans》<br><code>预测一个范围内的所有词，而不是像Bert一样预测一个个的词。</code></p>
 <ol>
