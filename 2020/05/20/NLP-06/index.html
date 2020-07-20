@@ -25,7 +25,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/03/31/Un4A5FkGJ6BDChs.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/31/xDhEYdRyCwU97NG.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/31/snFX5OGP2TV9aRv.jpg">
-<meta property="og:updated_time" content="2020-07-16T10:14:36.749Z">
+<meta property="og:updated_time" content="2020-07-20T04:28:00.791Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP系列6：词向量与文本生成">
 <meta name="twitter:description" content="核心内容：词向量、xgboost、RNN、LSTM、GRU、attention机制、self-attention、good-representation、seq2seq、看图说话、深度文本匹配、BERT、LDA、transform">
@@ -173,7 +173,7 @@
                                     <p>核心内容：词向量、xgboost、RNN、LSTM、GRU、attention机制、self-attention、good-representation、seq2seq、看图说话、深度文本匹配、BERT、LDA、transform</p>
 <a id="more"></a>
 
-<p><a href="https://iloveyou11.github.io/2020/03/19/NLP-01/" target="_blank" rel="noopener">NLP系列1：NLP简介</a><br><a href="https://iloveyou11.github.io/2020/03/20/NLP-02/" target="_blank" rel="noopener">NLP系列2：分词与文本表示</a><br><a href="https://iloveyou11.github.io/2020/03/21/NLP-03/" target="_blank" rel="noopener">NLP系列3：语言系统与NLP基础</a><br><a href="https://iloveyou11.github.io/2020/03/22/NLP-04/" target="_blank" rel="noopener">NLP系列4：NLP核心任务</a><br><a href="https://iloveyou11.github.io/2020/03/23/NLP-05/" target="_blank" rel="noopener">NLP系列5：重要模型与算法</a><br><a href="https://iloveyou11.github.io/2020/03/24/NLP-06/" target="_blank" rel="noopener">NLP系列6：词向量与文本生成</a></p>
+<p><a href="https://iloveyou11.github.io/2020/03/22/NLP-01/" target="_blank" rel="noopener">NLP系列1：NLP简介</a><br>[NLP系列2：分词与文本表示](<a href="https://iloveyou11.github.io/2020/04/02/NLP-02/" target="_blank" rel="noopener">https://iloveyou11.github.io/2020/04/02/NLP-02/</a><br><a href="https://iloveyou11.github.io/2020/04/21/NLP-03/" target="_blank" rel="noopener">NLP系列3：语言系统与NLP基础</a><br><a href="https://iloveyou11.github.io/2020/05/02/NLP-04/" target="_blank" rel="noopener">NLP系列4：NLP核心任务</a><br><a href="https://iloveyou11.github.io/2020/05/10/NLP-05/" target="_blank" rel="noopener">NLP系列5：重要模型与算法</a><br><a href="https://iloveyou11.github.io/2020/05/20/NLP-06/" target="_blank" rel="noopener">NLP系列6：词向量与文本生成</a></p>
 <h3 id="词向量（wordvector）"><a href="#词向量（wordvector）" class="headerlink" title="词向量（wordvector）"></a>词向量（wordvector）</h3><img width="100%" src="https://i.loli.net/2020/03/25/lxXWp9yaeIjfq8Y.jpg" alt="词向量">
 
 <p>在NLP领域中，为了能表示人类的语言符号，一般会把这些符号转成一种数学向量形式以方便处理，我们把语言单词嵌入到向量空间中就叫<code>词嵌入（word embedding）</code>。<br>比如有比较流行的谷歌开源的 word2vec ，它能生成词向量，通过该词向量在一定程度上还可以用来度量词与词之间的相似性。word2vec采用的模型包含了连续词袋模型（CBOW）和Skip-Gram模型，并通过神经网络来训练。</p>
