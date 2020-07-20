@@ -17,7 +17,7 @@
 <meta property="og:description" content="什么是预训练模型预训练模型实际上就是已经训练过的模型或模型组件。它已经在大型训练集上经过了很好的训练，学习到了每个词的表示，并且保存下来所有的模型参数。 预训练模型的本质是用来文本特征提取，可以适用于迁移学习，减少前期训练词向量的成本。 预训练模型在word embedding就开始出现，相当于AlexNet在卷积神经网络的地位（雏形）。word embedding是将文字进行向量化，探索字词">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2020/07/20/pJaOoIxtEYBemMW.png">
-<meta property="og:updated_time" content="2020-07-20T04:30:29.231Z">
+<meta property="og:updated_time" content="2020-07-20T11:14:06.551Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="预训练语言模型">
 <meta name="twitter:description" content="什么是预训练模型预训练模型实际上就是已经训练过的模型或模型组件。它已经在大型训练集上经过了很好的训练，学习到了每个词的表示，并且保存下来所有的模型参数。 预训练模型的本质是用来文本特征提取，可以适用于迁移学习，减少前期训练词向量的成本。 预训练模型在word embedding就开始出现，相当于AlexNet在卷积神经网络的地位（雏形）。word embedding是将文字进行向量化，探索字词">
@@ -167,6 +167,8 @@
 <h3 id="什么是预训练模型"><a href="#什么是预训练模型" class="headerlink" title="什么是预训练模型"></a>什么是预训练模型</h3><p>预训练模型实际上就是已经训练过的模型或模型组件。它已经在大型训练集上经过了很好的训练，学习到了每个词的表示，并且保存下来所有的模型参数。</p>
 <p>预训练模型的本质是用来文本特征提取，可以适用于迁移学习，减少前期训练词向量的成本。</p>
 <p>预训练模型在word embedding就开始出现，相当于AlexNet在卷积神经网络的地位（雏形）。word embedding是将文字进行向量化，探索字词句的向量表示，如one-hot、tfidf等表示方法，但是这种表达方式非常稀疏，而且词的含义并没有得到表达，因此我们要探索稠密向量。</p>
+<p>在自然语言处理领域的背景下，预训练技术通过使用大规模无标注的文本语料来训练深层网络结构，从而得到一组模型参数，这种深层网络结构通常被称为“预训练模型”;将预训练好的模型参数应用到后续的其他特定任务上，这些特定任务通常被称为“下游任务”。</p>
+<p>预训练技术取得的巨大成功，很大程度上归功于其实现了<code>迁移学习</code>的概念。迁移学习本质上是在一个数据集上训练基础模型，通过微调等方式，使得模型可以在其他不同的数据集上处理不同的任务。预训练的过程如上文所述，是将预训练好的模型的相应结构和权重直接应用到下游任务上，从而实现“迁移学习”的概念，即将预训练模型“迁移”到下游任务。</p>
 <p>词向量的表达应该符合以下特征：</p>
 <ol>
 <li>在分布空间中，含义越类似的词语应该距离越近（相同类型的词语应该在同一簇）</li>
@@ -185,6 +187,9 @@
 <li>去噪自编码DAE，如Bert</li>
 <li>排列语言模型，如XLNet</li>
 </ol>
+<p>引用知乎@JayLou的图，展示一下ELMo以来的预训练语言模型发展的概况：</p>
+<img src alt="预训练模型表格" width="80%">
+
 <h3 id="分布式表示"><a href="#分布式表示" class="headerlink" title="分布式表示"></a>分布式表示</h3><p>以下是词向量表示法的分类：</p>
 <img src="https://i.loli.net/2020/07/20/pJaOoIxtEYBemMW.png" alt="分布式表示" width="100%">
 
