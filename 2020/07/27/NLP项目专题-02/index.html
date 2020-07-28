@@ -8,13 +8,13 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：  语言理解 文档召回和排序 文本生成辅助搜索  语言理解这块的任务都是以分类问题为准，所谓的理解，只是把语言抽象到某一个理解空间，将其进行标准化，以便进行批量化处理。主要步骤是：  实体标注(即命名实体识别) 实体消歧或指代消歧(基于知识的预测) 意图识别(句子级别预测，甚至就是简单的文本分类)  命名实体识别（NER）实体标注方面，传统">
+  <meta name="description" content="NLP项目专题-01-文本分类NLP项目专题-02-自动补全NLP项目专题-03-语义消歧 自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：  语言理解 文档召回和排序 文本生成辅助搜索  语言理解这块的任务都是以分类问题为准，所谓的理解，只是把语言抽象到某一个理解空间，将其进行标准化，以便进行批量化处理。主要步骤是：  实体标注(即命名实体识别) 实体消歧或指代消歧(基于知识的预测)">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLP项目专题-02">
 <meta property="og:url" content="http://localhost:4000/2020/07/27/NLP项目专题-02/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：  语言理解 文档召回和排序 文本生成辅助搜索  语言理解这块的任务都是以分类问题为准，所谓的理解，只是把语言抽象到某一个理解空间，将其进行标准化，以便进行批量化处理。主要步骤是：  实体标注(即命名实体识别) 实体消歧或指代消歧(基于知识的预测) 意图识别(句子级别预测，甚至就是简单的文本分类)  命名实体识别（NER）实体标注方面，传统">
+<meta property="og:description" content="NLP项目专题-01-文本分类NLP项目专题-02-自动补全NLP项目专题-03-语义消歧 自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：  语言理解 文档召回和排序 文本生成辅助搜索  语言理解这块的任务都是以分类问题为准，所谓的理解，只是把语言抽象到某一个理解空间，将其进行标准化，以便进行批量化处理。主要步骤是：  实体标注(即命名实体识别) 实体消歧或指代消歧(基于知识的预测)">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2020/07/23/MPQpLulqTESiIna.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/27/qPQNLlFvnzTyUHr.png">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="https://i.loli.net/2020/07/27/MC2DtKFon9jUhPz.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/27/smUq8pnOEoQVzPk.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/27/WUANVdqfYw28HPs.png">
-<meta property="og:updated_time" content="2020-07-28T03:05:04.256Z">
+<meta property="og:updated_time" content="2020-07-28T03:08:20.603Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP项目专题-02">
-<meta name="twitter:description" content="自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：  语言理解 文档召回和排序 文本生成辅助搜索  语言理解这块的任务都是以分类问题为准，所谓的理解，只是把语言抽象到某一个理解空间，将其进行标准化，以便进行批量化处理。主要步骤是：  实体标注(即命名实体识别) 实体消歧或指代消歧(基于知识的预测) 意图识别(句子级别预测，甚至就是简单的文本分类)  命名实体识别（NER）实体标注方面，传统">
+<meta name="twitter:description" content="NLP项目专题-01-文本分类NLP项目专题-02-自动补全NLP项目专题-03-语义消歧 自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：  语言理解 文档召回和排序 文本生成辅助搜索  语言理解这块的任务都是以分类问题为准，所谓的理解，只是把语言抽象到某一个理解空间，将其进行标准化，以便进行批量化处理。主要步骤是：  实体标注(即命名实体识别) 实体消歧或指代消歧(基于知识的预测)">
 <meta name="twitter:image" content="https://i.loli.net/2020/07/23/MPQpLulqTESiIna.png">
   
   
@@ -169,7 +169,8 @@
         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#语言理解"><span class="toc-text">语言理解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#命名实体识别（NER）"><span class="toc-text">命名实体识别（NER）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#HMM-隐马尔可夫"><span class="toc-text">HMM(隐马尔可夫)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CRF-条件随机场"><span class="toc-text">CRF(条件随机场)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#LSTM-CRF"><span class="toc-text">LSTM+CRF</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CNN-CRF"><span class="toc-text">CNN+CRF</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#BERT-（LSTM）-CRF"><span class="toc-text">BERT+（LSTM）+CRF</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指代消歧"><span class="toc-text">指代消歧</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基于二元分类的方法"><span class="toc-text">基于二元分类的方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#端到端的神经共指消解"><span class="toc-text">端到端的神经共指消解</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文本分类"><span class="toc-text">文本分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文档召回和排序"><span class="toc-text">文档召回和排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文档召回"><span class="toc-text">文档召回</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文档排序"><span class="toc-text">文档排序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#TextRank"><span class="toc-text">TextRank</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本生成辅助搜索"><span class="toc-text">文本生成辅助搜索</span></a></li></ol>
     </div>
     
-                                    <p>自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：</p>
+                                    <p><a href="https://iloveyou11.github.io/2020/07/26/NLP%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98-01/" target="_blank" rel="noopener">NLP项目专题-01-文本分类</a><br><a href="https://iloveyou11.github.io/2020/07/27/NLP%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98-02/" target="_blank" rel="noopener">NLP项目专题-02-自动补全</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98-03/" target="_blank" rel="noopener">NLP项目专题-03-语义消歧</a></p>
+<p>自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：</p>
 <ol>
 <li>语言理解</li>
 <li>文档召回和排序</li>

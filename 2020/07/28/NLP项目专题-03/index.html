@@ -8,19 +8,19 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="语义消歧方法消歧任务主要分以下几种：  分词的消歧 多义词的具体词义 词性的判断  对于词性的判断，可以看做一个词性标注的问题，通常需要考虑邻近上下文。如果是词义判决，可能会有相隔很远的词语来决定其词性。因此大部分的词性标注模型简单地使用当前上下文，而语义消歧模型通常使用规模广泛一些的上下文中的实词。 1234消歧方法分为以下几种：(1)有监督消歧(2)无监督消歧(3)基于词典的消歧  有监督消歧">
+  <meta name="description" content="NLP项目专题-01-文本分类NLP项目专题-02-自动补全NLP项目专题-03-语义消歧 语义消歧方法消歧任务主要分以下几种：  分词的消歧 多义词的具体词义 词性的判断  对于词性的判断，可以看做一个词性标注的问题，通常需要考虑邻近上下文。如果是词义判决，可能会有相隔很远的词语来决定其词性。因此大部分的词性标注模型简单地使用当前上下文，而语义消歧模型通常使用规模广泛一些的上下文中的实词。 12">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLP项目专题-03">
 <meta property="og:url" content="http://localhost:4000/2020/07/28/NLP项目专题-03/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="语义消歧方法消歧任务主要分以下几种：  分词的消歧 多义词的具体词义 词性的判断  对于词性的判断，可以看做一个词性标注的问题，通常需要考虑邻近上下文。如果是词义判决，可能会有相隔很远的词语来决定其词性。因此大部分的词性标注模型简单地使用当前上下文，而语义消歧模型通常使用规模广泛一些的上下文中的实词。 1234消歧方法分为以下几种：(1)有监督消歧(2)无监督消歧(3)基于词典的消歧  有监督消歧">
+<meta property="og:description" content="NLP项目专题-01-文本分类NLP项目专题-02-自动补全NLP项目专题-03-语义消歧 语义消歧方法消歧任务主要分以下几种：  分词的消歧 多义词的具体词义 词性的判断  对于词性的判断，可以看做一个词性标注的问题，通常需要考虑邻近上下文。如果是词义判决，可能会有相隔很远的词语来决定其词性。因此大部分的词性标注模型简单地使用当前上下文，而语义消歧模型通常使用规模广泛一些的上下文中的实词。 12">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2020/07/28/o2Rfa6VNhkiOgH5.png">
-<meta property="og:updated_time" content="2020-07-28T03:04:00.780Z">
+<meta property="og:updated_time" content="2020-07-28T03:08:24.870Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP项目专题-03">
-<meta name="twitter:description" content="语义消歧方法消歧任务主要分以下几种：  分词的消歧 多义词的具体词义 词性的判断  对于词性的判断，可以看做一个词性标注的问题，通常需要考虑邻近上下文。如果是词义判决，可能会有相隔很远的词语来决定其词性。因此大部分的词性标注模型简单地使用当前上下文，而语义消歧模型通常使用规模广泛一些的上下文中的实词。 1234消歧方法分为以下几种：(1)有监督消歧(2)无监督消歧(3)基于词典的消歧  有监督消歧">
+<meta name="twitter:description" content="NLP项目专题-01-文本分类NLP项目专题-02-自动补全NLP项目专题-03-语义消歧 语义消歧方法消歧任务主要分以下几种：  分词的消歧 多义词的具体词义 词性的判断  对于词性的判断，可以看做一个词性标注的问题，通常需要考虑邻近上下文。如果是词义判决，可能会有相隔很远的词语来决定其词性。因此大部分的词性标注模型简单地使用当前上下文，而语义消歧模型通常使用规模广泛一些的上下文中的实词。 12">
 <meta name="twitter:image" content="https://i.loli.net/2020/07/28/o2Rfa6VNhkiOgH5.png">
   
   
@@ -162,7 +162,8 @@
         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#语义消歧方法"><span class="toc-text">语义消歧方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#有监督消歧"><span class="toc-text">有监督消歧</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#（1）贝叶斯分类的原理"><span class="toc-text">（1）贝叶斯分类的原理</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#（2）基于信息论的方法"><span class="toc-text">（2）基于信息论的方法</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#无监督消歧"><span class="toc-text">无监督消歧</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#基于词典的消歧"><span class="toc-text">基于词典的消歧</span></a></li></ol></li></ol>
     </div>
     
-                                    <h3 id="语义消歧方法"><a href="#语义消歧方法" class="headerlink" title="语义消歧方法"></a>语义消歧方法</h3><p>消歧任务主要分以下几种：</p>
+                                    <p><a href="https://iloveyou11.github.io/2020/07/26/NLP%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98-01/" target="_blank" rel="noopener">NLP项目专题-01-文本分类</a><br><a href="https://iloveyou11.github.io/2020/07/27/NLP%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98-02/" target="_blank" rel="noopener">NLP项目专题-02-自动补全</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E9%A1%B9%E7%9B%AE%E4%B8%93%E9%A2%98-03/" target="_blank" rel="noopener">NLP项目专题-03-语义消歧</a></p>
+<h3 id="语义消歧方法"><a href="#语义消歧方法" class="headerlink" title="语义消歧方法"></a>语义消歧方法</h3><p>消歧任务主要分以下几种：</p>
 <ol>
 <li>分词的消歧</li>
 <li>多义词的具体词义</li>
