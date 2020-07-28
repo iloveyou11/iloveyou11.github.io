@@ -29,7 +29,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/07/12/oM3ZXHFuBzD67Wn.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/12/UzZWQCG64Et9y5P.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/22/JXgR19pBNy7xior.png">
-<meta property="og:updated_time" content="2020-07-22T03:31:21.454Z">
+<meta property="og:updated_time" content="2020-07-27T09:12:29.909Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="transformer">
 <meta name="twitter:description" content="什么是transformer一句话解释：transformer是带有self-attention的seq2seq，输出能同时计算，可以代替RNN结构（必须按输入的顺序计算），因此transformer对于sequence to sequence的应用场景更为高效。 transformer是首个完全抛弃RNN的recurrence，CNN的convolution，仅用attention来做特征抽取的">
@@ -282,6 +282,8 @@
 <p>Transformer-XL在没有大幅度提高算力需求的情况下，一定程度上解决了长距离依赖问题。</p>
 <h4 id="Reformer"><a href="#Reformer" class="headerlink" title="Reformer"></a>Reformer</h4><p>针对transformer处理文本长度过短（512）的问题，提出了两个机制分别解决这两个问题，它们是<code>locality-sensitve hashing(LSH) attention</code>和<code>Reversible transformer</code>。</p>
 <p>首先用LSH来对每个segment进行分桶，将相似的部分放在同一个桶里面。然后我们将每一个桶并行化计算其中两两之间的点乘。还考虑到有一定的概率相似的向量会被分到不同的桶里，因此采用了多轮hashing来降低这个概率。Reformer在减少了attention计算量的情况下，还减少了模型的内存占用，为未来大型预训练模型的落地奠定了基础。</p>
+<hr>
+<p>推荐阅读：<a href="http://mantchs.com/2019/09/26/NLP/Transformer/" target="_blank" rel="noopener">【NLP】Transformer</a></p>
 
                                         
                 </div>
