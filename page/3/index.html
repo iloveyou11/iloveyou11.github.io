@@ -120,14 +120,14 @@
       <div class="outer">
         <section id="main" class="body-wrap">
   
-    <article id="post-NLP模型-04-CRF" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-NLP模型-05-transformer" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/28/NLP模型-04-CRF/"  >NLP模型-04-CRF</a>
+      <a class="article-title" href="/2020/07/28/NLP模型-05-transformer/"  >NLP模型-05-transformer</a>
     </h1>
   
 
@@ -145,9 +145,10 @@
                     
                         <div class="article-feed">
                             <p>
-                                CRF简介CRF是条件随机场（Conditional Random Fields）的简称，是给定一组输入序列条件下另一组输出序列的条件概率分布模型。
-为什么要使用CRF模型？
-举个例子，我们今有一项任务是“图像分类”，如果我们只是单纯看到了一个人闭着嘴的照片，其实很难去标记他到底在干什么，如果我们能够获得这张照片前一点点时间的照片的话，则很好标记，如在时间序列上前一张的照...
+                                <p><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-01-%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" target="_blank" rel="noopener">NLP模型-01-预训练语言模型</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-02-HMM/" target="_blank" rel="noopener">NLP模型-02-HMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-03-GMM/" target="_blank" rel="noopener">NLP模型-03-GMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-04-CRF/" target="_blank" rel="noopener">NLP模型-04-CRF</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-05-transformer/" target="_blank" rel="noopener">NLP模型-05-transformer</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-06-Bert/" target="_blank" rel="noopener">NLP模型-06-Bert</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-07-LDA/" target="_blank" rel="noopener">NLP模型-07-LDA</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-08-fastText/" target="_blank" rel="noopener">NLP模型-08-fastText</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-09-Glove/" target="_blank" rel="noopener">NLP模型-09-Glove</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-10-textRNN%20&%20textCNN/" target="_blank" rel="noopener">NLP模型-10-textRNN &amp; textCNN</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-11-seq2seq/" target="_blank" rel="noopener">NLP模型-11-seq2seq</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-12-attention/" target="_blank" rel="noopener">NLP模型-12-attention</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-13-XLnet/" target="_blank" rel="noopener">NLP模型-13-XLnet</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-14-%E6%A0%B8%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">NLP模型-14-核方法</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-15-%E6%B7%B1%E5%BA%A6%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-15-深度玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-16-%E5%8F%97%E9%99%90%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-16-受限玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-17-%E6%B7%B1%E5%BA%A6%E4%BF%A1%E5%BF%B5%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">NLP模型-17-深度信念网络</a></p>
+<h3 id="什么是transformer"><a href="#什么是transformer" class="headerlink" title="什么是transformer"></a>什么是transformer</h3><p>一句话解释：<code>transformer</code>是带有<code>self-attention</code>的<code>seq2seq</code>，输出能同时计算，可以代替RNN结构（必须按输入的顺序计算），因此transformer对于sequence to sequence的应用场景更为高效。</p>
+<p>transformer是首个完全抛弃RNN的recurrence，CNN的convolution，仅用attention来做特征抽取的模型。</p>
+<p><strong>Transformer中抛弃了传统的CNN和RNN，整个网络结构完全是由Attention机制组成。</strong></p>
                             </p>
                         </div>
                         
@@ -163,7 +164,56 @@
                                             
                                 </ul>
                                 
-                                    <a href="/2020/07/28/NLP模型-04-CRF/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    <a href="/2020/07/28/NLP模型-05-transformer/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP模型-06-Bert" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP模型-06-Bert/"  >NLP模型-06-Bert</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp; textCNNNLP模型-11-seq2seqNLP模型-12-atte...
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP模型-06-Bert/#more" class="article-more-link" >more&gt;&gt;</a>
                                     
                 </footer>
     </div>
@@ -196,9 +246,7 @@
                     
                         <div class="article-feed">
                             <p>
-                                什么是LDA？LDA（Latent Dirichlet Allocation）是一种文档主题生成模型，也称为一个三层贝叶斯概率模型，包含词、主题和文档三层结构。
-LDA的目的就是要识别主题，即把文档—词汇矩阵变成文档—主题矩阵（分布）和主题—词汇矩阵（分布）
-生成过程LDA 的产生过程描述了文档以及文档中文字的生成过程。在原始的 LDA 论文中，作者们描述了对于每一个文档...
+                                NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp; textCNNNLP模型-11-seq2seqNLP模型-12-atte...
                             </p>
                         </div>
                         
@@ -247,7 +295,7 @@ LDA的目的就是要识别主题，即把文档—词汇矩阵变成文档—�
                     
                         <div class="article-feed">
                             <p>
-                                fastText初始fastText是一个快速文本分类算法，FastText 算法能获得和深度模型相同的精度，但是计算时间却要远远小于深度学习模型。fastText 可以作为一个文本分类的 baseline 模型。fastText不需要训练好的词向量模型，它会自己训练词向量模型。fastText两个重要的优化：Hierarchical Softmax、N-gram。fas...
+                                NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp; textCNNNLP模型-11-seq2seqNLP模型-12-atte...
                             </p>
                         </div>
                         
@@ -264,58 +312,6 @@ LDA的目的就是要识别主题，即把文档—词汇矩阵变成文档—�
                                 </ul>
                                 
                                     <a href="/2020/07/28/NLP模型-08-fastText/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
-    <article id="post-NLP模型-06-Bert" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/28/NLP模型-06-Bert/"  >NLP模型-06-Bert</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                Bert（Bidirectional Encoder Representations from Transformers）说白了就是transformer中的encoder部分，就是怎么将transformer模型中的特征学习出来，是Word2Vec的替代者。
-
-使用了Transformer作为算法的主要框架，能更彻底的捕捉语句中的双向关系；
-使用了Mask Langua...
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-28
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/28/NLP模型-06-Bert/#more" class="article-more-link" >more&gt;&gt;</a>
                                     
                 </footer>
     </div>
@@ -348,13 +344,7 @@ LDA的目的就是要识别主题，即把文档—词汇矩阵变成文档—�
                     
                         <div class="article-feed">
                             <p>
-                                GloVe是Global Vectors for Word Representation的简称，是一个基于全局词频统计的词表征工具，可以将单词表示为向量，这些向量可以刻画单词的语义特征，通过向量之间的距离可以计算两个单词之间的予以相似度。
-Glove流程
-构建共现矩阵（就是文档中单词两两同时出现次数矩阵）
-
-
-
-根据语料库构建一个共现矩阵X，矩阵中的每一个元素Xij代表单...
+                                NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp; textCNNNLP模型-11-seq2seqNLP模型-12-atte...
                             </p>
                         </div>
                         
@@ -371,65 +361,6 @@ Glove流程
                                 </ul>
                                 
                                     <a href="/2020/07/28/NLP模型-09-Glove/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
-    <article id="post-NLP模型-10-textRNN &amp; textCNN" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/28/NLP模型-10-textRNN & textCNN/"  >NLP模型-10-textRNN&amp;textCNN</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                TextRNN模型结构TextRNN是利用RNN网络来解决文本分类问题，当然，也可以采用RNN的变种LSTM、GRU来实现……
-文本分类的任务有：
-
-垃圾邮件分类
-情感分析
-新闻/报道主题分析
-问答系统中的问句分类
-……
-
-
-结构1流程：embedding—&gt;BiLSTM—&gt;concat final output/average all output—–&gt...
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-28
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/28/NLP模型-10-textRNN & textCNN/#more" class="article-more-link" >more&gt;&gt;</a>
                                     
                 </footer>
     </div>
@@ -462,8 +393,7 @@ Glove流程
                     
                         <div class="article-feed">
                             <p>
-                                seq2seq初识当输入和输出都是不定长序列时，则可以使用编码器-解码器或seq2seq模型解决。
-seq2seq属于encoder-decoder结构的一种，常见是encoder-decoder结构，基本思想就是利用两个RNN，一个RNN作为encoder，另一个RNN作为decoder，两个RNN网络是共同训练的。encoder负责将输入序列压缩成指定长度的向量，这个...
+                                NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp; textCNNNLP模型-11-seq2seqNLP模型-12-atte...
                             </p>
                         </div>
                         
@@ -480,6 +410,55 @@ seq2seq属于encoder-decoder结构的一种，常见是encoder-decoder结构，�
                                 </ul>
                                 
                                     <a href="/2020/07/28/NLP模型-11-seq2seq/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP模型-10-textRNN &amp; textCNN" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP模型-10-textRNN & textCNN/"  >NLP模型-10-textRNN&amp;textCNN</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp; textCNNNLP模型-11-seq2seqNLP模型-12-atte...
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP模型-10-textRNN & textCNN/#more" class="article-more-link" >more&gt;&gt;</a>
                                     
                 </footer>
     </div>
@@ -512,9 +491,7 @@ seq2seq属于encoder-decoder结构的一种，常见是encoder-decoder结构，�
                     
                         <div class="article-feed">
                             <p>
-                                何为Attention
-
-Attention是一种用于提升基于RNN（LSTM或GRU）的Encoder + Decoder模型的效果的的机制。Attention目前非常流行，广泛应用于机器翻译、语音识别、图像标注等很多领域，之所以它这么受欢迎，是因为Attention给模型赋予了区分辨别的能力，例如，在机器翻译、语音识别应用中，为句子中的每个词赋予不同的权重，使神经网络...
+                                NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp; textCNNNLP模型-11-seq2seqNLP模型-12-atte...
                             </p>
                         </div>
                         
@@ -531,58 +508,6 @@ Attention是一种用于提升基于RNN（LSTM或GRU）的Encoder + Decoder模�
                                 </ul>
                                 
                                     <a href="/2020/07/28/NLP模型-12-attention/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
-    <article id="post-NLP模型-13-XLnet" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/28/NLP模型-13-XLnet/"  >NLP模型-13-XLNet</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                XLNet初识XLNet 是一个类似 BERT 的模型，而不是完全不同的模型。先将句子打乱，再复原句子。XLNet融合了GPT和Bert两个模型，等效为mask机制+序列预测的难度加强版。
-XLNet在2019年6月发布，在20个任务上超过了BERT的表现，并在18个任务上取得了SOA，包括机器问答、自然语言推断、情感分析和文档排序。
-
-GPT是自编码模型， 通过双向LS...
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-28
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/28/NLP模型-13-XLnet/#more" class="article-more-link" >more&gt;&gt;</a>
                                     
                 </footer>
     </div>
@@ -615,11 +540,7 @@ GPT是自编码模型， 通过双向LS...
                     
                         <div class="article-feed">
                             <p>
-                                核方法核方法是把低维空间的非线性可分问题，转化为高维空间的线性可分问题的方法。
-核技巧核技巧是一种利用核函数直接计算φ(x),φ(z)，以避开分别计算φ(x)和φ(z)，从而加速核方法计算的技巧。得益于SVM对偶问题的表现形式，核技巧可以应用于SVM。
-核函数核函数就是低维空间中的内积的某个函数，即核函数就等于就是高维空间的内积。
-待补充……
-
+                                NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp; textCNNNLP模型-11-seq2seqNLP模型-12-atte...
                             </p>
                         </div>
                         
@@ -636,6 +557,55 @@ GPT是自编码模型， 通过双向LS...
                                 </ul>
                                 
                                     <a href="/2020/07/28/NLP模型-14-核方法/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP模型-15-深度玻尔兹曼机" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP模型-15-深度玻尔兹曼机/"  >NLP模型-15-深度玻尔兹曼机</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp; textCNNNLP模型-11-seq2seqNLP模型-12-atte...
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP模型-15-深度玻尔兹曼机/#more" class="article-more-link" >more&gt;&gt;</a>
                                     
                 </footer>
     </div>

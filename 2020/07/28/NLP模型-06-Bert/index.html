@@ -8,13 +8,13 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="Bert（Bidirectional Encoder Representations from Transformers）说白了就是transformer中的encoder部分，就是怎么将transformer模型中的特征学习出来，是Word2Vec的替代者。  使用了Transformer作为算法的主要框架，能更彻底的捕捉语句中的双向关系； 使用了Mask Language Model(MLM)">
+  <meta name="description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLP模型-06-Bert">
 <meta property="og:url" content="http://localhost:4000/2020/07/28/NLP模型-06-Bert/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="Bert（Bidirectional Encoder Representations from Transformers）说白了就是transformer中的encoder部分，就是怎么将transformer模型中的特征学习出来，是Word2Vec的替代者。  使用了Transformer作为算法的主要框架，能更彻底的捕捉语句中的双向关系； 使用了Mask Language Model(MLM)">
+<meta property="og:description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2020/07/13/4HJVnyOFmdNA9Eh.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/13/9wmjBbWXN5pTseY.png">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="https://i.loli.net/2020/07/16/Y3ILtDFR7MkczoK.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/16/mgYp7IFyKun9OoD.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/16/LDcEvnGglPxHiYO.png">
-<meta property="og:updated_time" content="2020-07-28T06:16:11.811Z">
+<meta property="og:updated_time" content="2020-07-28T12:20:00.227Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP模型-06-Bert">
-<meta name="twitter:description" content="Bert（Bidirectional Encoder Representations from Transformers）说白了就是transformer中的encoder部分，就是怎么将transformer模型中的特征学习出来，是Word2Vec的替代者。  使用了Transformer作为算法的主要框架，能更彻底的捕捉语句中的双向关系； 使用了Mask Language Model(MLM)">
+<meta name="twitter:description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta name="twitter:image" content="https://i.loli.net/2020/07/13/4HJVnyOFmdNA9Eh.png">
   
   
@@ -169,7 +169,8 @@
         <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#什么是预训练模型"><span class="toc-text">什么是预训练模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#如何训练Bert"><span class="toc-text">如何训练Bert</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#举例说明"><span class="toc-text">举例说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bert模型如何使用"><span class="toc-text">Bert模型如何使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bert模型的变种"><span class="toc-text">Bert模型的变种</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#XLNet"><span class="toc-text">XLNet</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#SpanBert"><span class="toc-text">SpanBert</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#T5"><span class="toc-text">T5</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#StructBert"><span class="toc-text">StructBert</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#FastBert"><span class="toc-text">FastBert</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#VL-Bert"><span class="toc-text">VL-Bert</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#VideoBert"><span class="toc-text">VideoBert</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#DynaBERT"><span class="toc-text">DynaBERT</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对于Bert的思考"><span class="toc-text">对于Bert的思考</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Bert的应用"><span class="toc-text">Bert的应用</span></a></li></ol>
     </div>
     
-                                    <p>Bert（Bidirectional Encoder Representations from Transformers）说白了就是<code>transformer</code>中的<code>encoder</code>部分，就是怎么将transformer模型中的特征学习出来，是Word2Vec的替代者。</p>
+                                    <p><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-01-%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" target="_blank" rel="noopener">NLP模型-01-预训练语言模型</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-02-HMM/" target="_blank" rel="noopener">NLP模型-02-HMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-03-GMM/" target="_blank" rel="noopener">NLP模型-03-GMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-04-CRF/" target="_blank" rel="noopener">NLP模型-04-CRF</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-05-transformer/" target="_blank" rel="noopener">NLP模型-05-transformer</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-06-Bert/" target="_blank" rel="noopener">NLP模型-06-Bert</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-07-LDA/" target="_blank" rel="noopener">NLP模型-07-LDA</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-08-fastText/" target="_blank" rel="noopener">NLP模型-08-fastText</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-09-Glove/" target="_blank" rel="noopener">NLP模型-09-Glove</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-10-textRNN%20&%20textCNN/" target="_blank" rel="noopener">NLP模型-10-textRNN &amp; textCNN</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-11-seq2seq/" target="_blank" rel="noopener">NLP模型-11-seq2seq</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-12-attention/" target="_blank" rel="noopener">NLP模型-12-attention</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-13-XLnet/" target="_blank" rel="noopener">NLP模型-13-XLnet</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-14-%E6%A0%B8%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">NLP模型-14-核方法</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-15-%E6%B7%B1%E5%BA%A6%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-15-深度玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-16-%E5%8F%97%E9%99%90%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-16-受限玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-17-%E6%B7%B1%E5%BA%A6%E4%BF%A1%E5%BF%B5%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">NLP模型-17-深度信念网络</a></p>
+<p>Bert（Bidirectional Encoder Representations from Transformers）说白了就是<code>transformer</code>中的<code>encoder</code>部分，就是怎么将transformer模型中的特征学习出来，是Word2Vec的替代者。</p>
 <ol>
 <li>使用了Transformer作为算法的主要框架，能更彻底的捕捉语句中的双向关系；</li>
 <li>使用了Mask Language Model(MLM) 和 Next Sentence Prediction(NSP) 的多任务训练目标；</li>
@@ -337,19 +338,19 @@
         
 <nav id="article-nav">
   
-    <a href="/2020/07/28/NLP模型-08-fastText/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/28/NLP模型-05-transformer/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          NLP模型-08-fastText
+          NLP模型-05-transformer
         
       </span>
     </a>
   
   
-    <a href="/2020/07/28/NLP模型-09-Glove/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">NLP模型-09-Glove</span>
+    <a href="/2020/07/28/NLP模型-07-LDA/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">NLP模型-07-LDA</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   

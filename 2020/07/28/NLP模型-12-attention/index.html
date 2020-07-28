@@ -8,23 +8,23 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="何为Attention  Attention是一种用于提升基于RNN（LSTM或GRU）的Encoder + Decoder模型的效果的的机制。Attention目前非常流行，广泛应用于机器翻译、语音识别、图像标注等很多领域，之所以它这么受欢迎，是因为Attention给模型赋予了区分辨别的能力，例如，在机器翻译、语音识别应用中，为句子中的每个词赋予不同的权重，使神经网络模型的学习变得更加灵活。">
+  <meta name="description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLP模型-12-attention">
 <meta property="og:url" content="http://localhost:4000/2020/07/28/NLP模型-12-attention/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="何为Attention  Attention是一种用于提升基于RNN（LSTM或GRU）的Encoder + Decoder模型的效果的的机制。Attention目前非常流行，广泛应用于机器翻译、语音识别、图像标注等很多领域，之所以它这么受欢迎，是因为Attention给模型赋予了区分辨别的能力，例如，在机器翻译、语音识别应用中，为句子中的每个词赋予不同的权重，使神经网络模型的学习变得更加灵活。">
+<meta property="og:description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2020/03/31/NF5q9JroSgapxTt.png">
 <meta property="og:image" content="https://i.loli.net/2020/03/31/UEuWVo8qeidIX4h.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/31/t1CbX8recRGfVpv.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/31/Un4A5FkGJ6BDChs.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/03/31/xDhEYdRyCwU97NG.jpg">
-<meta property="og:updated_time" content="2020-07-28T09:00:51.311Z">
+<meta property="og:updated_time" content="2020-07-28T12:20:27.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP模型-12-attention">
-<meta name="twitter:description" content="何为Attention  Attention是一种用于提升基于RNN（LSTM或GRU）的Encoder + Decoder模型的效果的的机制。Attention目前非常流行，广泛应用于机器翻译、语音识别、图像标注等很多领域，之所以它这么受欢迎，是因为Attention给模型赋予了区分辨别的能力，例如，在机器翻译、语音识别应用中，为句子中的每个词赋予不同的权重，使神经网络模型的学习变得更加灵活。">
+<meta name="twitter:description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta name="twitter:image" content="https://i.loli.net/2020/03/31/NF5q9JroSgapxTt.png">
   
   
@@ -166,7 +166,8 @@
         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#何为Attention"><span class="toc-text">何为Attention</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#self-attention"><span class="toc-text">self-attention</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#原理"><span class="toc-text">原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#计算流程"><span class="toc-text">计算流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#优势"><span class="toc-text">优势</span></a></li></ol></li></ol>
     </div>
     
-                                    <h3 id="何为Attention"><a href="#何为Attention" class="headerlink" title="何为Attention"></a>何为Attention</h3><img width="60%" src="https://i.loli.net/2020/03/31/NF5q9JroSgapxTt.png" alt="attention">
+                                    <p><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-01-%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" target="_blank" rel="noopener">NLP模型-01-预训练语言模型</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-02-HMM/" target="_blank" rel="noopener">NLP模型-02-HMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-03-GMM/" target="_blank" rel="noopener">NLP模型-03-GMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-04-CRF/" target="_blank" rel="noopener">NLP模型-04-CRF</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-05-transformer/" target="_blank" rel="noopener">NLP模型-05-transformer</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-06-Bert/" target="_blank" rel="noopener">NLP模型-06-Bert</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-07-LDA/" target="_blank" rel="noopener">NLP模型-07-LDA</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-08-fastText/" target="_blank" rel="noopener">NLP模型-08-fastText</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-09-Glove/" target="_blank" rel="noopener">NLP模型-09-Glove</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-10-textRNN%20&%20textCNN/" target="_blank" rel="noopener">NLP模型-10-textRNN &amp; textCNN</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-11-seq2seq/" target="_blank" rel="noopener">NLP模型-11-seq2seq</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-12-attention/" target="_blank" rel="noopener">NLP模型-12-attention</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-13-XLnet/" target="_blank" rel="noopener">NLP模型-13-XLnet</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-14-%E6%A0%B8%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">NLP模型-14-核方法</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-15-%E6%B7%B1%E5%BA%A6%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-15-深度玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-16-%E5%8F%97%E9%99%90%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-16-受限玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-17-%E6%B7%B1%E5%BA%A6%E4%BF%A1%E5%BF%B5%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">NLP模型-17-深度信念网络</a></p>
+<h3 id="何为Attention"><a href="#何为Attention" class="headerlink" title="何为Attention"></a>何为Attention</h3><img width="60%" src="https://i.loli.net/2020/03/31/NF5q9JroSgapxTt.png" alt="attention">
 
 <p><code>Attention</code>是一种用于提升基于RNN（LSTM或GRU）的<code>Encoder + Decoder</code>模型的效果的的机制。<code>Attention</code>目前非常流行，广泛应用于机器翻译、语音识别、图像标注等很多领域，之所以它这么受欢迎，是因为<code>Attention</code>给模型赋予了区分辨别的能力，例如，在机器翻译、语音识别应用中，为句子中的每个词赋予不同的权重，使神经网络模型的学习变得更加灵活。</p>
 <p><code>Attention</code> 机制的本质来自于人类视觉注意力机制。人们视觉在感知东西的时候一般不会是一个场景从到头看到尾每次全部都看，而往往是根据需求观察注意特定的一部分。而且当人们发现一个场景经常在某部分出现自己想观察的东西时，人们会进行学习在将来再出现类似场景时把注意力放到该部分上。</p>
@@ -272,19 +273,19 @@
         
 <nav id="article-nav">
   
-    <a href="/2020/07/28/NLP模型-11-seq2seq/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/28/NLP模型-10-textRNN & textCNN/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          NLP模型-11-seq2seq
+          NLP模型-10-textRNN&amp;textCNN
         
       </span>
     </a>
   
   
-    <a href="/2020/07/28/NLP模型-13-XLnet/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">NLP模型-13-XLNet</span>
+    <a href="/2020/07/28/NLP模型-14-核方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">NLP模型-14-核方法</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   

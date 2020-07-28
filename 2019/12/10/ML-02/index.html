@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://i.loli.net/2020/04/01/tgBmxNDbcJahwIT.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/04/01/bgTrXv5mezul2pQ.jpg">
 <meta property="og:image" content="https://i.loli.net/2020/04/01/nS6XHKIQvyTmjBM.jpg">
-<meta property="og:updated_time" content="2020-07-07T09:56:53.048Z">
+<meta property="og:updated_time" content="2020-07-28T12:23:32.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ML系列2：机器学习必会算法">
 <meta name="twitter:description" content="介绍机器学习必会算法">
@@ -180,7 +180,7 @@
                             
                                 
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#基础概念"><span class="toc-text">基础概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#感知机"><span class="toc-text">感知机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#线性回归"><span class="toc-text">线性回归</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#逻辑回归"><span class="toc-text">逻辑回归</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#决策树（包括-ID3，C4-5-决策树生成算法）"><span class="toc-text">决策树（包括 ID3，C4.5 决策树生成算法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集成学习（Boosting、bagging、随机森林）"><span class="toc-text">集成学习（Boosting、bagging、随机森林）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#支持向量机（SVM）"><span class="toc-text">支持向量机（SVM）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#朴素贝叶斯"><span class="toc-text">朴素贝叶斯</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#KNN-算法"><span class="toc-text">KNN 算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#聚类算法（k-means）"><span class="toc-text">聚类算法（k-means）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特征降维"><span class="toc-text">特征降维</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模型学习的最优化算法"><span class="toc-text">模型学习的最优化算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#EM算法与高斯混合模型（GMM）"><span class="toc-text">EM算法与高斯混合模型（GMM）</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#基础概念"><span class="toc-text">基础概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#感知机"><span class="toc-text">感知机</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#线性回归"><span class="toc-text">线性回归</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#逻辑回归"><span class="toc-text">逻辑回归</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#决策树（包括-ID3，C4-5-决策树生成算法）"><span class="toc-text">决策树（包括 ID3，C4.5 决策树生成算法）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#集成学习（Boosting、bagging、随机森林）"><span class="toc-text">集成学习（Boosting、bagging、随机森林）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#支持向量机（SVM）"><span class="toc-text">支持向量机（SVM）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#朴素贝叶斯"><span class="toc-text">朴素贝叶斯</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#KNN-算法"><span class="toc-text">KNN 算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#聚类算法（k-means）"><span class="toc-text">聚类算法（k-means）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#特征降维"><span class="toc-text">特征降维</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#模型学习的最优化算法"><span class="toc-text">模型学习的最优化算法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#EM算法与高斯混合模型（GMM）"><span class="toc-text">EM算法与高斯混合模型（GMM）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#隐马尔可夫模型（HMM）"><span class="toc-text">隐马尔可夫模型（HMM）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#条件随机场（CRF）"><span class="toc-text">条件随机场（CRF）</span></a></li></ol>
     </div>
     
                                     <p>介绍机器学习必会算法</p>
@@ -641,7 +641,6 @@
 <li>牛顿法和拟牛顿法</li>
 <li>共轭梯度法</li>
 </ul>
-<p>这里待补充~</p>
 <h4 id="EM算法与高斯混合模型（GMM）"><a href="#EM算法与高斯混合模型（GMM）" class="headerlink" title="EM算法与高斯混合模型（GMM）"></a>EM算法与高斯混合模型（GMM）</h4><p>掌握的重点：</p>
 <ul>
 <li>什么是EM算法</li>
@@ -649,8 +648,7 @@
 <li>EM算法在GMM中的应用</li>
 <li>EM算法的推广</li>
 </ul>
-<p>这里待补充~</p>
-<p>####隐马尔可夫模型（HMM）<br>掌握的重点：</p>
+<h4 id="隐马尔可夫模型（HMM）"><a href="#隐马尔可夫模型（HMM）" class="headerlink" title="隐马尔可夫模型（HMM）"></a>隐马尔可夫模型（HMM）</h4><p>掌握的重点：</p>
 <ul>
 <li>HMM基本概念</li>
 <li>HMM的3个基本问题</li>
@@ -658,8 +656,7 @@
 <li>学习算法（监督学习算法、Baum-Welch算法）</li>
 <li>预测算法（近似算法、维特比算法）</li>
 </ul>
-<p>这里待补充~</p>
-<p>####条件随机场（CRF）<br>掌握的重点：</p>
+<h4 id="条件随机场（CRF）"><a href="#条件随机场（CRF）" class="headerlink" title="条件随机场（CRF）"></a>条件随机场（CRF）</h4><p>掌握的重点：</p>
 <ul>
 <li>什么是概率无向图模型</li>
 <li>什么是条件随机场</li>
@@ -667,7 +664,6 @@
 <li>学习算法（改进的迭代尺度法、拟牛顿法）</li>
 <li>预测算法</li>
 </ul>
-<p>这里待补充~</p>
 <p><strong>sklearn官网给出的机器学习算法选择路径图如下：</strong><br><img width="70%" src="https://i.loli.net/2020/04/01/nS6XHKIQvyTmjBM.jpg" alt="算法选择路径图"></p>
 
                                         
@@ -735,7 +731,7 @@
     
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基础概念"><span class="post-toc-text">基础概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#感知机"><span class="post-toc-text">感知机</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#线性回归"><span class="post-toc-text">线性回归</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#逻辑回归"><span class="post-toc-text">逻辑回归</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#决策树（包括-ID3，C4-5-决策树生成算法）"><span class="post-toc-text">决策树（包括 ID3，C4.5 决策树生成算法）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#集成学习（Boosting、bagging、随机森林）"><span class="post-toc-text">集成学习（Boosting、bagging、随机森林）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#支持向量机（SVM）"><span class="post-toc-text">支持向量机（SVM）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#朴素贝叶斯"><span class="post-toc-text">朴素贝叶斯</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#KNN-算法"><span class="post-toc-text">KNN 算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#聚类算法（k-means）"><span class="post-toc-text">聚类算法（k-means）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#特征降维"><span class="post-toc-text">特征降维</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模型学习的最优化算法"><span class="post-toc-text">模型学习的最优化算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#EM算法与高斯混合模型（GMM）"><span class="post-toc-text">EM算法与高斯混合模型（GMM）</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#基础概念"><span class="post-toc-text">基础概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#感知机"><span class="post-toc-text">感知机</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#线性回归"><span class="post-toc-text">线性回归</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#逻辑回归"><span class="post-toc-text">逻辑回归</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#决策树（包括-ID3，C4-5-决策树生成算法）"><span class="post-toc-text">决策树（包括 ID3，C4.5 决策树生成算法）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#集成学习（Boosting、bagging、随机森林）"><span class="post-toc-text">集成学习（Boosting、bagging、随机森林）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#支持向量机（SVM）"><span class="post-toc-text">支持向量机（SVM）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#朴素贝叶斯"><span class="post-toc-text">朴素贝叶斯</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#KNN-算法"><span class="post-toc-text">KNN 算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#聚类算法（k-means）"><span class="post-toc-text">聚类算法（k-means）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#特征降维"><span class="post-toc-text">特征降维</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#模型学习的最优化算法"><span class="post-toc-text">模型学习的最优化算法</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#EM算法与高斯混合模型（GMM）"><span class="post-toc-text">EM算法与高斯混合模型（GMM）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#隐马尔可夫模型（HMM）"><span class="post-toc-text">隐马尔可夫模型（HMM）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#条件随机场（CRF）"><span class="post-toc-text">条件随机场（CRF）</span></a></li></ol>
         </nav>
     </aside>
     

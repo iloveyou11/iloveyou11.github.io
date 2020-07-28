@@ -8,19 +8,19 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="GloVe是Global Vectors for Word Representation的简称，是一个基于全局词频统计的词表征工具，可以将单词表示为向量，这些向量可以刻画单词的语义特征，通过向量之间的距离可以计算两个单词之间的予以相似度。 Glove流程 构建共现矩阵（就是文档中单词两两同时出现次数矩阵）    根据语料库构建一个共现矩阵X，矩阵中的每一个元素Xij代表单词i和上下文单词j在特定大">
+  <meta name="description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLP模型-09-Glove">
 <meta property="og:url" content="http://localhost:4000/2020/07/28/NLP模型-09-Glove/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="GloVe是Global Vectors for Word Representation的简称，是一个基于全局词频统计的词表征工具，可以将单词表示为向量，这些向量可以刻画单词的语义特征，通过向量之间的距离可以计算两个单词之间的予以相似度。 Glove流程 构建共现矩阵（就是文档中单词两两同时出现次数矩阵）    根据语料库构建一个共现矩阵X，矩阵中的每一个元素Xij代表单词i和上下文单词j在特定大">
+<meta property="og:description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2020/07/28/NxdB6MnUDhHlsik.png">
-<meta property="og:updated_time" content="2020-07-28T12:08:04.604Z">
+<meta property="og:updated_time" content="2020-07-28T12:20:14.203Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP模型-09-Glove">
-<meta name="twitter:description" content="GloVe是Global Vectors for Word Representation的简称，是一个基于全局词频统计的词表征工具，可以将单词表示为向量，这些向量可以刻画单词的语义特征，通过向量之间的距离可以计算两个单词之间的予以相似度。 Glove流程 构建共现矩阵（就是文档中单词两两同时出现次数矩阵）    根据语料库构建一个共现矩阵X，矩阵中的每一个元素Xij代表单词i和上下文单词j在特定大">
+<meta name="twitter:description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta name="twitter:image" content="https://i.loli.net/2020/07/28/NxdB6MnUDhHlsik.png">
   
   
@@ -162,7 +162,8 @@
         <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#Glove流程"><span class="toc-text">Glove流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#与其他词向量模型的区别"><span class="toc-text">与其他词向量模型的区别</span></a></li></ol>
     </div>
     
-                                    <p>GloVe是<code>Global Vectors for Word Representation</code>的简称，是一个基于全局词频统计的词表征工具，可以将单词表示为向量，这些向量可以刻画单词的语义特征，通过向量之间的距离可以计算两个单词之间的予以相似度。</p>
+                                    <p><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-01-%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" target="_blank" rel="noopener">NLP模型-01-预训练语言模型</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-02-HMM/" target="_blank" rel="noopener">NLP模型-02-HMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-03-GMM/" target="_blank" rel="noopener">NLP模型-03-GMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-04-CRF/" target="_blank" rel="noopener">NLP模型-04-CRF</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-05-transformer/" target="_blank" rel="noopener">NLP模型-05-transformer</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-06-Bert/" target="_blank" rel="noopener">NLP模型-06-Bert</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-07-LDA/" target="_blank" rel="noopener">NLP模型-07-LDA</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-08-fastText/" target="_blank" rel="noopener">NLP模型-08-fastText</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-09-Glove/" target="_blank" rel="noopener">NLP模型-09-Glove</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-10-textRNN%20&%20textCNN/" target="_blank" rel="noopener">NLP模型-10-textRNN &amp; textCNN</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-11-seq2seq/" target="_blank" rel="noopener">NLP模型-11-seq2seq</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-12-attention/" target="_blank" rel="noopener">NLP模型-12-attention</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-13-XLnet/" target="_blank" rel="noopener">NLP模型-13-XLnet</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-14-%E6%A0%B8%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">NLP模型-14-核方法</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-15-%E6%B7%B1%E5%BA%A6%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-15-深度玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-16-%E5%8F%97%E9%99%90%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-16-受限玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-17-%E6%B7%B1%E5%BA%A6%E4%BF%A1%E5%BF%B5%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">NLP模型-17-深度信念网络</a></p>
+<p>GloVe是<code>Global Vectors for Word Representation</code>的简称，是一个基于全局词频统计的词表征工具，可以将单词表示为向量，这些向量可以刻画单词的语义特征，通过向量之间的距离可以计算两个单词之间的予以相似度。</p>
 <h4 id="Glove流程"><a href="#Glove流程" class="headerlink" title="Glove流程"></a>Glove流程</h4><ol>
 <li>构建共现矩阵（就是文档中单词两两同时出现次数矩阵）</li>
 </ol>
@@ -251,19 +252,19 @@
         
 <nav id="article-nav">
   
-    <a href="/2020/07/28/NLP模型-06-Bert/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/28/NLP模型-08-fastText/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          NLP模型-06-Bert
+          NLP模型-08-fastText
         
       </span>
     </a>
   
   
-    <a href="/2020/07/28/NLP模型-10-textRNN & textCNN/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">NLP模型-10-textRNN&amp;textCNN</span>
+    <a href="/2020/07/28/NLP模型-11-seq2seq/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">NLP模型-11-seq2seq</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   

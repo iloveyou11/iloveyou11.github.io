@@ -8,13 +8,13 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：  语言理解 文档召回和排序 文本生成辅助搜索  语言理解这块的任务都是以分类问题为准，所谓的理解，只是把语言抽象到某一个理解空间，将其进行标准化，以便进行批量化处理。主要步骤是：  实体标注(即命名实体识别) 实体消歧或指代消歧(基于知识的预测) 意图识别(句子级别预测，甚至就是简单的文本分类)  命名实体识别（NER）实体标注方面，传统">
+  <meta name="description" content="NLP任务-01-词嵌入NLP任务-02-序列标注NLP任务-03-分词NLP任务-04-词性标注NLP任务-05-命名实体识别NLP任务-06-依存句法分析NLP任务-07-信息抽取NLP任务-08-文本分类NLP任务-09-文本聚类NLP任务-10-自动补全NLP任务-11-语义消歧NLP任务-12-问答系统NLP任务-13-机器翻译NLP任务-14-自动摘要NLP任务-15-情感分析NLP任">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLP任务-10-自动补全">
 <meta property="og:url" content="http://localhost:4000/2020/07/28/NLP任务-10-自动补全/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：  语言理解 文档召回和排序 文本生成辅助搜索  语言理解这块的任务都是以分类问题为准，所谓的理解，只是把语言抽象到某一个理解空间，将其进行标准化，以便进行批量化处理。主要步骤是：  实体标注(即命名实体识别) 实体消歧或指代消歧(基于知识的预测) 意图识别(句子级别预测，甚至就是简单的文本分类)  命名实体识别（NER）实体标注方面，传统">
+<meta property="og:description" content="NLP任务-01-词嵌入NLP任务-02-序列标注NLP任务-03-分词NLP任务-04-词性标注NLP任务-05-命名实体识别NLP任务-06-依存句法分析NLP任务-07-信息抽取NLP任务-08-文本分类NLP任务-09-文本聚类NLP任务-10-自动补全NLP任务-11-语义消歧NLP任务-12-问答系统NLP任务-13-机器翻译NLP任务-14-自动摘要NLP任务-15-情感分析NLP任">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2020/07/23/MPQpLulqTESiIna.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/27/qPQNLlFvnzTyUHr.png">
@@ -24,10 +24,10 @@
 <meta property="og:image" content="https://i.loli.net/2020/07/27/MC2DtKFon9jUhPz.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/27/smUq8pnOEoQVzPk.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/27/WUANVdqfYw28HPs.png">
-<meta property="og:updated_time" content="2020-07-28T06:16:58.482Z">
+<meta property="og:updated_time" content="2020-07-28T12:21:30.989Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP任务-10-自动补全">
-<meta name="twitter:description" content="自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：  语言理解 文档召回和排序 文本生成辅助搜索  语言理解这块的任务都是以分类问题为准，所谓的理解，只是把语言抽象到某一个理解空间，将其进行标准化，以便进行批量化处理。主要步骤是：  实体标注(即命名实体识别) 实体消歧或指代消歧(基于知识的预测) 意图识别(句子级别预测，甚至就是简单的文本分类)  命名实体识别（NER）实体标注方面，传统">
+<meta name="twitter:description" content="NLP任务-01-词嵌入NLP任务-02-序列标注NLP任务-03-分词NLP任务-04-词性标注NLP任务-05-命名实体识别NLP任务-06-依存句法分析NLP任务-07-信息抽取NLP任务-08-文本分类NLP任务-09-文本聚类NLP任务-10-自动补全NLP任务-11-语义消歧NLP任务-12-问答系统NLP任务-13-机器翻译NLP任务-14-自动摘要NLP任务-15-情感分析NLP任">
 <meta name="twitter:image" content="https://i.loli.net/2020/07/23/MPQpLulqTESiIna.png">
   
   
@@ -169,7 +169,8 @@
         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#语言理解"><span class="toc-text">语言理解</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#命名实体识别（NER）"><span class="toc-text">命名实体识别（NER）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#HMM-隐马尔可夫"><span class="toc-text">HMM(隐马尔可夫)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CRF-条件随机场"><span class="toc-text">CRF(条件随机场)</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#LSTM-CRF"><span class="toc-text">LSTM+CRF</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#CNN-CRF"><span class="toc-text">CNN+CRF</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#BERT-（LSTM）-CRF"><span class="toc-text">BERT+（LSTM）+CRF</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#指代消歧"><span class="toc-text">指代消歧</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#基于二元分类的方法"><span class="toc-text">基于二元分类的方法</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#端到端的神经共指消解"><span class="toc-text">端到端的神经共指消解</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文本分类"><span class="toc-text">文本分类</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文档召回和排序"><span class="toc-text">文档召回和排序</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#文档召回"><span class="toc-text">文档召回</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#文档排序"><span class="toc-text">文档排序</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#TextRank"><span class="toc-text">TextRank</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#其他"><span class="toc-text">其他</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文本生成辅助搜索"><span class="toc-text">文本生成辅助搜索</span></a></li></ol>
     </div>
     
-                                    <p>自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：</p>
+                                    <p><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-01-%E8%AF%8D%E5%B5%8C%E5%85%A5/" target="_blank" rel="noopener">NLP任务-01-词嵌入</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-02-%E5%BA%8F%E5%88%97%E6%A0%87%E6%B3%A8/" target="_blank" rel="noopener">NLP任务-02-序列标注</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-03-%E5%88%86%E8%AF%8D/" target="_blank" rel="noopener">NLP任务-03-分词</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-04-%E8%AF%8D%E6%80%A7%E6%A0%87%E6%B3%A8/" target="_blank" rel="noopener">NLP任务-04-词性标注</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-05-%E5%91%BD%E5%90%8D%E5%AE%9E%E4%BD%93%E8%AF%86%E5%88%ABNER/" target="_blank" rel="noopener">NLP任务-05-命名实体识别</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-06-%E4%BE%9D%E5%AD%98%E5%8F%A5%E6%B3%95%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">NLP任务-06-依存句法分析</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-07-%E4%BF%A1%E6%81%AF%E6%8A%BD%E5%8F%96/" target="_blank" rel="noopener">NLP任务-07-信息抽取</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-08-%E6%96%87%E6%9C%AC%E5%88%86%E7%B1%BB/" target="_blank" rel="noopener">NLP任务-08-文本分类</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-09-%E6%96%87%E6%9C%AC%E8%81%9A%E7%B1%BB/" target="_blank" rel="noopener">NLP任务-09-文本聚类</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-10-%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8/" target="_blank" rel="noopener">NLP任务-10-自动补全</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-11-%E8%AF%AD%E4%B9%89%E6%B6%88%E6%AD%A7/" target="_blank" rel="noopener">NLP任务-11-语义消歧</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-12-%E9%97%AE%E7%AD%94%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener">NLP任务-12-问答系统</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-13-%E6%9C%BA%E5%99%A8%E7%BF%BB%E8%AF%91/" target="_blank" rel="noopener">NLP任务-13-机器翻译</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-14-%E8%87%AA%E5%8A%A8%E6%91%98%E8%A6%81/" target="_blank" rel="noopener">NLP任务-14-自动摘要</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-15-%E6%83%85%E6%84%9F%E5%88%86%E6%9E%90/" target="_blank" rel="noopener">NLP任务-15-情感分析</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E4%BB%BB%E5%8A%A1-16-%E8%81%8A%E5%A4%A9%E6%9C%BA%E5%99%A8%E4%BA%BA/" target="_blank" rel="noopener">NLP任务-16-聊天机器人</a></p>
+<p>自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：</p>
 <ol>
 <li>语言理解</li>
 <li>文档召回和排序</li>
@@ -320,19 +321,19 @@
         
 <nav id="article-nav">
   
-    <a href="/2020/07/28/NLP任务-09-文本聚类/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/28/NLP任务-08-文本分类/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          NLP任务-09-文本聚类
+          NLP任务-08-文本分类
         
       </span>
     </a>
   
   
-    <a href="/2020/07/28/NLP任务-11-语义消歧/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">NLP任务-11-语义消歧</span>
+    <a href="/2020/07/28/NLP任务-09-文本聚类/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">NLP任务-09-文本聚类</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   

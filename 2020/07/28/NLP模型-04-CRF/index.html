@@ -8,22 +8,22 @@
   
     <meta name="keywords" content="YP's Blog">
   
-  <meta name="description" content="CRF简介CRF是条件随机场（Conditional Random Fields）的简称，是给定一组输入序列条件下另一组输出序列的条件概率分布模型。 为什么要使用CRF模型？ 举个例子，我们今有一项任务是“图像分类”，如果我们只是单纯看到了一个人闭着嘴的照片，其实很难去标记他到底在干什么，如果我们能够获得这张照片前一点点时间的照片的话，则很好标记，如在时间序列上前一张的照片里这个人在吃饭，那么这张">
+  <meta name="description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta name="keywords" content="web">
 <meta property="og:type" content="article">
 <meta property="og:title" content="NLP模型-04-CRF">
 <meta property="og:url" content="http://localhost:4000/2020/07/28/NLP模型-04-CRF/index.html">
 <meta property="og:site_name" content="blog">
-<meta property="og:description" content="CRF简介CRF是条件随机场（Conditional Random Fields）的简称，是给定一组输入序列条件下另一组输出序列的条件概率分布模型。 为什么要使用CRF模型？ 举个例子，我们今有一项任务是“图像分类”，如果我们只是单纯看到了一个人闭着嘴的照片，其实很难去标记他到底在干什么，如果我们能够获得这张照片前一点点时间的照片的话，则很好标记，如在时间序列上前一张的照片里这个人在吃饭，那么这张">
+<meta property="og:description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://i.loli.net/2020/07/28/6KYFgUacSXeOlxz.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/28/jbDstNiPAg6WVZB.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/28/jbDstNiPAg6WVZB.png">
 <meta property="og:image" content="https://i.loli.net/2020/07/28/gUOt7YMwBsqP8ZL.png">
-<meta property="og:updated_time" content="2020-07-28T12:07:57.088Z">
+<meta property="og:updated_time" content="2020-07-28T12:19:51.994Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP模型-04-CRF">
-<meta name="twitter:description" content="CRF简介CRF是条件随机场（Conditional Random Fields）的简称，是给定一组输入序列条件下另一组输出序列的条件概率分布模型。 为什么要使用CRF模型？ 举个例子，我们今有一项任务是“图像分类”，如果我们只是单纯看到了一个人闭着嘴的照片，其实很难去标记他到底在干什么，如果我们能够获得这张照片前一点点时间的照片的话，则很好标记，如在时间序列上前一张的照片里这个人在吃饭，那么这张">
+<meta name="twitter:description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta name="twitter:image" content="https://i.loli.net/2020/07/28/6KYFgUacSXeOlxz.png">
   
   
@@ -165,7 +165,8 @@
         <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#CRF简介"><span class="toc-text">CRF简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#随机场与马尔科夫随机场"><span class="toc-text">随机场与马尔科夫随机场</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#条件随机场"><span class="toc-text">条件随机场</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#线性链条件随机场"><span class="toc-text">线性链条件随机场</span></a></li></ol></li></ol>
     </div>
     
-                                    <h3 id="CRF简介"><a href="#CRF简介" class="headerlink" title="CRF简介"></a>CRF简介</h3><p>CRF是条件随机场（Conditional Random Fields）的简称，是给定一组输入序列条件下另一组输出序列的条件概率分布模型。</p>
+                                    <p><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-01-%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" target="_blank" rel="noopener">NLP模型-01-预训练语言模型</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-02-HMM/" target="_blank" rel="noopener">NLP模型-02-HMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-03-GMM/" target="_blank" rel="noopener">NLP模型-03-GMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-04-CRF/" target="_blank" rel="noopener">NLP模型-04-CRF</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-05-transformer/" target="_blank" rel="noopener">NLP模型-05-transformer</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-06-Bert/" target="_blank" rel="noopener">NLP模型-06-Bert</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-07-LDA/" target="_blank" rel="noopener">NLP模型-07-LDA</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-08-fastText/" target="_blank" rel="noopener">NLP模型-08-fastText</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-09-Glove/" target="_blank" rel="noopener">NLP模型-09-Glove</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-10-textRNN%20&%20textCNN/" target="_blank" rel="noopener">NLP模型-10-textRNN &amp; textCNN</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-11-seq2seq/" target="_blank" rel="noopener">NLP模型-11-seq2seq</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-12-attention/" target="_blank" rel="noopener">NLP模型-12-attention</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-13-XLnet/" target="_blank" rel="noopener">NLP模型-13-XLnet</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-14-%E6%A0%B8%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">NLP模型-14-核方法</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-15-%E6%B7%B1%E5%BA%A6%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-15-深度玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-16-%E5%8F%97%E9%99%90%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-16-受限玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-17-%E6%B7%B1%E5%BA%A6%E4%BF%A1%E5%BF%B5%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">NLP模型-17-深度信念网络</a></p>
+<h3 id="CRF简介"><a href="#CRF简介" class="headerlink" title="CRF简介"></a>CRF简介</h3><p>CRF是条件随机场（Conditional Random Fields）的简称，是给定一组输入序列条件下另一组输出序列的条件概率分布模型。</p>
 <p>为什么要使用CRF模型？</p>
 <p>举个例子，我们今有一项任务是“图像分类”，如果我们只是单纯看到了一个人闭着嘴的照片，其实很难去标记他到底在干什么，如果我们能够获得这张照片前一点点时间的照片的话，则很好标记，如在时间序列上前一张的照片里这个人在吃饭，那么这张闭嘴的照片很有可能是在吃饭咀嚼。而如果在时间序列上前一张的照片里这个人在唱歌，那么这张闭嘴的照片很有可能是在唱歌……</p>
 <p>因此，为了使得分类器表现更好，我们可以考虑相邻数据的标记信息，这是CRF最擅长的地方。如词性标注(POS Tagging)就是很好的例子。</p>
@@ -270,19 +271,19 @@
         
 <nav id="article-nav">
   
-    <a href="/2020/07/28/NLP模型-05-transformer/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/28/NLP模型-03-GMM/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          NLP模型-05-transformer
+          NLP模型-03-GMM
         
       </span>
     </a>
   
   
-    <a href="/2020/07/28/NLP模型-07-LDA/" id="article-nav-older" class="article-nav-link-wrap">
-      <span class="article-nav-title">NLP模型-07-LDA</span>
+    <a href="/2020/07/28/NLP模型-05-transformer/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">NLP模型-05-transformer</span>
       <i class="fa fa-hand-o-right" aria-hidden="true"></i>
     </a>
   
