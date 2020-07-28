@@ -120,14 +120,14 @@
       <div class="outer">
         <section id="main" class="body-wrap">
   
-    <article id="post-NLP项目专题-03" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-NLP任务-01-词嵌入" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/28/NLP项目专题-03/"  >NLP项目专题-03</a>
+      <a class="article-title" href="/2020/07/28/NLP任务-01-词嵌入/"  >NLP任务-01-词嵌入</a>
     </h1>
   
 
@@ -145,14 +145,7 @@
                     
                         <div class="article-feed">
                             <p>
-                                NLP项目专题-01-文本分类NLP项目专题-02-自动补全NLP项目专题-03-语义消歧
-语义消歧方法消歧任务主要分以下几种：
-
-分词的消歧
-多义词的具体词义
-词性的判断
-
-对于词性的判断，可以看做一个词性标注的问题，通常需要考虑邻近上下文。如果是词义判决，可能会有相隔很远的词语来决定其词性。因此大部分的词性标注模型简单地使用当前上下文，而语义消歧模型通常使用规模广泛一...
+                                NLP任务-01-词嵌入NLP任务-02-序列标注NLP任务-03-分词NLP任务-04-词性标注NLP任务-05-命名实体识别NLP任务-06-依存句法分析NLP任务-07-信息抽取NLP任务-08-文本分类NLP任务-09-文本聚类NLP任务-10-自动补全NLP任务-11-语义消歧NLP任务-12-问答系统NLP任务-13-机器翻译NLP任务-14-自动摘要NLP任...
                             </p>
                         </div>
                         
@@ -168,7 +161,7 @@
                                             
                                 </ul>
                                 
-                                    <a href="/2020/07/28/NLP项目专题-03/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    <a href="/2020/07/28/NLP任务-01-词嵌入/#more" class="article-more-link" >more&gt;&gt;</a>
                                     
                 </footer>
     </div>
@@ -176,14 +169,14 @@
 
                 
   
-    <article id="post-NLP项目专题-02" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-NLP任务-02-序列标注" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/27/NLP项目专题-02/"  >NLP项目专题-02</a>
+      <a class="article-title" href="/2020/07/28/NLP任务-02-序列标注/"  >NLP任务-02-序列标注</a>
     </h1>
   
 
@@ -201,8 +194,426 @@
                     
                         <div class="article-feed">
                             <p>
-                                NLP项目专题-01-文本分类NLP项目专题-02-自动补全NLP项目专题-03-语义消歧
-自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：
+                                序列标注包括了以下几个方面：
+
+中文分词——人们提出了{B,M,E,S}这种最流行的标注集，{B,M,E,S}分为代表{Begin,Middle,End,Single}
+词性标注——根据单词序列，标注出词性序列
+命名实体识别——命名实体识别可以复用{B,M,E,S}标注集，但是还需要确定实体所属的类别
+
+序列标注方面，传统的统计方法是HMM(隐马尔可夫)、MEMM(最大熵...
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP任务-02-序列标注/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP任务-03-分词" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP任务-03-分词/"  >NLP任务-03-分词</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                分词分词算法有以下几种：
+
+最大匹配算法（贪心算法）包括前向最大匹配和后向最大匹配，缺点是不能考虑语义，可能是局部最优
+考虑语义基本思想：根据输入的句子，生成所有可能的分割，根据LM（语言模型，用来评估句子的合理程度，后面会讲到）选择其中最好的分割方式，但是效率低下。
+维特比算法根据词典概率，构建连接图，使用DP动态规划
+
+
+
+核心问题变为：如何找到最短的路径
+总结：
+
+...
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP任务-03-分词/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP任务-05-命名实体识别NER" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP任务-05-命名实体识别NER/"  >NLP任务-05-命名实体识别</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                待补充……
+
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP任务-05-命名实体识别NER/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP任务-04-词性标注" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP任务-04-词性标注/"  >NLP任务-04-词性标注</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                待补充……
+
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP任务-04-词性标注/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP任务-06-依存句法分析" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP任务-06-依存句法分析/"  >NLP任务-06-依存语法分析</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                待补充……
+
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP任务-06-依存句法分析/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP任务-07-信息抽取" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP任务-07-信息抽取/"  >NLP任务-07-信息抽取</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                待补充……
+
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP任务-07-信息抽取/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP任务-08-文本分类" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP任务-08-文本分类/"  >NLP任务-08-文本分类</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                文本分类方法例如，需求详细描述文档中哪一部分属于数据描述，哪一部分属于UI描述。将这些信息分类后，可以方便后续的文本理解任务(针对不同类别的部分，机器理解的模型是不同的)，这样可以明显提升文本理解与匹配的准确度。
+文本分类常用方法如下：
+
+基于词典模板的规则分类
+基于过往日志匹配（适用于搜索引擎）
+基于传统机器学习模型(特征工程+算法，如NaiveBayes/SVM/LR...
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP任务-08-文本分类/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP任务-09-文本聚类" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP任务-09-文本聚类/"  >NLP任务-09-文本聚类</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                待补充……
+
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP任务-09-文本聚类/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP任务-10-自动补全" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP任务-10-自动补全/"  >NLP任务-10-自动补全</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                自动补全是个基于NLP的搜索任务，主要包括了以下几个方面：
 
 语言理解
 文档召回和排序
@@ -211,7 +622,10 @@
 语言理解这块的任务都是以分类问题为准，所谓的理解，只是把语言抽象到某一个理解空间，将其进行标准化，以便进行批量化处理。主要步骤是：
 
 实体标注(即命名实体识别)
-实体消歧或指...
+实体消歧或指代消歧(基于知识的预测)
+意图识别(句子级别预测，甚至就是简单的文本分类)
+
+命名实体识别（...
                             </p>
                         </div>
                         
@@ -221,431 +635,13 @@
                                 <ul class="article-footer-menu">
                                     
                                         <li><i class="fa fa-calendar"></i>
-                                            2020-07-27
+                                            2020-07-28
                                         </li>
                                         
                                             
                                 </ul>
                                 
-                                    <a href="/2020/07/27/NLP项目专题-02/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
-    <article id="post-NLP项目专题-01" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/26/NLP项目专题-01/"  >NLP项目专题-01</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                NLP项目专题-01-文本分类NLP项目专题-02-自动补全NLP项目专题-03-语义消歧
-文本分类方法例如，需求详细描述文档中哪一部分属于数据描述，哪一部分属于UI描述。将这些信息分类后，可以方便后续的文本理解任务(针对不同类别的部分，机器理解的模型是不同的)，这样可以明显提升文本理解与匹配的准确度。
-文本分类常用方法如下：
-
-基于词典模板的规则分类
-基于过往日志匹配（...
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-26
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/26/NLP项目专题-01/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
-    <article id="post-HMM详解" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/23/HMM详解/"  >HMM原理详解</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                初识HMMHMM是Hidden Markov Model的缩写，是一个时序类的模型，x是观测值，z是隐变量。z可以视为状态，每个状态z都可以产生一个观测值x。HMM是有方向的生成模型。HMM的基础结构如下：
-
-
-HMM中三个不同的参数：θ=(A,B,Π)，其中：
-
-A是状态z到状态z的转移矩阵，指从一个状态z转移到下一个状态z的概率。
-B是状态z到结果x的生成矩阵，表示从...
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-23
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/23/HMM详解/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
-    <article id="post-数据增强" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/22/数据增强/"  >数据增强</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                何为数据增强数据增强是通过已经获得的数据来产生更多的数据，等质量训练样本的增强会提高模型的精度。这种处理手段常被用于数据不足的场景中。
-模型需要大量的数据才可能在许多任务中获得较为满意的结果，但是，现实生活中，很多场景无法获得大量的样本数据（如医学图像等），这时，使用数据增强可以解决这个问题，提高样本数据的数量和质量。有一些机器学习库实现了数据增强，如imgaug对计算机...
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-22
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/22/数据增强/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
-    <article id="post-预训练语言模型" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/20/预训练语言模型/"  >预训练语言模型</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                
-
-什么是预训练模型预训练模型实际上就是已经训练过的模型或模型组件。它已经在大型训练集上经过了很好的训练，学习到了每个词的表示，并且保存下来所有的模型参数。
-预训练模型的本质是用来文本特征提取，可以适用于迁移学习，减少前期训练词向量的成本。
-预训练模型在word embedding就开始出现，相当于AlexNet在卷积神经网络的地位（雏形）。word embedding是...
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-20
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/20/预训练语言模型/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
-    <article id="post-Bert模型及其变种" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/16/Bert模型及其变种/"  >Bert模型及其变种</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                Bert（Bidirectional Encoder Representations from Transformers）说白了就是transformer中的encoder部分，就是怎么将transformer模型中的特征学习出来，是Word2Vec的替代者。
-
-使用了Transformer作为算法的主要框架，能更彻底的捕捉语句中的双向关系；
-使用了Mask Langua...
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-16
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/16/Bert模型及其变种/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
-    <article id="post-transformer结构" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/12/transformer结构/"  >transformer</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                <h3 id="什么是transformer"><a href="#什么是transformer" class="headerlink" title="什么是transformer"></a>什么是transformer</h3><p>一句话解释：<code>transformer</code>是带有<code>self-attention</code>的<code>seq2seq</code>，输出能同时计算，可以代替RNN结构（必须按输入的顺序计算），因此transformer对于sequence to sequence的应用场景更为高效。</p>
-<p>transformer是首个完全抛弃RNN的recurrence，CNN的convolution，仅用attention来做特征抽取的模型。</p>
-<p><strong>Transformer中抛弃了传统的CNN和RNN，整个网络结构完全是由Attention机制组成。</strong></p>
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-12
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/12/transformer结构/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
-    <article id="post-LDA模型深入" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/11/LDA模型深入/"  >LDA模型深入</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                
-
-什么是LDA？LDA（Latent Dirichlet Allocation）是一种文档主题生成模型，也称为一个三层贝叶斯概率模型，包含词、主题和文档三层结构。
-LDA的目的就是要识别主题，即把文档—词汇矩阵变成文档—主题矩阵（分布）和主题—词汇矩阵（分布）
-生成过程LDA 的产生过程描述了文档以及文档中文字的生成过程。在原始的 LDA 论文中，作者们描述了对于每一个...
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-11
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/11/LDA模型深入/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
-    <article id="post-学术前沿ACL2020研究" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/11/学术前沿ACL2020研究/"  >学术前沿ACL2020研究</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                Knowledge Embedding多跳知识图谱论文：Improving Multi-hop Question Answering over Knowledge Graphs using Knowledge Base Embeddings多跳知识图谱问答指的是，该问答系统需要通过知识图谱上的多条边执行推理，以获得正确答案。
-BERT文本纠错原生的 BERT 在一些NLP...
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-11
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/11/学术前沿ACL2020研究/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    <a href="/2020/07/28/NLP任务-10-自动补全/#more" class="article-more-link" >more&gt;&gt;</a>
                                     
                 </footer>
     </div>
@@ -656,7 +652,7 @@ BERT文本纠错原生的 BERT 在一些NLP...
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/2/">Next >></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">Next >></a>
   </nav>
 </section>
         
