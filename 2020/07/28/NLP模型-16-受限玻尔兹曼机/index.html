@@ -16,10 +16,14 @@
 <meta property="og:site_name" content="blog">
 <meta property="og:description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-07-28T12:23:57.396Z">
+<meta property="og:image" content="https://i.loli.net/2020/07/29/nWK7rfZRzETbICx.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/29/FTnJv8ESALpWd1k.png">
+<meta property="og:image" content="https://i.loli.net/2020/07/29/Ki9XE8lzwShRM1m.png">
+<meta property="og:updated_time" content="2020-07-29T03:09:51.878Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NLP模型-16-受限玻尔兹曼机">
 <meta name="twitter:description" content="NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp;amp; textCNNNLP模型-11-seq2seqNLP模型-12-attentionNLP模型-13">
+<meta name="twitter:image" content="https://i.loli.net/2020/07/29/nWK7rfZRzETbICx.png">
   
   
     <link rel="icon" href="/favicon.ico">
@@ -157,11 +161,24 @@
                             
                                 
     <div id="toc">
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#待补充……"><span class="toc-text">待补充……</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#RBM基本模型"><span class="toc-text">RBM基本模型</span></a></li></ol>
     </div>
     
                                     <p><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-01-%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" target="_blank" rel="noopener">NLP模型-01-预训练语言模型</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-02-HMM/" target="_blank" rel="noopener">NLP模型-02-HMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-03-GMM/" target="_blank" rel="noopener">NLP模型-03-GMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-04-CRF/" target="_blank" rel="noopener">NLP模型-04-CRF</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-05-transformer/" target="_blank" rel="noopener">NLP模型-05-transformer</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-06-Bert/" target="_blank" rel="noopener">NLP模型-06-Bert</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-07-LDA/" target="_blank" rel="noopener">NLP模型-07-LDA</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-08-fastText/" target="_blank" rel="noopener">NLP模型-08-fastText</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-09-Glove/" target="_blank" rel="noopener">NLP模型-09-Glove</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-10-textRNN%20&%20textCNN/" target="_blank" rel="noopener">NLP模型-10-textRNN &amp; textCNN</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-11-seq2seq/" target="_blank" rel="noopener">NLP模型-11-seq2seq</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-12-attention/" target="_blank" rel="noopener">NLP模型-12-attention</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-13-XLnet/" target="_blank" rel="noopener">NLP模型-13-XLnet</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-14-%E6%A0%B8%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">NLP模型-14-核方法</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-15-%E6%B7%B1%E5%BA%A6%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-15-深度玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-16-%E5%8F%97%E9%99%90%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-16-受限玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-17-%E6%B7%B1%E5%BA%A6%E4%BF%A1%E5%BF%B5%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">NLP模型-17-深度信念网络</a></p>
-<h4 id="待补充……"><a href="#待补充……" class="headerlink" title="待补充……"></a>待补充……</h4>
+<p>受限玻尔兹曼机的全名为Restricted Boltzmann Machines（RBM），是一类具有两层结构、对称连接且无自反馈的随机神经网络模型，层间全连接，层内无连接。</p>
+<p>以下图中，左边为玻尔兹曼机的结构，右边为受限玻尔兹曼机的结构：</p>
+<img src="https://i.loli.net/2020/07/29/nWK7rfZRzETbICx.png" alt="玻尔兹曼机结构图比较" width="80%">
+
+<h3 id="RBM基本模型"><a href="#RBM基本模型" class="headerlink" title="RBM基本模型"></a>RBM基本模型</h3><img src="https://i.loli.net/2020/07/29/FTnJv8ESALpWd1k.png" alt="RBM基本结构" width="80%">
+
+<p> RBM是一个无向图模型，<code>v</code>为可见层表示观测数据，<code>h</code>为隐层表示特征提取，<code>w</code>为两层之间的连接权重。BM中的隐单元和可见单元可以为任意的指数族单元（如softmax单元、高斯单元、泊松单元等）。常用的RBM一般是二值的，即不管是隐藏层还是可见层，它们的神经元的取值只为0或者1。</p>
+<p> RBM模型结构的结构：主要是权重矩阵<code>w</code>, 偏倚系数向量<code>a</code>和<code>b</code>，隐藏层神经元状态向量<code>h</code>和可见层神经元状态向量<code>v</code>。</p>
+<p> <strong>RBM损失函数：</strong></p>
+<p> 虽然说梯度下降从理论上可以用来优化RBM模型，但实际中是很难求得<code>P(v)</code>的概率分布的（<code>P(v)</code>表示可见层节点的联合概率）。计算复杂度非常大，因此采用一些随机采样的方法来得到近似的解。看这三个梯度的第二项实际上都是求期望，而我们知道，样本的均值是随机变量期望的无偏估计。因此一般都是基于对比散度方法来求解。</p>
+<p><strong>RBM训练算法：</strong></p>
+<p>对比散度算法（CD）</p>
+ <img src="https://i.loli.net/2020/07/29/Ki9XE8lzwShRM1m.png" alt="RBM训练算法" width="80%">
+
                                         
                 </div>
                 <footer class="article-footer">
@@ -227,19 +244,19 @@
     
     <aside class="post-toc-pos post-toc-top" id="post-toc">
         <nav class="post-toc-wrap">
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#待补充……"><span class="post-toc-text">待补充……</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#RBM基本模型"><span class="post-toc-text">RBM基本模型</span></a></li></ol>
         </nav>
     </aside>
     
         
 <nav id="article-nav">
   
-    <a href="/2020/07/28/NLP模型-13-XLnet/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/07/28/NLP知识体系-大图/" id="article-nav-newer" class="article-nav-link-wrap">
 
       <span class="article-nav-title">
         <i class="fa fa-hand-o-left" aria-hidden="true"></i>
         
-          NLP模型-13-XLNet
+          NLP知识体系-大图
         
       </span>
     </a>

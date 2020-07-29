@@ -120,66 +120,14 @@
       <div class="outer">
         <section id="main" class="body-wrap">
   
-    <article id="post-NLP模型-05-transformer" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-NLP模型-04-CRF" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/28/NLP模型-05-transformer/"  >NLP模型-05-transformer</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                <p><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-01-%E9%A2%84%E8%AE%AD%E7%BB%83%E8%AF%AD%E8%A8%80%E6%A8%A1%E5%9E%8B/" target="_blank" rel="noopener">NLP模型-01-预训练语言模型</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-02-HMM/" target="_blank" rel="noopener">NLP模型-02-HMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-03-GMM/" target="_blank" rel="noopener">NLP模型-03-GMM</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-04-CRF/" target="_blank" rel="noopener">NLP模型-04-CRF</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-05-transformer/" target="_blank" rel="noopener">NLP模型-05-transformer</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-06-Bert/" target="_blank" rel="noopener">NLP模型-06-Bert</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-07-LDA/" target="_blank" rel="noopener">NLP模型-07-LDA</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-08-fastText/" target="_blank" rel="noopener">NLP模型-08-fastText</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-09-Glove/" target="_blank" rel="noopener">NLP模型-09-Glove</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-10-textRNN%20&%20textCNN/" target="_blank" rel="noopener">NLP模型-10-textRNN &amp; textCNN</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-11-seq2seq/" target="_blank" rel="noopener">NLP模型-11-seq2seq</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-12-attention/" target="_blank" rel="noopener">NLP模型-12-attention</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-13-XLnet/" target="_blank" rel="noopener">NLP模型-13-XLnet</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-14-%E6%A0%B8%E6%96%B9%E6%B3%95/" target="_blank" rel="noopener">NLP模型-14-核方法</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-15-%E6%B7%B1%E5%BA%A6%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-15-深度玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-16-%E5%8F%97%E9%99%90%E7%8E%BB%E5%B0%94%E5%85%B9%E6%9B%BC%E6%9C%BA/" target="_blank" rel="noopener">NLP模型-16-受限玻尔兹曼机</a><br><a href="https://iloveyou11.github.io/2020/07/28/NLP%E6%A8%A1%E5%9E%8B-17-%E6%B7%B1%E5%BA%A6%E4%BF%A1%E5%BF%B5%E7%BD%91%E7%BB%9C/" target="_blank" rel="noopener">NLP模型-17-深度信念网络</a></p>
-<h3 id="什么是transformer"><a href="#什么是transformer" class="headerlink" title="什么是transformer"></a>什么是transformer</h3><p>一句话解释：<code>transformer</code>是带有<code>self-attention</code>的<code>seq2seq</code>，输出能同时计算，可以代替RNN结构（必须按输入的顺序计算），因此transformer对于sequence to sequence的应用场景更为高效。</p>
-<p>transformer是首个完全抛弃RNN的recurrence，CNN的convolution，仅用attention来做特征抽取的模型。</p>
-<p><strong>Transformer中抛弃了传统的CNN和RNN，整个网络结构完全是由Attention机制组成。</strong></p>
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-28
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/28/NLP模型-05-transformer/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
-    <article id="post-NLP模型-06-Bert" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/28/NLP模型-06-Bert/"  >NLP模型-06-Bert</a>
+      <a class="article-title" href="/2020/07/28/NLP模型-04-CRF/"  >NLP模型-04-CRF</a>
     </h1>
   
 
@@ -213,7 +161,56 @@
                                             
                                 </ul>
                                 
-                                    <a href="/2020/07/28/NLP模型-06-Bert/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    <a href="/2020/07/28/NLP模型-04-CRF/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP模型-03-GMM" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP模型-03-GMM/"  >NLP模型-03-GMM</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp; textCNNNLP模型-11-seq2seqNLP模型-12-atte...
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP模型-03-GMM/#more" class="article-more-link" >more&gt;&gt;</a>
                                     
                 </footer>
     </div>
@@ -515,55 +512,6 @@
 
                 
   
-    <article id="post-NLP模型-14-核方法" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-            <header class="article-header">
-                
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/28/NLP模型-14-核方法/"  >NLP模型-14-核方法</a>
-    </h1>
-  
-
-                    
-                        <span class="header-cate">
-                <i class="fa fa-map-marker"></i>
-                
-                <a href="/categories/AI/">AI</a>
-                
-            </span>
-                        
-            </header>
-            
-                <div class="article-entry " itemprop="articleBody">
-                    
-                        <div class="article-feed">
-                            <p>
-                                NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp; textCNNNLP模型-11-seq2seqNLP模型-12-atte...
-                            </p>
-                        </div>
-                        
-                </div>
-                <footer class="article-footer">
-                    
-                                <ul class="article-footer-menu">
-                                    
-                                        <li><i class="fa fa-calendar"></i>
-                                            2020-07-28
-                                        </li>
-                                        
-                                            
-                                </ul>
-                                
-                                    <a href="/2020/07/28/NLP模型-14-核方法/#more" class="article-more-link" >more&gt;&gt;</a>
-                                    
-                </footer>
-    </div>
-</article>
-
-                
-  
     <article id="post-NLP模型-15-深度玻尔兹曼机" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -606,6 +554,55 @@
                                 </ul>
                                 
                                     <a href="/2020/07/28/NLP模型-15-深度玻尔兹曼机/#more" class="article-more-link" >more&gt;&gt;</a>
+                                    
+                </footer>
+    </div>
+</article>
+
+                
+  
+    <article id="post-NLP模型-13-XLnet" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/28/NLP模型-13-XLnet/"  >NLP模型-13-XLNet</a>
+    </h1>
+  
+
+                    
+                        <span class="header-cate">
+                <i class="fa fa-map-marker"></i>
+                
+                <a href="/categories/AI/">AI</a>
+                
+            </span>
+                        
+            </header>
+            
+                <div class="article-entry " itemprop="articleBody">
+                    
+                        <div class="article-feed">
+                            <p>
+                                NLP模型-01-预训练语言模型NLP模型-02-HMMNLP模型-03-GMMNLP模型-04-CRFNLP模型-05-transformerNLP模型-06-BertNLP模型-07-LDANLP模型-08-fastTextNLP模型-09-GloveNLP模型-10-textRNN &amp; textCNNNLP模型-11-seq2seqNLP模型-12-atte...
+                            </p>
+                        </div>
+                        
+                </div>
+                <footer class="article-footer">
+                    
+                                <ul class="article-footer-menu">
+                                    
+                                        <li><i class="fa fa-calendar"></i>
+                                            2020-07-28
+                                        </li>
+                                        
+                                            
+                                </ul>
+                                
+                                    <a href="/2020/07/28/NLP模型-13-XLnet/#more" class="article-more-link" >more&gt;&gt;</a>
                                     
                 </footer>
     </div>
