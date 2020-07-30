@@ -34,9 +34,10 @@
 
 </head>
 </html>
-<body>
-  <div id="container">
-      <header id="header">
+
+    <body>
+        <div id="container">
+            <header id="header">
     <div id="banner"></div>
     <div id="header-outer">
         <div id="header-menu" class="header-menu-pos animated">
@@ -123,8 +124,9 @@
         </div>
     </div>
 </header>
-      <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-前端总结" class="article article-type-post" itemscope itemprop="blogPost">
+                <div class="outer">
+                    <section id="main" class="body-wrap">
+                        <article id="post-前端总结" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -155,6 +157,26 @@
   
 
                     
+                        <div style="margin-top:10px;">
+    <span class="post-time">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-keyboard-o"></i>
+      <span class="post-meta-item-text"> 字数统计: </span>
+    <span class="post-count">4.7k字</span>
+    </span>
+    </span>
+
+    <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="fa fa-hourglass-half"></i>
+      <span class="post-meta-item-text"> 阅读时长: </span>
+    <span class="post-count">18分</span>
+    </span>
+    </span>
+</div>
+                            
+                                
             </header>
             
                 <div class="article-entry post-content" itemprop="articleBody">
@@ -260,7 +282,7 @@
 <ul>
 <li>解决方法一：利用行内元素</li>
 </ul>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>文字测试<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="comment">/* 傻大本粗RESET*/</span></span></span><br><span class="line">      * &#123;</span><br><span class="line">        margin: 0;</span><br><span class="line">        padding: 0;</span><br><span class="line">        list-style: none;</span><br><span class="line">        font-weight: normal;</span><br><span class="line">        font-style: normal;</span><br><span class="line">      &#125;</span><br><span class="line">      body &#123;</span><br><span class="line">        font-size: 13px;</span><br><span class="line">        font-family: tahoma, Helvetica, Arial, "\5FAE\8F6F\96C5\9ED1";</span><br><span class="line">        line-height: 1;</span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="comment">/* 代码开始 */</span></span></span><br><span class="line">      ul &#123;</span><br><span class="line">        width: 500px;</span><br><span class="line">        margin: 100px auto;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="comment">/* 开始了！！！！ */</span></span></span><br><span class="line">      li &#123;</span><br><span class="line"><span class="css">        <span class="comment">/* 这些都不重要 */</span></span></span><br><span class="line">        float: left;</span><br><span class="line">        width: 100px;</span><br><span class="line"><span class="css">        <span class="selector-tag">background</span>: <span class="selector-id">#fafafa</span>;</span></span><br><span class="line">        height: 50px;</span><br><span class="line">        margin-right: 10px;</span><br><span class="line"><span class="css">        <span class="comment">/* 重点 */</span></span></span><br><span class="line">        text-align: center;</span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="comment">/* 重点 */</span></span></span><br><span class="line">      p &#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        text-align: left;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>一行文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>这里是比较长的两行文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>文字测试<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="css">      <span class="comment">/* 傻大本粗RESET*/</span></span></span><br><span class="line">      * &#123;</span><br><span class="line">        margin: 0;</span><br><span class="line">        padding: 0;</span><br><span class="line">        list-style: none;</span><br><span class="line">        font-weight: normal;</span><br><span class="line">        font-style: normal;</span><br><span class="line">      &#125;</span><br><span class="line">      body &#123;</span><br><span class="line">        font-size: 13px;</span><br><span class="line">        font-family: tahoma, Helvetica, Arial, "\5FAE\8F6F\96C5\9ED1";</span><br><span class="line">        line-height: 1;</span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="comment">/* 代码开始 */</span></span></span><br><span class="line">      ul &#123;</span><br><span class="line">        width: 500px;</span><br><span class="line">        margin: 100px auto;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="comment">/* 开始了！！！！ */</span></span></span><br><span class="line">      li &#123;</span><br><span class="line"><span class="css">        <span class="comment">/* 这些都不重要 */</span></span></span><br><span class="line">        float: left;</span><br><span class="line">        width: 100px;</span><br><span class="line"><span class="css">        <span class="selector-tag">background</span>: <span class="selector-id">#fafafa</span>;</span></span><br><span class="line">        height: 50px;</span><br><span class="line">        margin-right: 10px;</span><br><span class="line"><span class="css">        <span class="comment">/* 重点 */</span></span></span><br><span class="line">        text-align: center;</span><br><span class="line">      &#125;</span><br><span class="line"><span class="css">      <span class="comment">/* 重点 */</span></span></span><br><span class="line">      p &#123;</span><br><span class="line">        display: inline-block;</span><br><span class="line">        text-align: left;</span><br><span class="line">      &#125;</span><br><span class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>一行文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">p</span>&gt;</span>这里是比较长的两行文字<span class="tag">&lt;/<span class="name">p</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>解决方法二：利用万能的表格</li>
@@ -388,10 +410,11 @@
     <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
 </div>
                                                     
-                                                            </section>
-        
-      </div>
-      <footer id="footer">
+                                                            
+                    </section>
+                    
+                </div>
+                <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
       
@@ -413,7 +436,7 @@
     </div>
   </div>
 </footer>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script>
     var mihoConfig = {
@@ -544,6 +567,15 @@
                                                                             $(".article-entry p img").popImg();
                                                                         </script>
                                                                         
-  </div>
-</body>
-</html>
+        </div>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+    <!-- 添加鼠标单击烟花效果 -->
+    <!-- <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="/js/fireworks.js"></script> -->
+    <!--动态线条背景-->
+    <!-- <script type="text/javascript" color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script> -->
+
+    </html>

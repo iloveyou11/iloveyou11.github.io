@@ -37,9 +37,10 @@
 
 </head>
 </html>
-<body>
-  <div id="container">
-      <header id="header">
+
+    <body>
+        <div id="container">
+            <header id="header">
     <div id="banner"></div>
     <div id="header-outer">
         <div id="header-menu" class="header-menu-pos animated">
@@ -126,8 +127,9 @@
         </div>
     </div>
 </header>
-      <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-react框架详解" class="article article-type-post" itemscope itemprop="blogPost">
+                <div class="outer">
+                    <section id="main" class="body-wrap">
+                        <article id="post-react框架详解" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -158,6 +160,26 @@
   
 
                     
+                        <div style="margin-top:10px;">
+    <span class="post-time">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-keyboard-o"></i>
+      <span class="post-meta-item-text"> 字数统计: </span>
+    <span class="post-count">5.7k字</span>
+    </span>
+    </span>
+
+    <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="fa fa-hourglass-half"></i>
+      <span class="post-meta-item-text"> 阅读时长: </span>
+    <span class="post-count">23分</span>
+    </span>
+    </span>
+</div>
+                            
+                                
             </header>
             
                 <div class="article-entry post-content" itemprop="articleBody">
@@ -205,7 +227,7 @@
 </ul>
 <h5 id="jsx"><a href="#jsx" class="headerlink" title="jsx"></a>jsx</h5><p>JSX 是一种用于描述UI的JavaScript扩展语法，JSX可以使用JavaScript表达式， 因为JSX本质上仍然是JavaScript。JSX语法只是 React.createElement ( )的语法糖， 所有的JSX语法最终都会被转换成对这个方法的调用</p>
 <h5 id="this指向问题"><a href="#this指向问题" class="headerlink" title="this指向问题"></a>this指向问题</h5><p><a href="https://segmentfault.com/a/1190000013609997" target="_blank" rel="noopener">React事件this指向问题</a></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、&lt;span onClick=&#123;<span class="keyword">this</span>.del.bind(<span class="keyword">this</span>)&#125;&gt;&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">2、constructor(props) &#123;</span></span><br><span class="line"><span class="regexp">        super(props);</span></span><br><span class="line"><span class="regexp">        this.state = &#123;&#125;;</span></span><br><span class="line"><span class="regexp">        this.del=this.del.bind(this)</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">3、&lt;span onClick=&#123;::this.del&#125;&gt;&lt;/</span>span&gt;</span><br><span class="line"><span class="number">4</span>、del=<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'del'</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>、&lt;span onClick=&#123;<span class="keyword">this</span>.del.bind(<span class="keyword">this</span>)&#125;&gt;&lt;/span&gt;</span><br><span class="line"><span class="number">2</span>、<span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;&#125;;</span><br><span class="line">        <span class="keyword">this</span>.del=<span class="keyword">this</span>.del.bind(<span class="keyword">this</span>)</span><br><span class="line">    &#125;</span><br><span class="line"><span class="number">3</span>、&lt;span onClick=&#123;::<span class="keyword">this</span>.del&#125;&gt;&lt;/span&gt;</span><br><span class="line"><span class="number">4</span>、del=<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'del'</span>)</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="生命周期"><a href="#生命周期" class="headerlink" title="生命周期"></a>生命周期</h5><p>React 16之后有三个生命周期被废弃(但并未删除)</p>
 <ul>
@@ -393,7 +415,7 @@
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useReducer, useEffect, useLayoutEffect &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">countReducer</span>(<span class="params">state, action</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">switch</span> (action.type) &#123;</span><br><span class="line">    <span class="keyword">case</span> <span class="string">'add'</span>:</span><br><span class="line">      <span class="keyword">return</span> state + <span class="number">1</span></span><br><span class="line">    <span class="keyword">case</span> <span class="string">'minus'</span>:</span><br><span class="line">      <span class="keyword">return</span> state - <span class="number">1</span></span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="keyword">return</span> state</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">MyCountFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> [count, dispatchCount] = useReducer(countReducer, <span class="number">0</span>)</span><br><span class="line">  <span class="keyword">const</span> [name, setName] = useState(<span class="string">'yp'</span>)</span><br><span class="line"></span><br><span class="line">  useEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'useEffect start'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'useEffect end'</span>);</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  useLayoutEffect(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'useLayoutEffect start'</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="string">'useLayoutEffectend'</span>);</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &lt;input type=<span class="string">"text"</span> value=&#123;name&#125; onChange=&#123;e =&gt; setName(e.target.value)&#125; /&gt;</span><br><span class="line">      &lt;button onClick=&#123;() =&gt; dispatchCount(&#123; <span class="attr">type</span>: <span class="string">'add'</span> &#125;)&#125;&gt;+<span class="number">1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> MyCountFunction</span><br></pre></td></tr></table></figure>
 
 <p><strong>useContext</strong></p>
-<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useContext &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; UserContext &#125; <span class="keyword">from</span> <span class="string">'./UserContext'</span></span><br><span class="line"><span class="keyword">import</span> &#123; MessageContext &#125; <span class="keyword">from</span> <span class="string">'./MessageContext'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> MessageList = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; user &#125; = useContext(UserContext)</span><br><span class="line">  <span class="keyword">const</span> &#123; loading, messages, onSelectMessage &#125; = useContext(MessageContext)</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;</span><br><span class="line">        loading ? &lt;div&gt;加载中......&lt;/div&gt; :</span><br><span class="line">          messages.length === <span class="number">0</span> ? &lt;div&gt;没有信息, &#123;user.name&#125;&lt;/div&gt; :</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">              &#123;messages.map(<span class="function"><span class="params">message</span> =&gt;</span> &lt;Message key=&#123;message.id&#125; message=&#123;message&#125; onClick=&#123;() =&gt; onSelectMessage(message)&#125; /&gt;)&#125;</span><br><span class="line">            &lt;<span class="regexp">/ul&gt;</span></span><br><span class="line"><span class="regexp">      &#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>div&gt;</span><br><span class="line">  )</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> Message = <span class="function">(<span class="params">&#123; message, onClick &#125;</span>) =&gt;</span> (</span><br><span class="line">  &lt;li onClick=&#123;onClick&#125;&gt;</span><br><span class="line">    &lt;div&gt;&#123;message.subject&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  &lt;/</span>li&gt;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> MessageList</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> React, &#123; useContext &#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"><span class="keyword">import</span> &#123; UserContext &#125; <span class="keyword">from</span> <span class="string">'./UserContext'</span></span><br><span class="line"><span class="keyword">import</span> &#123; MessageContext &#125; <span class="keyword">from</span> <span class="string">'./MessageContext'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> MessageList = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> &#123; user &#125; = useContext(UserContext)</span><br><span class="line">  <span class="keyword">const</span> &#123; loading, messages, onSelectMessage &#125; = useContext(MessageContext)</span><br><span class="line">  <span class="keyword">return</span> (</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">      &#123;</span><br><span class="line">        loading ? &lt;div&gt;加载中......&lt;/div&gt; :</span><br><span class="line">          messages.length === <span class="number">0</span> ? &lt;div&gt;没有信息, &#123;user.name&#125;&lt;/div&gt; :</span><br><span class="line">            &lt;ul&gt;</span><br><span class="line">              &#123;messages.map(<span class="function"><span class="params">message</span> =&gt;</span> &lt;Message key=&#123;message.id&#125; message=&#123;message&#125; onClick=&#123;() =&gt; onSelectMessage(message)&#125; /&gt;)&#125;</span><br><span class="line">            &lt;/ul&gt;</span><br><span class="line">      &#125;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">  )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">const Message = (&#123; message, onClick &#125;) =&gt; (</span></span><br><span class="line"><span class="regexp">  &lt;li onClick=&#123;onClick&#125;&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;&#123;message.subject&#125;&lt;/</span>div&gt;</span><br><span class="line">  &lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">)</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default MessageList</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>Ref hook</strong></p>
 <p>获取dom元素，应用很简单，<code>const inputRef = useRef(), &lt;input ref={inputRef}/&gt;</code>即可</p>
@@ -527,10 +549,11 @@
     <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
 </div>
                                                     
-                                                            </section>
-        
-      </div>
-      <footer id="footer">
+                                                            
+                    </section>
+                    
+                </div>
+                <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
       
@@ -552,7 +575,7 @@
     </div>
   </div>
 </footer>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script>
     var mihoConfig = {
@@ -683,6 +706,15 @@
                                                                             $(".article-entry p img").popImg();
                                                                         </script>
                                                                         
-  </div>
-</body>
-</html>
+        </div>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+    <!-- 添加鼠标单击烟花效果 -->
+    <!-- <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="/js/fireworks.js"></script> -->
+    <!--动态线条背景-->
+    <!-- <script type="text/javascript" color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script> -->
+
+    </html>

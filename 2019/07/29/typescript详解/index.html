@@ -34,9 +34,10 @@
 
 </head>
 </html>
-<body>
-  <div id="container">
-      <header id="header">
+
+    <body>
+        <div id="container">
+            <header id="header">
     <div id="banner"></div>
     <div id="header-outer">
         <div id="header-menu" class="header-menu-pos animated">
@@ -123,8 +124,9 @@
         </div>
     </div>
 </header>
-      <div class="outer">
-        <section id="main" class="body-wrap"><article id="post-typescript详解" class="article article-type-post" itemscope itemprop="blogPost">
+                <div class="outer">
+                    <section id="main" class="body-wrap">
+                        <article id="post-typescript详解" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
@@ -155,6 +157,26 @@
   
 
                     
+                        <div style="margin-top:10px;">
+    <span class="post-time">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-keyboard-o"></i>
+      <span class="post-meta-item-text"> 字数统计: </span>
+    <span class="post-count">7.4k字</span>
+    </span>
+    </span>
+
+    <span class="post-time">
+    &nbsp; | &nbsp;
+    <span class="post-meta-item-icon">
+      <i class="fa fa-hourglass-half"></i>
+      <span class="post-meta-item-text"> 阅读时长: </span>
+    <span class="post-count">35分</span>
+    </span>
+    </span>
+</div>
+                            
+                                
             </header>
             
                 <div class="article-entry post-content" itemprop="articleBody">
@@ -268,7 +290,7 @@
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Animal &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  eat() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"吃的方法"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> Dog <span class="keyword">extends</span> Animal &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name);</span><br><span class="line">  &#125;</span><br><span class="line">  eat() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="string">"吃肉"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> Cat <span class="keyword">extends</span> Animal &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name);</span><br><span class="line">  &#125;</span><br><span class="line">  eat() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.name + <span class="string">"吃鱼"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>6、抽象类(abstract 关键字，无法创造抽象类的实例)</strong><br>抽象类和抽象方法用来定义标准，要求子类必须实现抽象类中的所有方法</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> Animal1 &#123;</span><br><span class="line">  <span class="keyword">public</span> name: <span class="built_in">string</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">abstract</span> eat(): <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> Dog1 <span class="keyword">extends</span> Animal1 &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">any</span></span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name);</span><br><span class="line">  &#125;</span><br><span class="line">  eat() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>吃肉`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="keyword">class</span> Animal1 &#123;</span><br><span class="line">  <span class="keyword">public</span> name: <span class="built_in">string</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">abstract</span> eat(): <span class="built_in">any</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> Dog1 <span class="keyword">extends</span> Animal1 &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">any</span></span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name);</span><br><span class="line">  &#125;</span><br><span class="line">  eat() &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;this.name&#125;</span>吃肉`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="四、typescript-接口（定义标准）"><a href="#四、typescript-接口（定义标准）" class="headerlink" title="四、typescript 接口（定义标准）"></a>四、typescript 接口（定义标准）</h5><p><strong>1、属性接口</strong></p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//对传入地值进行约束</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print_label1</span>(<span class="params">label: <span class="built_in">string</span></span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(label);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print_label2</span>(<span class="params">labelInfo: &#123; label: <span class="built_in">string</span> &#125;</span>): <span class="title">void</span> </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(labelInfo);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//接口（批量方法约束）</span></span><br><span class="line"><span class="keyword">interface</span> FullName &#123;</span><br><span class="line">  firstname: <span class="built_in">string</span>;</span><br><span class="line">  lastname: <span class="built_in">string</span>; <span class="comment">//可选属性 lastname?: string;</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//传到的参数必须包含firstname、lastname</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">printName</span>(<span class="params">name: FullName</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;name.firstname&#125;</span>---<span class="subst">$&#123;name.lastname&#125;</span>`</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -280,7 +302,7 @@
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> UserArr &#123;</span><br><span class="line">  [index: <span class="built_in">number</span>]: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> arr: UserArr = [<span class="string">"1"</span>, <span class="string">"2"</span>, <span class="string">"3"</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">interface</span> UserObj &#123;</span><br><span class="line">  [index: <span class="built_in">string</span>]: <span class="built_in">string</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> obj: UserObj = &#123; name: <span class="string">"zhangsan"</span>, age: <span class="string">"12"</span> &#125;;</span><br></pre></td></tr></table></figure>
 
 <p><strong>4 类类型接口(对类的约束,和抽象类很相似)</strong></p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> AnimalI &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  eat(str: <span class="built_in">string</span>): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> a1 <span class="keyword">implements</span> AnimalI &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  eat(food: <span class="built_in">string</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`我是<span class="subst">$&#123;<span class="keyword">this</span>.name&#125;</span>,我吃<span class="subst">$&#123;food&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> AnimalI &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  eat(str: <span class="built_in">string</span>): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> a1 <span class="keyword">implements</span> AnimalI &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  eat(food: <span class="built_in">string</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">`我是<span class="subst">$&#123;this.name&#125;</span>,我吃<span class="subst">$&#123;food&#125;</span>`</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>5 接口扩展(接口集成接口,类实现接口时需要实现所有的方法)</strong></p>
 <figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> Ani &#123;</span><br><span class="line">  eat(): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//接口也可以相互继承</span></span><br><span class="line"><span class="keyword">interface</span> Per <span class="keyword">extends</span> Ani &#123;</span><br><span class="line">  work(): <span class="built_in">void</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">class</span> Programmer &#123;</span><br><span class="line">  name: <span class="built_in">string</span>;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">  &#125;</span><br><span class="line">  coding(code: <span class="built_in">string</span>) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name + code);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//集成父类+实现接口</span></span><br><span class="line"><span class="keyword">class</span> Web1 <span class="keyword">extends</span> Programmer <span class="keyword">implements</span> Per &#123;</span><br><span class="line">  <span class="keyword">constructor</span>(<span class="params">name: <span class="built_in">string</span></span>) &#123;</span><br><span class="line">    <span class="keyword">super</span>(name);</span><br><span class="line">  &#125;</span><br><span class="line">  eat() &#123;&#125;</span><br><span class="line">  work() &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -552,10 +574,11 @@
     <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
 </div>
                                                     
-                                                            </section>
-        
-      </div>
-      <footer id="footer">
+                                                            
+                    </section>
+                    
+                </div>
+                <footer id="footer">
   <div class="outer">
     <div id="footer-info" class="inner">
       
@@ -577,7 +600,7 @@
     </div>
   </div>
 </footer>
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+                    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 <script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 <script>
     var mihoConfig = {
@@ -708,6 +731,15 @@
                                                                             $(".article-entry p img").popImg();
                                                                         </script>
                                                                         
-  </div>
-</body>
-</html>
+        </div>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+
+    <!-- 添加鼠标单击烟花效果 -->
+    <!-- <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none;"></canvas>
+    <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script>
+    <script type="text/javascript" src="/js/fireworks.js"></script> -->
+    <!--动态线条背景-->
+    <!-- <script type="text/javascript" color="220,220,220" opacity='0.7' zIndex="-2" count="200" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
+    </script> -->
+
+    </html>
