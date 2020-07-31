@@ -4,23 +4,23 @@ function initSearch() {
         searchContainer = $('#search-container'),
         searchResult = $('#search-result'),
         searchTpl = $('#search-tpl').html(),
-        JSON_DATA = '/content.json?v=' + (+ new Date()),
+        JSON_DATA = '/content.json?v=' + (+new Date()),
         searchData;
 
     function loadData(success) {
-        if (! searchData) {
+        if (!searchData) {
             var xhr = new XMLHttpRequest();
             xhr.open('GET', JSON_DATA, true);
-            xhr.onload = function () {
+            xhr.onload = function() {
                 if (this.status >= 200 && this.status < 300) {
-                    var res = JSON.parse(this.response||this.responseText);
+                    var res = JSON.parse(this.response || this.responseText);
                     searchData = res instanceof Array ? res : res.posts;
                     success(searchData);
                 } else {
                     console.error(this.statusText);
                 }
             };
-            xhr.onerror = function () {
+            xhr.onerror = function() {
                 console.error(this.statusText);
             };
             xhr.send();
@@ -30,7 +30,7 @@ function initSearch() {
     }
 
     function tpl(html, data) {
-        return html.replace(/\{\w+\}/g, function (str) {
+        return html.replace(/\{\w+\}/g, function(str) {
             var prop = str.replace(/\{|\}/g, '');
             return data[prop] || '';
         });
@@ -39,7 +39,7 @@ function initSearch() {
     function render(data) {
         var html = '';
         if (data.length) {
-            html = data.map(function (post) {
+            html = data.map(function(post) {
                 return tpl(searchTpl, {
                     title: post.title,
                     url: (window.mihoConfig.root + '/' + post.path)
@@ -51,6 +51,7 @@ function initSearch() {
         searchResult.html(html);
         containerDisplay(true);
     }
+
     function containerDisplay(status) {
         if (status) {
             searchContainer.addClass('search-container-show')
@@ -61,14 +62,14 @@ function initSearch() {
 
     function search(e) {
         var keywords = this.value.trim().toLowerCase();
-        if (! keywords) {
+        if (!keywords) {
             containerDisplay(false);
             return;
         }
 
-        loadData(function (items) {
+        loadData(function(items) {
             var results = [];
-            items.forEach( function(item) {
+            items.forEach(function(item) {
                 if (item.title.toLowerCase().indexOf(keywords) > -1 || item.text.toLowerCase().indexOf(keywords) > -1) {
                     results.push(item);
                 }

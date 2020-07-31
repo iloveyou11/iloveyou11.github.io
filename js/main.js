@@ -3,8 +3,8 @@
         toc = $("#post-toc"),
         headerMenu = $("#header-menu"),
         backTop = $("#sidebar-top"),
-        search = $('#sidebar-search'),
-        searchWrap = $('.search-wrap'),
+        // search = $('#sidebar-search'),
+        // searchWrap = $('.search-wrap'),
         tags = $("#sidebar-menu-box-tags"),
         mobileTags = $("#mobile-header-container-tags"),
         categories = $("#sidebar-menu-box-categories"),
@@ -119,16 +119,16 @@
     //初始化搜索数据
     initSearch();
     //搜索点击事件
-    search.click(function() {
-        searchWrap.css('top', '50%');
-        searchWrap.css('marginTop', '-80px');
-        searchWrap.css('opacity', '1');
-    });
-    $('.search-close').click(function() {
-        searchWrap.css('top', '0');
-        searchWrap.css('opacity', '0');
-        $('#search-container').removeClass('search-container-show');
-    });
+    // search.click(function() {
+    //     searchWrap.css('top', '50%');
+    //     searchWrap.css('marginTop', '-80px');
+    //     searchWrap.css('opacity', '1');
+    // });
+    // $('.search-close').click(function() {
+    //     searchWrap.css('top', '0');
+    //     searchWrap.css('opacity', '0');
+    //     $('#search-container').removeClass('search-container-show');
+    // });
 
     //tags | 标签
     Blog.setTags(tags); //pc
@@ -136,18 +136,18 @@
     //categories | 类别
     Blog.setCategories();
     //类别展示
-    $("#sidebar-category").click(function(e) {
-        tags.css('display', 'none');
-        categories.css('display', 'block');
-        e.stopPropagation();
-        if (sideMenuBoxIsOpen) {
-            Blog.showSidebarBox(true);
-            sideMenuBoxIsOpen = false;
-        } else {
-            Blog.showSidebarBox(false);
-            sideMenuBoxIsOpen = true;
-        }
-    });
+    // $("#sidebar-category").click(function(e) {
+    //     tags.css('display', 'none');
+    //     categories.css('display', 'block');
+    //     e.stopPropagation();
+    //     if (sideMenuBoxIsOpen) {
+    //         Blog.showSidebarBox(true);
+    //         sideMenuBoxIsOpen = false;
+    //     } else {
+    //         Blog.showSidebarBox(false);
+    //         sideMenuBoxIsOpen = true;
+    //     }
+    // });
     //点击菜单区域不能关闭菜单
     sideMenuBox.click(function(e) {
         e.stopPropagation();
