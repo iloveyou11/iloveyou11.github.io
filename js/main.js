@@ -117,7 +117,7 @@
     };
 
     //初始化搜索数据
-    initSearch();
+    // initSearch();
     //搜索点击事件
     // search.click(function() {
     //     searchWrap.css('top', '50%');
